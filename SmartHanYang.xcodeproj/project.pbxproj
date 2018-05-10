@@ -7,21 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F910BA7620A448EC00E15F90 /* SuupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F910BA7520A448EC00E15F90 /* SuupTableViewCell.swift */; };
 		F96DFB9220A42E4300997614 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96DFB9120A42E4300997614 /* AppDelegate.swift */; };
 		F96DFB9420A42E4300997614 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96DFB9320A42E4300997614 /* ViewController.swift */; };
 		F96DFB9720A42E4300997614 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F96DFB9520A42E4300997614 /* Main.storyboard */; };
-		F96DFB9920A42E4400997614 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F96DFB9820A42E4400997614 /* Assets.xcassets */; };
 		F96DFB9C20A42E4400997614 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F96DFB9A20A42E4400997614 /* LaunchScreen.storyboard */; };
+		F96DFBA420A4315600997614 /* SuupTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96DFBA320A4315600997614 /* SuupTableViewController.swift */; };
+		F96DFBAD20A4467D00997614 /* Lecture.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96DFBAC20A4467C00997614 /* Lecture.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F910BA7520A448EC00E15F90 /* SuupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuupTableViewCell.swift; sourceTree = "<group>"; };
 		F96DFB8E20A42E4300997614 /* SmartHanYang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartHanYang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F96DFB9120A42E4300997614 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F96DFB9320A42E4300997614 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F96DFB9620A42E4300997614 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		F96DFB9820A42E4400997614 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F96DFB9B20A42E4400997614 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F96DFB9D20A42E4400997614 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F96DFBA320A4315600997614 /* SuupTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuupTableViewController.swift; sourceTree = "<group>"; };
+		F96DFBAC20A4467C00997614 /* Lecture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lecture.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +39,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F910BA7420A448CA00E15F90 /* SuupViewClasses */ = {
+			isa = PBXGroup;
+			children = (
+				F910BA7520A448EC00E15F90 /* SuupTableViewCell.swift */,
+			);
+			path = SuupViewClasses;
+			sourceTree = "<group>";
+		};
 		F96DFB8520A42E4300997614 = {
 			isa = PBXGroup;
 			children = (
@@ -54,14 +66,24 @@
 		F96DFB9020A42E4300997614 /* SmartHanYang */ = {
 			isa = PBXGroup;
 			children = (
+				F910BA7420A448CA00E15F90 /* SuupViewClasses */,
+				F96DFBAB20A4466400997614 /* ModelClasses */,
 				F96DFB9120A42E4300997614 /* AppDelegate.swift */,
 				F96DFB9320A42E4300997614 /* ViewController.swift */,
 				F96DFB9520A42E4300997614 /* Main.storyboard */,
-				F96DFB9820A42E4400997614 /* Assets.xcassets */,
+				F96DFBA320A4315600997614 /* SuupTableViewController.swift */,
 				F96DFB9A20A42E4400997614 /* LaunchScreen.storyboard */,
 				F96DFB9D20A42E4400997614 /* Info.plist */,
 			);
 			path = SmartHanYang;
+			sourceTree = "<group>";
+		};
+		F96DFBAB20A4466400997614 /* ModelClasses */ = {
+			isa = PBXGroup;
+			children = (
+				F96DFBAC20A4467C00997614 /* Lecture.swift */,
+			);
+			path = ModelClasses;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -123,7 +145,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F96DFB9C20A42E4400997614 /* LaunchScreen.storyboard in Resources */,
-				F96DFB9920A42E4400997614 /* Assets.xcassets in Resources */,
 				F96DFB9720A42E4300997614 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -136,7 +157,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F96DFB9420A42E4300997614 /* ViewController.swift in Sources */,
+				F910BA7620A448EC00E15F90 /* SuupTableViewCell.swift in Sources */,
 				F96DFB9220A42E4300997614 /* AppDelegate.swift in Sources */,
+				F96DFBAD20A4467D00997614 /* Lecture.swift in Sources */,
+				F96DFBA420A4315600997614 /* SuupTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
