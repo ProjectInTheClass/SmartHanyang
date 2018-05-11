@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		F910BA7620A448EC00E15F90 /* SuupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F910BA7520A448EC00E15F90 /* SuupTableViewCell.swift */; };
+		F91DCFDA20A57F42003A4161 /* Suup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F91DCFD820A57F42003A4161 /* Suup.storyboard */; };
+		F91DCFDE20A5814A003A4161 /* Goaje.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F91DCFDC20A5814A003A4161 /* Goaje.storyboard */; };
 		F96DFB9220A42E4300997614 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96DFB9120A42E4300997614 /* AppDelegate.swift */; };
 		F96DFB9420A42E4300997614 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96DFB9320A42E4300997614 /* ViewController.swift */; };
 		F96DFB9720A42E4300997614 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F96DFB9520A42E4300997614 /* Main.storyboard */; };
@@ -18,6 +20,8 @@
 
 /* Begin PBXFileReference section */
 		F910BA7520A448EC00E15F90 /* SuupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuupTableViewCell.swift; sourceTree = "<group>"; };
+		F91DCFD920A57F42003A4161 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = SmartHanYang/Base.lproj/Suup.storyboard; sourceTree = "<group>"; };
+		F91DCFDD20A5814A003A4161 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = SmartHanYang/Base.lproj/Goaje.storyboard; sourceTree = "<group>"; };
 		F96DFB8E20A42E4300997614 /* SmartHanYang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartHanYang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F96DFB9120A42E4300997614 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F96DFB9320A42E4300997614 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,9 +51,21 @@
 			path = SuupViewClasses;
 			sourceTree = "<group>";
 		};
+		F91DCFDB20A57F4B003A4161 /* StoryBoards */ = {
+			isa = PBXGroup;
+			children = (
+				F96DFB9520A42E4300997614 /* Main.storyboard */,
+				F96DFB9A20A42E4400997614 /* LaunchScreen.storyboard */,
+				F91DCFD820A57F42003A4161 /* Suup.storyboard */,
+				F91DCFDC20A5814A003A4161 /* Goaje.storyboard */,
+			);
+			path = StoryBoards;
+			sourceTree = "<group>";
+		};
 		F96DFB8520A42E4300997614 = {
 			isa = PBXGroup;
 			children = (
+				F91DCFDB20A57F4B003A4161 /* StoryBoards */,
 				F96DFB9020A42E4300997614 /* SmartHanYang */,
 				F96DFB8F20A42E4300997614 /* Products */,
 			);
@@ -70,9 +86,7 @@
 				F96DFBAB20A4466400997614 /* ModelClasses */,
 				F96DFB9120A42E4300997614 /* AppDelegate.swift */,
 				F96DFB9320A42E4300997614 /* ViewController.swift */,
-				F96DFB9520A42E4300997614 /* Main.storyboard */,
 				F96DFBA320A4315600997614 /* SuupTableViewController.swift */,
-				F96DFB9A20A42E4400997614 /* LaunchScreen.storyboard */,
 				F96DFB9D20A42E4400997614 /* Info.plist */,
 			);
 			path = SmartHanYang;
@@ -145,7 +159,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F96DFB9C20A42E4400997614 /* LaunchScreen.storyboard in Resources */,
+				F91DCFDE20A5814A003A4161 /* Goaje.storyboard in Resources */,
 				F96DFB9720A42E4300997614 /* Main.storyboard in Resources */,
+				F91DCFDA20A57F42003A4161 /* Suup.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,6 +183,22 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		F91DCFD820A57F42003A4161 /* Suup.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F91DCFD920A57F42003A4161 /* Base */,
+			);
+			name = Suup.storyboard;
+			sourceTree = "<group>";
+		};
+		F91DCFDC20A5814A003A4161 /* Goaje.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F91DCFDD20A5814A003A4161 /* Base */,
+			);
+			name = Goaje.storyboard;
+			sourceTree = "<group>";
+		};
 		F96DFB9520A42E4300997614 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
