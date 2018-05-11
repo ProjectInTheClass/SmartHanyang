@@ -10,6 +10,8 @@ import Foundation
 
 struct LectureTimeTable
 {
+    var lecture : Lecture?
+    
     var room : String?
     
     //하루 내에서의 시각. second.
@@ -74,6 +76,7 @@ class Lecture
         timeTables![day]?.timeStart = Int(timeStart * 60) * 60;
         timeTables![day]?.timeEnd = Int(timeEnd * 60) * 60;
         timeTables![day]?.room = room;
+        timeTables![day]?.lecture = self;
         
     }
     
@@ -83,6 +86,7 @@ class Lecture
         bogangInfo.timeStart = Int(timeStart * 60) * 60;
         bogangInfo.timeEnd = Int(timeEnd * 60) * 60;
         bogangInfo.room = room;
+        bogangInfo.lecture = self;
         bogangTimeTables!.append(bogangInfo);
     }
 }
