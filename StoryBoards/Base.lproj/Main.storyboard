@@ -29,6 +29,16 @@
             </objects>
             <point key="canvasLocation" x="-447" y="-1225"/>
         </scene>
+        <!--Login-->
+        <scene sceneID="Fiy-5i-aOD">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Login" id="khE-qH-vXS" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="downloads" id="zf8-RS-IZW"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LKS-vz-gk6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-412" y="-1068"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="NhD-Y3-oIC">
             <objects>
@@ -41,6 +51,7 @@
                     <connections>
                         <segue destination="gjZ-U2-kof" kind="relationship" relationship="viewControllers" id="Bzh-Lh-Euu"/>
                         <segue destination="NqI-kx-bNS" kind="relationship" relationship="viewControllers" id="Zog-Ql-Y9y"/>
+                        <segue destination="khE-qH-vXS" kind="relationship" relationship="viewControllers" id="Lm0-eh-O31"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gJN-oE-G76" userLabel="First Responder" sceneMemberID="firstResponder"/>

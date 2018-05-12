@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		17A2DED813E7E06C83C19482 /* Pods_SmartHanYang.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 666F3E54E112B992B392C915 /* Pods_SmartHanYang.framework */; };
 		F910BA7620A448EC00E15F90 /* SuupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F910BA7520A448EC00E15F90 /* SuupTableViewCell.swift */; };
 		F91DCFDA20A57F42003A4161 /* Suup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F91DCFD820A57F42003A4161 /* Suup.storyboard */; };
 		F91DCFDE20A5814A003A4161 /* Goaje.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F91DCFDC20A5814A003A4161 /* Goaje.storyboard */; };
-		F91DCFE120A58873003A4161 /* HWParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91DCFE020A58873003A4161 /* HWParser.swift */; };
 		F91DCFE320A58C3D003A4161 /* example in Resources */ = {isa = PBXBuildFile; fileRef = F91DCFE220A58C3D003A4161 /* example */; };
 		F91DCFE520A58D10003A4161 /* ParseJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91DCFE420A58D10003A4161 /* ParseJson.swift */; };
+		F955200F20A6882700FB08E8 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F955200E20A6882700FB08E8 /* Login.storyboard */; };
+		F955201120A6886700FB08E8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F955201020A6886700FB08E8 /* LoginViewController.swift */; };
 		F96DFB9220A42E4300997614 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96DFB9120A42E4300997614 /* AppDelegate.swift */; };
 		F96DFB9420A42E4300997614 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96DFB9320A42E4300997614 /* ViewController.swift */; };
 		F96DFB9720A42E4300997614 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F96DFB9520A42E4300997614 /* Main.storyboard */; };
@@ -22,12 +24,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		666F3E54E112B992B392C915 /* Pods_SmartHanYang.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartHanYang.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		88313F3567C407636023779F /* Pods-SmartHanYang.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartHanYang.release.xcconfig"; path = "Pods/Target Support Files/Pods-SmartHanYang/Pods-SmartHanYang.release.xcconfig"; sourceTree = "<group>"; };
+		CA3DD5FE608F5E983A631046 /* Pods-SmartHanYang.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartHanYang.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SmartHanYang/Pods-SmartHanYang.debug.xcconfig"; sourceTree = "<group>"; };
 		F910BA7520A448EC00E15F90 /* SuupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuupTableViewCell.swift; sourceTree = "<group>"; };
 		F91DCFD920A57F42003A4161 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = SmartHanYang/Base.lproj/Suup.storyboard; sourceTree = "<group>"; };
 		F91DCFDD20A5814A003A4161 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = SmartHanYang/Base.lproj/Goaje.storyboard; sourceTree = "<group>"; };
-		F91DCFE020A58873003A4161 /* HWParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HWParser.swift; sourceTree = "<group>"; };
 		F91DCFE220A58C3D003A4161 /* example */ = {isa = PBXFileReference; lastKnownFileType = text; path = example; sourceTree = "<group>"; };
 		F91DCFE420A58D10003A4161 /* ParseJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseJson.swift; sourceTree = "<group>"; };
+		F955200E20A6882700FB08E8 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		F955201020A6886700FB08E8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F96DFB8E20A42E4300997614 /* SmartHanYang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartHanYang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F96DFB9120A42E4300997614 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F96DFB9320A42E4300997614 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -43,12 +49,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17A2DED813E7E06C83C19482 /* Pods_SmartHanYang.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9569696F9572352FDF189102 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				666F3E54E112B992B392C915 /* Pods_SmartHanYang.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B0726CA7F6BDB220D88621A5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CA3DD5FE608F5E983A631046 /* Pods-SmartHanYang.debug.xcconfig */,
+				88313F3567C407636023779F /* Pods-SmartHanYang.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		F910BA7420A448CA00E15F90 /* SuupViewClasses */ = {
 			isa = PBXGroup;
 			children = (
@@ -64,6 +88,7 @@
 				F96DFB9A20A42E4400997614 /* LaunchScreen.storyboard */,
 				F91DCFD820A57F42003A4161 /* Suup.storyboard */,
 				F91DCFDC20A5814A003A4161 /* Goaje.storyboard */,
+				F955200E20A6882700FB08E8 /* Login.storyboard */,
 			);
 			path = StoryBoards;
 			sourceTree = "<group>";
@@ -71,7 +96,7 @@
 		F91DCFDF20A5884B003A4161 /* Parsing */ = {
 			isa = PBXGroup;
 			children = (
-				F91DCFE020A58873003A4161 /* HWParser.swift */,
+				F955201020A6886700FB08E8 /* LoginViewController.swift */,
 				F91DCFE220A58C3D003A4161 /* example */,
 				F91DCFE420A58D10003A4161 /* ParseJson.swift */,
 			);
@@ -84,6 +109,8 @@
 				F91DCFDB20A57F4B003A4161 /* StoryBoards */,
 				F96DFB9020A42E4300997614 /* SmartHanYang */,
 				F96DFB8F20A42E4300997614 /* Products */,
+				B0726CA7F6BDB220D88621A5 /* Pods */,
+				9569696F9572352FDF189102 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -124,9 +151,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F96DFBA020A42E4400997614 /* Build configuration list for PBXNativeTarget "SmartHanYang" */;
 			buildPhases = (
+				866E60FBCF2BB3E9FED822EA /* [CP] Check Pods Manifest.lock */,
 				F96DFB8A20A42E4300997614 /* Sources */,
 				F96DFB8B20A42E4300997614 /* Frameworks */,
 				F96DFB8C20A42E4300997614 /* Resources */,
+				8E22AFB2457E9B32065D49D7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -175,6 +204,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F955200F20A6882700FB08E8 /* Login.storyboard in Resources */,
 				F96DFB9C20A42E4400997614 /* LaunchScreen.storyboard in Resources */,
 				F91DCFDE20A5814A003A4161 /* Goaje.storyboard in Resources */,
 				F91DCFE320A58C3D003A4161 /* example in Resources */,
@@ -185,16 +215,57 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		866E60FBCF2BB3E9FED822EA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SmartHanYang-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8E22AFB2457E9B32065D49D7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SmartHanYang/Pods-SmartHanYang-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/WKZombie/WKZombie.framework",
+				"${BUILT_PRODUCTS_DIR}/hpple/hpple.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WKZombie.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/hpple.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SmartHanYang/Pods-SmartHanYang-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F96DFB8A20A42E4300997614 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				F96DFB9420A42E4300997614 /* ViewController.swift in Sources */,
-				F91DCFE120A58873003A4161 /* HWParser.swift in Sources */,
 				F910BA7620A448EC00E15F90 /* SuupTableViewCell.swift in Sources */,
 				F91DCFE520A58D10003A4161 /* ParseJson.swift in Sources */,
 				F96DFB9220A42E4300997614 /* AppDelegate.swift in Sources */,
+				F955201120A6886700FB08E8 /* LoginViewController.swift in Sources */,
 				F96DFBAD20A4467D00997614 /* Lecture.swift in Sources */,
 				F96DFBA420A4315600997614 /* SuupTableViewController.swift in Sources */,
 			);
@@ -354,6 +425,7 @@
 		};
 		F96DFBA120A42E4400997614 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CA3DD5FE608F5E983A631046 /* Pods-SmartHanYang.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -372,6 +444,7 @@
 		};
 		F96DFBA220A42E4400997614 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 88313F3567C407636023779F /* Pods-SmartHanYang.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

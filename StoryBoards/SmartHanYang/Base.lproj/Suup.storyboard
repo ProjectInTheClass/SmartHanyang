@@ -9,10 +9,12 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
+        <!--수업-->
         <scene sceneID="aTU-X3-hhu">
             <objects>
-                <navigationController id="Ph5-zV-aTs" sceneMemberID="viewController">
+                <navigationController id="Ph5-zV-aTs" userLabel="수업" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="수업" id="3S8-a8-rum" userLabel="수업"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iY1-rv-QA4">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
