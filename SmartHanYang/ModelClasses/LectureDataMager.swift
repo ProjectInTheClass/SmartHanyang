@@ -37,6 +37,9 @@ class LectureDataManager
     {
         lectures.removeAll()
         
+        //TODO
+        //아래는 임시 테스트용 코드
+        
         let softwareStudio1 = Lecture(name: "소프트웨어스튜디오1")
         softwareStudio1.professor = "윤성관"
         softwareStudio1.AddTime(day: 4, room: "IT/BT 509", timeStart: 16, timeEnd: 19)
@@ -80,7 +83,7 @@ class LectureDataManager
     
     public func Save()
     {
-        
+        //TODO
     }
     
     public func GetLecture(id:Int) -> Lecture?

@@ -34,7 +34,8 @@ class GoajaeDataManager
     {
         goajaes.removeAll()
         
-        // 임시 테스트 코드!!!!
+        //TODO
+        // 아래는 임시 테스트 코드!!!!
         for lecture in LectureDataManager.shared.GetLectures()
         {
             for i in 0...Int(arc4random_uniform(4))
@@ -60,7 +61,7 @@ class GoajaeDataManager
     
     public func Save()
     {
-        
+        //TODO
     }
     
     public func GetGoajaes (lecture:Lecture) -> [Goajae]
@@ -89,5 +90,14 @@ class GoajaeDataManager
     public func AddGoajae (goajae:Goajae)
     {
         goajaes.append(goajae)
+        Save()
+    }
+    
+    public func EditGoajae (goajae:Goajae)
+    {
+        goajaes = goajaes.filter({ (item) -> Bool in
+            item.id != goajae.id
+        })
+        AddGoajae(goajae: goajae)
     }
 }
