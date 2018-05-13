@@ -10,15 +10,13 @@ import Foundation
 
 struct LectureTimeTable
 {
-    var lecture : Lecture?
-    
     var room : String?
+    var lectureId : Int?
     
     //하루 내에서의 시각. second.
     var timeStart : Int?
     //하루 내에서의 시각. second.
     var timeEnd : Int?
-    
     //날짜만을 참조. 보강 정보일때만 값이 존재합니다.
     var bogangDay : Date?
     
@@ -47,24 +45,20 @@ struct LectureTimeTable
     }
 }
 
-struct HyugangDay
-{
-    var day : Int?;
-}
-
 class Lecture
 {
+    public var id : Int
     public var name : String
     public var professor : String?
     public var timeTables : [Int:LectureTimeTable]?
     public var bogangTimeTables : [LectureTimeTable]?
-    
-    public var hyugangTables : [HyugangDay]?
+    public var hyugangDays : [Date]?
     
     init(name:String)
     {
         self.name = name;
         self.timeTables = [Int:LectureTimeTable]()
+        self.id = LectureDataManager.shared.GetNewId()
     }
     
     public func AddTime(day:Int, room:String, timeStart:Double, timeEnd:Double)
@@ -76,7 +70,7 @@ class Lecture
         timeTables![day]?.timeStart = Int(timeStart * 60) * 60;
         timeTables![day]?.timeEnd = Int(timeEnd * 60) * 60;
         timeTables![day]?.room = room;
-        timeTables![day]?.lecture = self;
+        timeTables![day]?.lectureId = id;
         
     }
     
@@ -86,7 +80,12 @@ class Lecture
         bogangInfo.timeStart = Int(timeStart * 60) * 60;
         bogangInfo.timeEnd = Int(timeEnd * 60) * 60;
         bogangInfo.room = room;
-        bogangInfo.lecture = self;
+        bogangInfo.lectureId = id;
         bogangTimeTables!.append(bogangInfo);
+    }
+    
+    public func AddHugang(data:Date)
+    {
+        hyugangDays?.append(data)
     }
 }

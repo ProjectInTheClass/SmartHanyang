@@ -62,16 +62,11 @@ class LoginViewController : UIViewController {
                 request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
                 request.setValue(cookie, forHTTPHeaderField: "Cookie")
                 
-                for a in request.allHTTPHeaderFields!
-                {
-                    print(a)
-                }
-                
                 let session = URLSession.shared
                 session.dataTask(with: request, completionHandler: { (returnData, response, error) -> Void in
                     if (error) != nil
                     {
-                        print("re-yoil")
+                        //print("re-yoil")
                         self.requestData(cookie: cookie, yoils: [my_yoil])
                     }
                     else if returnData != nil

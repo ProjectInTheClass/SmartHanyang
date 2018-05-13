@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		17A2DED813E7E06C83C19482 /* Pods_SmartHanYang.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 666F3E54E112B992B392C915 /* Pods_SmartHanYang.framework */; };
+		F90FB8EE20A8DC02001077E9 /* LectureDataMager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90FB8ED20A8DC02001077E9 /* LectureDataMager.swift */; };
+		F90FB8F020A8EB2C001077E9 /* Goajae.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90FB8EF20A8EB2C001077E9 /* Goajae.swift */; };
+		F90FB8F220A8EB6C001077E9 /* GoajaeDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90FB8F120A8EB6C001077E9 /* GoajaeDataManager.swift */; };
 		F910BA7620A448EC00E15F90 /* SuupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F910BA7520A448EC00E15F90 /* SuupTableViewCell.swift */; };
 		F91DCFDA20A57F42003A4161 /* Suup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F91DCFD820A57F42003A4161 /* Suup.storyboard */; };
 		F91DCFDE20A5814A003A4161 /* Goaje.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F91DCFDC20A5814A003A4161 /* Goaje.storyboard */; };
@@ -27,6 +30,9 @@
 		666F3E54E112B992B392C915 /* Pods_SmartHanYang.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartHanYang.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		88313F3567C407636023779F /* Pods-SmartHanYang.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartHanYang.release.xcconfig"; path = "Pods/Target Support Files/Pods-SmartHanYang/Pods-SmartHanYang.release.xcconfig"; sourceTree = "<group>"; };
 		CA3DD5FE608F5E983A631046 /* Pods-SmartHanYang.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartHanYang.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SmartHanYang/Pods-SmartHanYang.debug.xcconfig"; sourceTree = "<group>"; };
+		F90FB8ED20A8DC02001077E9 /* LectureDataMager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureDataMager.swift; sourceTree = "<group>"; };
+		F90FB8EF20A8EB2C001077E9 /* Goajae.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goajae.swift; sourceTree = "<group>"; };
+		F90FB8F120A8EB6C001077E9 /* GoajaeDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoajaeDataManager.swift; sourceTree = "<group>"; };
 		F910BA7520A448EC00E15F90 /* SuupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuupTableViewCell.swift; sourceTree = "<group>"; };
 		F91DCFD920A57F42003A4161 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = SmartHanYang/Base.lproj/Suup.storyboard; sourceTree = "<group>"; };
 		F91DCFDD20A5814A003A4161 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = SmartHanYang/Base.lproj/Goaje.storyboard; sourceTree = "<group>"; };
@@ -140,6 +146,9 @@
 			isa = PBXGroup;
 			children = (
 				F96DFBAC20A4467C00997614 /* Lecture.swift */,
+				F90FB8ED20A8DC02001077E9 /* LectureDataMager.swift */,
+				F90FB8EF20A8EB2C001077E9 /* Goajae.swift */,
+				F90FB8F120A8EB6C001077E9 /* GoajaeDataManager.swift */,
 			);
 			path = ModelClasses;
 			sourceTree = "<group>";
@@ -261,8 +270,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F90FB8F020A8EB2C001077E9 /* Goajae.swift in Sources */,
+				F90FB8EE20A8DC02001077E9 /* LectureDataMager.swift in Sources */,
 				F96DFB9420A42E4300997614 /* ViewController.swift in Sources */,
 				F910BA7620A448EC00E15F90 /* SuupTableViewCell.swift in Sources */,
+				F90FB8F220A8EB6C001077E9 /* GoajaeDataManager.swift in Sources */,
 				F91DCFE520A58D10003A4161 /* ParseJson.swift in Sources */,
 				F96DFB9220A42E4300997614 /* AppDelegate.swift in Sources */,
 				F955201120A6886700FB08E8 /* LoginViewController.swift in Sources */,
