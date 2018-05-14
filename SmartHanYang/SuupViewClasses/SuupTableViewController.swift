@@ -47,7 +47,7 @@ class SuupTableViewController: UITableViewController {
         
         if editActionsForRowAt[1]%2 == 1
         {
-            return nil
+            return []
         }
         
         let hyugang = UITableViewRowAction(style: .normal, title: "휴강") { action, index in
