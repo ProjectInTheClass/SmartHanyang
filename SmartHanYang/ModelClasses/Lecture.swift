@@ -8,24 +8,30 @@
 
 import Foundation
 
-struct LectureTimeTable
+public struct LectureTimeTable
 {
-    var room : String?
-    var lectureId : Int?
-    
+    var room : String
+    var lectureId : Int
     //하루 내에서의 시각. second.
-    var timeStart : Int?
+    var timeStart : Int
     //하루 내에서의 시각. second.
-    var timeEnd : Int?
+    var timeEnd : Int
+    //요일
+    var weekDay : Int?
     //날짜만을 참조. 보강 정보일때만 값이 존재합니다.
     var bogangDay : Date?
     
     public func GetSubtitle() -> String
     {
-        return "\(room!)에서 \(TimeToString(time: timeStart!)) - \(TimeToString(time: timeEnd!))"
+        return "\(room)에서 \(GetTimeText())"
     }
     
-    func TimeToString(time:Int) -> String
+    public func GetTimeText() -> String
+    {
+        return "\(TimeToText(time: timeStart)) - \(TimeToText(time: timeEnd))"
+    }
+    
+    private func TimeToText(time:Int) -> String
     {
         var str = ""
         var tttt:Int = time;
@@ -49,43 +55,80 @@ class Lecture
 {
     public var id : Int
     public var name : String
-    public var professor : String?
-    public var timeTables : [Int:LectureTimeTable]?
-    public var bogangTimeTables : [LectureTimeTable]?
-    public var hyugangDays : [Date]?
+    public var professor : String
+    public var timeTables : [LectureTimeTable]
+    public var bogangTimeTables : [LectureTimeTable]
+    public var hyugangDays : [Date]
     
     init(name:String)
     {
         self.name = name;
-        self.timeTables = [Int:LectureTimeTable]()
+        professor = "알 수 없음"
+        self.timeTables = []
         self.id = LectureDataManager.shared.GetNewId()
+        bogangTimeTables = []
+        hyugangDays = []
     }
     
     public func AddTime(day:Int, room:String, timeStart:Double, timeEnd:Double)
     {
-        if timeTables!.index(forKey: day) == nil
-        {
-            timeTables![day] = LectureTimeTable()
-        }
-        timeTables![day]?.timeStart = Int(timeStart * 60) * 60;
-        timeTables![day]?.timeEnd = Int(timeEnd * 60) * 60;
-        timeTables![day]?.room = room;
-        timeTables![day]?.lectureId = id;
+        timeTables.append(LectureTimeTable(
+            room: room,
+            lectureId: id,
+            timeStart: Int(timeStart * 60) * 60,
+            timeEnd: Int(timeEnd * 60) * 60,
+            weekDay: day,
+            bogangDay: nil))
         
     }
     
     public func AddBogang(date:Date, room:String, timeStart:Double, timeEnd:Double)
     {
-        var bogangInfo = LectureTimeTable();
-        bogangInfo.timeStart = Int(timeStart * 60) * 60;
-        bogangInfo.timeEnd = Int(timeEnd * 60) * 60;
-        bogangInfo.room = room;
-        bogangInfo.lectureId = id;
-        bogangTimeTables!.append(bogangInfo);
+        let cal = Calendar(identifier: .gregorian)
+        let weekDay = cal.component(.weekday, from: date)
+        var bogangInfo = LectureTimeTable(
+            room: room,
+            lectureId: id,
+            timeStart: Int(timeStart * 60) * 60,
+            timeEnd: Int(timeEnd * 60) * 60,
+            weekDay: weekDay,
+            bogangDay: date);
+        bogangTimeTables.append(bogangInfo)
     }
     
     public func AddHugang(data:Date)
     {
-        hyugangDays?.append(data)
+        hyugangDays.append(data)
+    }
+    
+    public func GetTodayTable() -> [LectureTimeTable]
+    {
+        var ret:[LectureTimeTable] = []
+        
+        let date = Date(timeIntervalSinceNow: TimeInterval(TimeZone.current.secondsFromGMT()))
+        let cal = Calendar(identifier: .gregorian)
+        let weekDay = cal.component(.weekday, from: date)
+        
+        let today = cal.dateComponents([.year,.month,.day], from: date)
+        
+        
+        ret.append(contentsOf:timeTables.filter({$0.weekDay == weekDay}))
+        ret.append(contentsOf:bogangTimeTables.filter({ (table) -> Bool in
+            if let bogangDay = table.bogangDay
+            {
+                let tableDay = cal.dateComponents([.year,.month,.day], from: bogangDay)
+                let c1 = tableDay.year == today.year
+                let c2 = tableDay.month == today.month
+                let c3 = tableDay.day == today.day
+                
+                return c1 && c2 && c3
+            }
+            else
+            {
+                return false
+            }
+        }))
+        
+        return ret
     }
 }

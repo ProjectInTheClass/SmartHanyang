@@ -15,6 +15,7 @@ class LectureDataManager
 {
     static let shared = LectureDataManager();
     public var lectures:[Lecture] = [];
+    var lastId:Int = -1
     
     init() {
         
@@ -22,15 +23,23 @@ class LectureDataManager
     
     public func GetNewId() -> Int
     {
-        var id = 0
+        if(lastId != -1)
+        {
+            lastId += 1
+            return lastId
+        }
         for lecture in lectures
         {
-            if lecture.id >= id
+            if lecture.id >= lastId
             {
-                id = lecture.id + 1
+                lastId = lecture.id + 1
             }
         }
-        return id
+        if(lastId == -1)
+        {
+            lastId = 0
+        }
+        return lastId
     }
     
     public func Load()
@@ -42,36 +51,38 @@ class LectureDataManager
         
         let softwareStudio1 = Lecture(name: "소프트웨어스튜디오1")
         softwareStudio1.professor = "윤성관"
-        softwareStudio1.AddTime(day: 4, room: "IT/BT 509", timeStart: 16, timeEnd: 19)
-        softwareStudio1.AddTime(day: 5, room: "IT/BT 509", timeStart: 16, timeEnd: 18)
+        softwareStudio1.AddTime(day: 5, room: "IT/BT 509", timeStart: 16, timeEnd: 19)
+        softwareStudio1.AddTime(day: 6, room: "IT/BT 509", timeStart: 16, timeEnd: 18)
         
         
         let storytelling = Lecture(name:"디지털스토리텔링의이해")
         storytelling.professor = "김은정"
         storytelling.AddTime(day: 2, room: "인문관 B104", timeStart: 13.5, timeEnd: 15.5)
+        storytelling.AddTime(day: 3, room: "인문관 B104", timeStart: 13.5, timeEnd: 15.5)
         
         
         let automata = Lecture(name:"오토마타")
         automata.professor = "박희진"
-        automata.AddTime(day:3, room:"IT/BT 508", timeStart: 14.5, timeEnd: 16)
-        automata.AddTime(day:5, room:"IT/BT 508", timeStart: 14.5, timeEnd: 16)
+        automata.AddTime(day:4, room:"IT/BT 508", timeStart: 14.5, timeEnd: 16)
+        automata.AddTime(day:6, room:"IT/BT 508", timeStart: 14.5, timeEnd: 16)
         
         
         let os = Lecture(name:"운영체제")
         os.professor = "유민수"
-        os.AddTime(day: 3, room: "IT/BT 501", timeStart: 16, timeEnd: 18)
-        os.AddTime(day: 5, room: "IT/BT 503", timeStart: 10, timeEnd: 12)
+        os.AddTime(day: 2, room: "IT/BT 501", timeStart: 16, timeEnd: 18)
+        os.AddTime(day: 4, room: "IT/BT 501", timeStart: 16, timeEnd: 18)
+        os.AddTime(day: 6, room: "IT/BT 503", timeStart: 10, timeEnd: 12)
         
         
         let soundTec = Lecture(name: "아트테크놀로지사운드")
         soundTec.professor = "정은주"
-        soundTec.AddTime(day: 4, room: "제2공학관 PC1", timeStart: 10, timeEnd: 13)
+        soundTec.AddTime(day: 5, room: "제2공학관 PC1", timeStart: 10, timeEnd: 13)
         
         
         let computerStructure = Lecture(name:"컴퓨터구조")
         computerStructure.professor = "박영준"
-        computerStructure.AddTime(day: 4, room: "IT/BT 207", timeStart: 13, timeEnd: 14.5)
         computerStructure.AddTime(day: 5, room: "IT/BT 207", timeStart: 13, timeEnd: 14.5)
+        computerStructure.AddTime(day: 6, room: "IT/BT 207", timeStart: 13, timeEnd: 14.5)
         
         lectures.append(softwareStudio1);
         lectures.append(storytelling);
@@ -101,6 +112,19 @@ class LectureDataManager
     public func GetLectures() -> [Lecture]
     {
         return lectures
+    }
+    
+    public func GetTodayLectures() -> [LectureTimeTable]
+    {
+        var table:[LectureTimeTable] = []
+        for lecture in lectures
+        {
+            table.append(contentsOf:lecture.GetTodayTable())
+        }
+        table.sort { (l1, l2) -> Bool in
+            return l1.timeStart < l2.timeStart
+        }
+        return table
     }
     
 }
