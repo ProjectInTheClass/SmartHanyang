@@ -78,6 +78,25 @@ class SuupTableViewController: UITableViewController {
         return 5
     }
     
+    override func tableView(_ tableView: UITableView, editActionsForRowAt: IndexPath) -> [UITableViewRowAction]? {
+        
+        let hyugang = UITableViewRowAction(style: .normal, title: "휴강") { action, index in
+            print("휴강 추가")
+        }
+        hyugang.backgroundColor = .lightGray
+        
+        let bogang = UITableViewRowAction(style: .normal, title: "보강") { action, index in
+            print("보강 추가")
+        }
+        bogang.backgroundColor = UIColor(red:0.29, green:0.49, blue:0.75, alpha:1.0)
+        let goajae = UITableViewRowAction(style: .normal, title: "과제") { action, index in
+            print("과제 추가")
+        }
+        goajae.backgroundColor = UIColor(red:0.37, green:0.70, blue:0.62, alpha:1.0)
+        
+        return [goajae, hyugang, bogang]
+    }
+    
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch section {
         case 0:
@@ -111,8 +130,8 @@ class SuupTableViewController: UITableViewController {
         })
         
         let lecture = lectures[indexPath[1]]
-        cell.suupTitle!.text = lecture.name
-        cell.suupTime!.text = lecture.timeTables![indexPath[0]+1]!.GetSubtitle()
+        cell.titleLabel.text = lecture.name
+        cell.timeLabel.text = lecture.timeTables![indexPath[0]+1]!.GetSubtitle()
         return cell
     }
     
