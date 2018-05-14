@@ -10,8 +10,9 @@ import UIKit
 
 class SuupTableViewCell: UITableViewCell {
 
-    @IBOutlet weak public var suupTitle: UILabel!
-    @IBOutlet weak public var suupTime: UILabel!
+    @IBOutlet weak public var titleLabel: UILabel!
+    @IBOutlet weak public var locationLabel: UILabel!
+    @IBOutlet weak public var timeLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
