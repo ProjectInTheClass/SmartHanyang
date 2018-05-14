@@ -39,6 +39,9 @@ class SuupTableViewController: UITableViewController {
         return 5
     }
     */
+    override open func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return indexPath[1]%2 == 0 ? 78 : 41
+    }
     
     override func tableView(_ tableView: UITableView, editActionsForRowAt: IndexPath) -> [UITableViewRowAction]? {
         
