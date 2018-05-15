@@ -158,20 +158,31 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yma-pV-ugB">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <items>
-                                    <navigationItem title="보강/휴강 추가" id="Zg7-e0-lCf">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="uvi-gf-UzC"/>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="lel-As-HEg"/>
+                                    <navigationItem title="휴강/보강 추가" id="Zg7-e0-lCf">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="uvi-gf-UzC">
+                                            <connections>
+                                                <action selector="cancel" destination="knN-vv-he9" id="NZT-4c-Iey"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="lel-As-HEg">
+                                            <connections>
+                                                <action selector="done" destination="knN-vv-he9" id="H4b-rz-5ic"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="IxS-Tv-VVq">
                                 <rect key="frame" x="37" y="69" width="300" height="29"/>
                                 <segments>
-                                    <segment title="보강"/>
                                     <segment title="휴강"/>
+                                    <segment title="보강"/>
                                 </segments>
+                                <connections>
+                                    <action selector="typeChangedWithSender:" destination="knN-vv-he9" eventType="valueChanged" id="ajI-CZ-OBq"/>
+                                </connections>
                             </segmentedControl>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VRf-KG-S89" userLabel="LecturePicker">
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VRf-KG-S89" userLabel="LecturePicker" customClass="LecturePicker" customModule="SmartHanYang" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="102" width="375" height="162"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <accessibility key="accessibilityConfiguration" label="ㅁㄴㅇㄹ"/>

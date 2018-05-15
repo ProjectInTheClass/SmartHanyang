@@ -105,12 +105,12 @@ class Lecture
     {
         var ret:[LectureTimeTable] = []
         
-        let date = Date(timeIntervalSinceNow: TimeInterval(TimeZone.current.secondsFromGMT()))
-        let cal = Calendar(identifier: .gregorian)
+        let date = Date()
+        var cal = Calendar.current
+        cal.timeZone = .current
+        
         let weekDay = cal.component(.weekday, from: date)
-        
         let today = cal.dateComponents([.year,.month,.day], from: date)
-        
         
         ret.append(contentsOf:timeTables.filter({$0.weekDay == weekDay}))
         ret.append(contentsOf:bogangTimeTables.filter({ (table) -> Bool in
