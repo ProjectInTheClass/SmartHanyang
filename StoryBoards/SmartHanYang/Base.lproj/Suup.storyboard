@@ -94,10 +94,10 @@
                                     <outlet property="titleLabel" destination="R7p-t0-gV1" id="4Tv-Wq-0l7"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="gonggangCell" rowHeight="41" id="5jg-1a-m2w" userLabel="gonggangCell" customClass="GonggangCell" customModule="SmartHanYang" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="gonggangCell" rowHeight="41" id="5jg-1a-m2w" userLabel="gonggangCell" customClass="GonggangCell" customModule="SmartHanYang" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="106" width="375" height="41"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5jg-1a-m2w" id="VOu-0U-gT3">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5jg-1a-m2w" id="VOu-0U-gT3">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="40.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>

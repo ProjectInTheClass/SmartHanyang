@@ -31,7 +31,23 @@ public struct LectureTimeTable
         return "\(TimeToText(time: timeStart)) - \(TimeToText(time: timeEnd))"
     }
     
+    public func GetTimeText2() -> String
+    {
+        return "\(TimeToText2(time: timeStart)) - \(TimeToText2(time: timeEnd))"
+    }
+    
     private func TimeToText(time:Int) -> String
+    {
+        var str = ""
+        
+        let hour:Int = (time/3600);
+        let min:Int = (time%3600)/60;
+        
+        str += " \(String(format: "%2.2i", hour)):\(String(format: "%2.2i", min))"
+        return str
+    }
+    
+    private func TimeToText2(time:Int) -> String
     {
         var str = ""
         var tttt:Int = time;
@@ -109,7 +125,7 @@ class Lecture
         var cal = Calendar.current
         cal.timeZone = .current
         
-        let weekDay = cal.component(.weekday, from: date)
+        let weekDay = cal.component(.weekday, from: date) + 1
         let today = cal.dateComponents([.year,.month,.day], from: date)
         
         ret.append(contentsOf:timeTables.filter({$0.weekDay == weekDay}))
