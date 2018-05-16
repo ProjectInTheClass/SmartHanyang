@@ -33,6 +33,18 @@ class SuupTableViewCell: UITableViewCell
         timeLabel.text = table.GetTimeText()
         locationLabel.text = table.room
         
+        Update()
+        
+        Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.Update), userInfo: nil, repeats: true)
+    }
+    
+    @objc func Update()
+    {
+        if timeTable == nil{
+            return
+        }
+        let table:LectureTimeTable! = timeTable
+        
         var cal = Calendar.current
         cal.timeZone = .current
         let c = cal.dateComponents([.hour,.minute,.second], from: Date())
@@ -52,10 +64,7 @@ class SuupTableViewCell: UITableViewCell
         else{
             progressBar.tintColor = defaultColor
             progressBar.progress = Float(t-table.timeStart)/Float(table.timeEnd-table.timeStart)
-            print( progressBar.progress )
-            let b = 1
         }
-        
     }
     
     override func awakeFromNib() {

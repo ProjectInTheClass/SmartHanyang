@@ -15,6 +15,9 @@ class GonggangCell: UITableViewCell
     @IBOutlet weak public var progressBar: UIProgressView!
     var defaultColor:UIColor?
     
+    var timeTable1:LectureTimeTable?
+    var timeTable2:LectureTimeTable?
+    
     public func SetHyugangInfor(time1:LectureTimeTable, time2:LectureTimeTable)
     {
         defaultColor = progressBar.tintColor
@@ -30,6 +33,21 @@ class GonggangCell: UITableViewCell
         }
         label.text = str
         
+        Update()
+        timeTable1 = time1
+        timeTable2 = time2
+        
+        Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.Update), userInfo: nil, repeats: true)
+    }
+    
+    @objc func Update()
+    {
+        if timeTable1 == nil || timeTable2 == nil{
+            return
+        }
+        
+        let time1:LectureTimeTable! = timeTable1
+        let time2:LectureTimeTable! = timeTable2
         
         var cal = Calendar.current
         cal.timeZone = .current

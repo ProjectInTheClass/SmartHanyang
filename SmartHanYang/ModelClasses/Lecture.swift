@@ -125,7 +125,7 @@ class Lecture
         var cal = Calendar.current
         cal.timeZone = .current
         
-        let weekDay = cal.component(.weekday, from: date) + 1
+        let weekDay = cal.component(.weekday, from: date)
         let today = cal.dateComponents([.year,.month,.day], from: date)
         
         ret.append(contentsOf:timeTables.filter({$0.weekDay == weekDay}))
