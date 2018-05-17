@@ -14,7 +14,7 @@ var tableData:Array<Lecture> = Array();
 
 
 
-func ParseJson(json:String)
+func ParseJson(json:String, yoil:Int)
 {
     print("된다!");
 }

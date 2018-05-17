@@ -20,7 +20,14 @@ class EditSuupViewController: UIViewController
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var bogangStartTime: UIDatePicker!
     @IBOutlet weak var bogangEndTime: UIDatePicker!
-    @IBOutlet weak var hygangTimePicker: LectureTimePicker!
+    @IBOutlet weak var hyugangTimePicker: LectureTimePicker!
+    @IBOutlet weak var bogangRoom: UITextField!
+    
+    enum Mode:Int{
+        case HYUGANG = 0
+        case BOGANG
+    }
+    var mode:Mode = .HYUGANG
     
     @IBAction func cancel()
     {
@@ -30,7 +37,43 @@ class EditSuupViewController: UIViewController
     @IBAction func done()
     {
         self.dismiss(animated: true) {
+            let lecture_ = LectureDataManager.shared.GetLecture(id: self.lecturePicker.selectedLectureId)
+            if lecture_ == nil
+            {
+                return
+            }
+            let lecture = lecture_!
             
+            if self.mode == .HYUGANG
+            {
+                lecture.AddHyugang(date: self.datePicker.date, timeStart: self.hyugangTimePicker.selectedTimeStart)
+                LectureDataManager.shared.Save()
+            }
+            else if self.mode == .BOGANG
+            {
+                var cal = Calendar.current
+                let date = self.datePicker.date
+                cal.timeZone = .current
+                var tttt1 = cal.dateComponents([.hour,.minute,.second], from: date)
+                var t1:Int = 0, t2:Int = 0
+                if let h = tttt1.hour , let m = tttt1.minute , let s = tttt1.second{
+                    t1 = h*3600 + m*60 + s
+                }
+                if let h = tttt1.hour , let m = tttt1.minute , let s = tttt1.second{
+                    t2 = h*3600 + m*60 + s
+                }
+                let weekday = cal.component(.weekday, from: date)
+                if let bogangRoom = self.bogangRoom.text {
+                    let bogang = LectureTimeTable(room: bogangRoom, lectureId: lecture.id, timeStart: t1, timeEnd: t2, weekDay: weekday, bogangDay: date, hyugangDays: [])
+                    lecture.bogangTimeTables.append(bogang)
+                    LectureDataManager.shared.Save()
+                }
+                else{
+                    self.ShowAlert(title: "보강하는 방을 적어주세요!",message: "어디서 보강하죠?")
+                    return
+                }
+                LectureDataManager.shared.Save()
+            }
         }
     }
     
@@ -39,13 +82,18 @@ class EditSuupViewController: UIViewController
         switch typeSelector.selectedSegmentIndex {
         case 0:
             ShowHyugangView()
+            mode = .HYUGANG
             break
         case 1:
             ShowBogangView()
+            mode = .BOGANG
             break
         default:
             break
         }
+    }
+    @IBAction func dateChanged(_ sender: UIDatePicker) {
+        hyugangTimePicker.SetDate(date: sender.date)
     }
     
     public func ShowBogangView()
@@ -67,21 +115,45 @@ class EditSuupViewController: UIViewController
         let lectures = LectureDataManager.shared.GetLectures()
         if lectures.count == 0
         {
-            let alertController = UIAlertController(title: "수업 정보가 없습니다! x_x",message: "먼저 수업을 추가해주세요~", preferredStyle: UIAlertControllerStyle.alert)
-            
-            //UIAlertActionStye.destructive 지정 글꼴 색상 변경
-            let okAction = UIAlertAction(title: "네", style: UIAlertActionStyle.default){ (action: UIAlertAction) in
-                self.cancel()
-            }
-            alertController.addAction(okAction)
-            self.present(alertController,animated: true,completion: nil)
+            ShowAlert(title: "수업 정보가 없습니다! x_x",message: "먼저 수업을 추가해주세요~")
             return
         }
+        if lectureId == -1
+        {
+            return
+        }
+        lecturePicker.select(lectureId: lectureId)
+    }
+    
+    func OnLectureSelected(lectureId:Int)
+    {
+        if let lecture = LectureDataManager.shared.GetLecture(id: lectureId){
+            hyugangTimePicker.SetLecture(lecture: lecture)
+        }
+        
+        
+    }
+    
+    func ShowAlert(title:String, message:String)
+    {
+        let alertController = UIAlertController(title: "수업 정보가 없습니다! x_x",message: "먼저 수업을 추가해주세요~", preferredStyle: UIAlertControllerStyle.alert)
+        
+        //UIAlertActionStye.destructive 지정 글꼴 색상 변경
+        let okAction = UIAlertAction(title: "확인", style: UIAlertActionStyle.default){ (action: UIAlertAction) in
+            self.cancel()
+        }
+        alertController.addAction(okAction)
+        self.present(alertController,animated: true,completion: nil)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        lecturePicker.addSelectListener(f: OnLectureSelected)
+        let id = lecturePicker.selectedLectureId
+        if let lecture = LectureDataManager.shared.GetLecture(id: id){
+            hyugangTimePicker.SetLecture(lecture: lecture)
+        }
+        hyugangTimePicker.SetDate(date: datePicker.date)
     }
 
     override func didReceiveMemoryWarning() {
@@ -89,15 +161,4 @@ class EditSuupViewController: UIViewController
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
