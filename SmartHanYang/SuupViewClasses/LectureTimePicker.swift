@@ -10,6 +10,7 @@ import UIKit
 
 class LectureTimePicker: UIPickerView, UIPickerViewDelegate, UIPickerViewDataSource
 {
+    public var selectedTimeStart:Int = 0
     var lecture:Lecture?
     var times:[LectureTimeTable] = []
     var weekDay:Int = -1
@@ -25,7 +26,7 @@ class LectureTimePicker: UIPickerView, UIPickerViewDelegate, UIPickerViewDataSou
         var cal = Calendar.current
         cal.timeZone = .current
         
-        weekDay = cal.component(.day, from: Date())
+        weekDay = cal.component(.weekday, from: date)
         UpdateTimes()
     }
     
@@ -36,6 +37,7 @@ class LectureTimePicker: UIPickerView, UIPickerViewDelegate, UIPickerViewDataSou
             times = lecture.timeTables.filter({ (t) -> Bool in
                 return t.weekDay == self.weekDay
             })
+            reloadAllComponents()
         }
     }
     
@@ -60,11 +62,9 @@ class LectureTimePicker: UIPickerView, UIPickerViewDelegate, UIPickerViewDataSou
         return times[row].GetTimeText()
     }
     
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder : aDecoder)
-        self.delegate = self
-        self.dataSource = self
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        let selectedTime = times[row]
+        selectedTimeStart = selectedTime.timeStart
     }
     
 

@@ -14,7 +14,8 @@ var tableData:Array<Lecture> = Array();
 
 
 
-func ParseJson(json:String, day: yoil)
+
+func ParseJson(json:String, yoil:Int)
 {
     enum Tags: String {
         case classroom = "'GANGUISIL_NM':'"
@@ -111,7 +112,7 @@ func ParseJson(json:String, day: yoil)
     for lecInfo in arrangedLectureInfos {
         let lecture: Lecture = Lecture(name: lecInfo.lectureName)
         lecture.professor = lecInfo.profName
-        lecture.AddTime(day: day, room: lecInfo.classroom, timeStart: lecInfo.startTime, timeEnd: lecInfo.endTime)
+        lecture.AddTime(day: yoil, room: lecInfo.classroom, timeStart: lecInfo.startTime, timeEnd: lecInfo.endTime)
         
     }
 }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct LectureTimeTable
+public class LectureTimeTable
 {
     var room : String
     var lectureId : Int
@@ -20,6 +20,8 @@ public struct LectureTimeTable
     var weekDay : Int?
     //날짜만을 참조. 보강 정보일때만 값이 존재합니다.
     var bogangDay : Date?
+    
+    var hyugangDays : [Date] = []
     
     public func GetSubtitle() -> String
     {
@@ -65,6 +67,21 @@ public struct LectureTimeTable
         str += " \(String(format: "%2.2i", hour)):\(String(format: "%2.2i", min))"
         return str
     }
+    
+    public init(room:String,
+              lectureId: Int,
+              timeStart: Int,
+        timeEnd: Int,
+        weekDay: Int,
+        bogangDay: Date?, hyugangDays: [Date])
+    {
+        self.room = room
+        self.lectureId = lectureId
+        self.timeStart = timeStart
+        self.timeEnd = timeEnd
+        self.weekDay = weekDay
+        self.bogangDay = bogangDay
+    }
 }
 
 class Lecture
@@ -74,7 +91,6 @@ class Lecture
     public var professor : String
     public var timeTables : [LectureTimeTable]
     public var bogangTimeTables : [LectureTimeTable]
-    public var hyugangDays : [Date]
     
     init(name:String)
     {
@@ -83,7 +99,6 @@ class Lecture
         self.timeTables = []
         self.id = LectureDataManager.shared.GetNewId()
         bogangTimeTables = []
-        hyugangDays = []
     }
     
     public func AddTime(day:Int, room:String, timeStart:Double, timeEnd:Double)
@@ -94,7 +109,7 @@ class Lecture
             timeStart: Int(timeStart * 60) * 60,
             timeEnd: Int(timeEnd * 60) * 60,
             weekDay: day,
-            bogangDay: nil))
+            bogangDay: nil, hyugangDays: []))
         
     }
     
@@ -102,19 +117,26 @@ class Lecture
     {
         let cal = Calendar(identifier: .gregorian)
         let weekDay = cal.component(.weekday, from: date)
-        var bogangInfo = LectureTimeTable(
+        let bogangInfo = LectureTimeTable(
             room: room,
             lectureId: id,
             timeStart: Int(timeStart * 60) * 60,
             timeEnd: Int(timeEnd * 60) * 60,
             weekDay: weekDay,
-            bogangDay: date);
+            bogangDay: date, hyugangDays: []);
         bogangTimeTables.append(bogangInfo)
     }
     
-    public func AddHugang(data:Date)
+    public func AddHyugang(date:Date, timeStart:Int)
     {
-        hyugangDays.append(data)
+        for t in timeTables
+        {
+            if t.timeStart == timeStart
+            {
+                t.hyugangDays.append(date)
+                return
+            }
+        }
     }
     
     public func GetTodayTable() -> [LectureTimeTable]

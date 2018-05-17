@@ -13,6 +13,7 @@ class LecturePicker: UIPickerView, UIPickerViewDelegate, UIPickerViewDataSource 
     public var selectedLectureId:Int = -1
     
     var lectures:[Lecture] = []
+    var listeners:[(Int)->Void] = []
     
     public func select(lectureId:Int) {
         var index = 0
@@ -24,6 +25,12 @@ class LecturePicker: UIPickerView, UIPickerViewDelegate, UIPickerViewDataSource 
             }
         }
         self.selectRow(index, inComponent: 0, animated: false)
+        
+    }
+    
+    public func addSelectListener(f:@escaping (Int)->Void)
+    {
+        listeners.append(f)
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -40,6 +47,14 @@ class LecturePicker: UIPickerView, UIPickerViewDelegate, UIPickerViewDataSource 
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         selectedLectureId = lectures[row].id
+        dispatchEvent()
+    }
+    
+    func dispatchEvent()
+    {
+        for f in listeners{
+            f(selectedLectureId)
+        }
     }
     
     required init?(coder aDecoder: NSCoder) {
