@@ -13,10 +13,19 @@ class SuupTableViewController: UITableViewController {
     var gonggangIndexes:[Int] = []
     
     override func viewDidLoad() {
+        
+        LectureDataManager.shared.addUpdateEventListener {
+            self.update()
+            self.tableView.reloadData()
+        }
         super.viewDidLoad()
-        
+        update()
+    }
+    
+    func update()
+    {
         todayLectures = LectureDataManager.shared.GetTodayLectures()
-        
+        gonggangIndexes.removeAll()
         var prev:LectureTimeTable? = nil
         
         for (i,l) in todayLectures.enumerated()

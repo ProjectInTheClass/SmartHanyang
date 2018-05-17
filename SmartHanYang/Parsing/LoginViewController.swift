@@ -79,6 +79,8 @@ class LoginViewController : UIViewController {
                         if let str = NSString(data: returnData!, encoding: String.Encoding.utf8.rawValue)
                         {
                             print(str)
+                            print("gogo: \(my_yoil)")
+                            ParseJson(json: str as String, yoil: my_yoil-1)
                         }
                     }
                 }).resume()
