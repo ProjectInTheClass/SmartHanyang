@@ -14,9 +14,106 @@ var tableData:Array<Lecture> = Array();
 
 
 
-func ParseJson(json:String)
+func ParseJson(json:String, day: yoil)
 {
-    print("된다!");
+    enum Tags: String {
+        case classroom = "'GANGUISIL_NM':'"
+        case startTime = "'START_TM':'"
+        case endTime = "'END_TM':'"
+        case subject = "'GWAMOK_NM':'"
+        case prof = "'NAME':'"
+        
+        static let cases = [classroom, startTime, endTime, subject, prof]
+    }
+    
+    
+    
+    var str:String = json1.components(separatedBy:["[", "]"])[1]
+    str = str.replacingOccurrences(of: ",", with: "")
+    str = str.replacingOccurrences(of: "\n", with: "")
+    var subs: [String] = str.components(separatedBy: ["{", "}"])
+    
+    
+    var i:Int = 0
+    
+    
+    typealias LectureInfo = (lectureName: String, profName: String, classroom: String, startTime: Double, endTime: Double)
+    
+    var lectureInfos: [LectureInfo] = Array<LectureInfo>()
+    
+    
+    for sub in subs {
+        var lec:LectureInfo = ("", "" ,"", 0.0, 0.0)
+        if(sub.isEmpty) {
+            continue
+        }
+        
+        for tag in Tags.cases {
+            var substring:String = sub.components(separatedBy: tag.rawValue)[1]
+            substring = substring.components(separatedBy: "'")[0]
+           
+            switch(tag) {
+                
+            case Tags.classroom:
+                var substrings: [String] = substring.components(separatedBy: [" "])
+                substring = substrings[1] + " " + substrings[2]
+                lec.classroom = substring
+            case .startTime:
+                var timestr:String = substring.replacingOccurrences(of: ":", with:".")
+                timestr = timestr.replacingOccurrences(of: ".3", with: ".5")
+                let time:Double = Double(timestr)!
+                lec.startTime = time
+            case .endTime:
+                var timestr:String = substring.replacingOccurrences(of: ":", with:".")
+                timestr = timestr.replacingOccurrences(of: ".3", with: ".5")
+                let time:Double = Double(timestr)!
+                lec.endTime = time
+            case .subject:
+                lec.lectureName = substring
+            case .prof:
+                lec.profName = substring
+            default:
+                print("Error: Tag ")
+                
+                
+            }
+            
+        }
+        lectureInfos.append(lec)
+        
+        i += 1
+    }
+    
+    i = 0
+    print(lectureInfos.count)
+    var arrangedLectureInfos: [LectureInfo] = Array<LectureInfo>()
+    var lec: LectureInfo = ("", "", "", 0.0, 0.0)
+    while (i < lectureInfos.count) {
+        if(lec.lectureName.isEmpty) {
+            lec.lectureName = lectureInfos[i].lectureName
+            lec.profName = lectureInfos[i].profName
+            lec.classroom = lectureInfos[i].classroom
+            lec.startTime = lectureInfos[i].startTime
+        }
+        
+        if(lec.lectureName == lectureInfos[i].lectureName &&
+            lec.classroom == lectureInfos[i].classroom) {
+            lec.endTime = lectureInfos[i].endTime
+        } else {
+            arrangedLectureInfos.append(lec)
+            lec = ("", "", "", 0.0, 0.0)
+            continue
+        }
+        
+        i += 1
+    }
+    
+    for lecInfo in arrangedLectureInfos {
+        let lecture: Lecture = Lecture(name: lecInfo.lectureName)
+        lecture.professor = lecInfo.profName
+        lecture.AddTime(day: day, room: lecInfo.classroom, timeStart: lecInfo.startTime, timeEnd: lecInfo.endTime)
+        
+    }
 }
 
 
