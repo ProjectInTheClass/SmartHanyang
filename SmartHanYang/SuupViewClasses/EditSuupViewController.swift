@@ -46,8 +46,11 @@ class EditSuupViewController: UIViewController
             
             if self.mode == .HYUGANG
             {
-                lecture.AddHyugang(date: self.datePicker.date, timeStart: self.hyugangTimePicker.selectedTimeStart)
-                LectureDataManager.shared.Save()
+                if let time = self.hyugangTimePicker.selectedTimeTable
+                {
+                    lecture.AddHyugang(date: self.datePicker.date, timeTable:time)
+                    LectureDataManager.shared.Save()
+                }
             }
             else if self.mode == .BOGANG
             {
@@ -87,6 +90,7 @@ class EditSuupViewController: UIViewController
         case 1:
             ShowBogangView()
             mode = .BOGANG
+            doneBtn.isEnabled = true
             break
         default:
             break
@@ -130,8 +134,16 @@ class EditSuupViewController: UIViewController
         if let lecture = LectureDataManager.shared.GetLecture(id: lectureId){
             hyugangTimePicker.SetLecture(lecture: lecture)
         }
-        
-        
+    }
+    
+    func OnLectureTimeSelected(lectureTime:LectureTimeTable?)
+    {
+        if let time = lectureTime {
+            doneBtn.isEnabled = true
+        }
+        else {
+            doneBtn.isEnabled = false
+        }
     }
     
     func ShowAlert(title:String, message:String)
@@ -149,6 +161,7 @@ class EditSuupViewController: UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
         lecturePicker.addSelectListener(f: OnLectureSelected)
+        hyugangTimePicker.AddPickListener(f: OnLectureTimeSelected)
         let id = lecturePicker.selectedLectureId
         if let lecture = LectureDataManager.shared.GetLecture(id: id){
             hyugangTimePicker.SetLecture(lecture: lecture)

@@ -127,16 +127,9 @@ class Lecture
         bogangTimeTables.append(bogangInfo)
     }
     
-    public func AddHyugang(date:Date, timeStart:Int)
+    public func AddHyugang(date:Date, timeTable:LectureTimeTable)
     {
-        for t in timeTables
-        {
-            if t.timeStart == timeStart
-            {
-                t.hyugangDays.append(date)
-                return
-            }
-        }
+        timeTable.hyugangDays.append(date)
     }
     
     public func GetTodayTable() -> [LectureTimeTable]

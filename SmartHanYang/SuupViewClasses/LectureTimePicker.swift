@@ -10,10 +10,16 @@ import UIKit
 
 class LectureTimePicker: UIPickerView, UIPickerViewDelegate, UIPickerViewDataSource
 {
-    public var selectedTimeStart:Int = 0
+    public var selectedTimeTable:LectureTimeTable? = nil
     var lecture:Lecture?
     var times:[LectureTimeTable] = []
     var weekDay:Int = -1
+    var listeners:[(LectureTimeTable?)->Void] = []
+    
+    public func AddPickListener(f:@escaping (LectureTimeTable?)->Void)
+    {
+        listeners.append(f)
+    }
     
     public func SetLecture(lecture:Lecture)
     {
@@ -39,8 +45,8 @@ class LectureTimePicker: UIPickerView, UIPickerViewDelegate, UIPickerViewDataSou
             })
             reloadAllComponents()
         }
+        selectRow(row: 0)
     }
-    
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -63,9 +69,28 @@ class LectureTimePicker: UIPickerView, UIPickerViewDelegate, UIPickerViewDataSou
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        let selectedTime = times[row]
-        selectedTimeStart = selectedTime.timeStart
+        selectRow(row: row)
     }
     
-
+    func selectRow(row:Int)
+    {
+        if times.count == 0
+        {
+            selectedTimeTable = nil
+        }
+        else
+        {
+            selectedTimeTable = times[row]
+        }
+        for f in listeners {
+            f(selectedTimeTable)
+        }
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder : aDecoder)
+        self.delegate = self
+        self.dataSource = self
+        UpdateTimes()
+    }
 }
