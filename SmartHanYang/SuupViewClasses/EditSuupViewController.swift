@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EditSuupViewController: UIViewController
+class EditSuupViewController: UIViewController, UITextFieldDelegate
 {
     @IBOutlet weak var bogangView: UIView!
     @IBOutlet weak var hygangView: UIView!
@@ -36,47 +36,102 @@ class EditSuupViewController: UIViewController
     
     @IBAction func done()
     {
-        self.dismiss(animated: true) {
-            let lecture_ = LectureDataManager.shared.GetLecture(id: self.lecturePicker.selectedLectureId)
-            if lecture_ == nil
+        var dismissOk = true
+        
+        let lecture_ = LectureDataManager.shared.GetLecture(id: self.lecturePicker.selectedLectureId)
+        if lecture_ == nil
+        {
+            return
+        }
+        let lecture = lecture_!
+        
+        if self.mode == .HYUGANG
+        {
+            if let time = self.hyugangTimePicker.selectedTimeTable
             {
+                lecture.AddHyugang(date: self.datePicker.date, timeTable:time)
+                LectureDataManager.shared.Save()
+            }
+        }
+        else if self.mode == .BOGANG
+        {
+            let t1 = EasyCalendar.GetDayTimeSecond(date: self.bogangStartTime.date)
+            let t2 = EasyCalendar.GetDayTimeSecond(date: self.bogangEndTime.date)
+            
+            if t2 <= t1
+            {
+                self.ShowAlert(title: "아니 이건 좀..", message: "질리언이세요?")
                 return
             }
-            let lecture = lecture_!
             
-            if self.mode == .HYUGANG
-            {
-                if let time = self.hyugangTimePicker.selectedTimeTable
-                {
-                    lecture.AddHyugang(date: self.datePicker.date, timeTable:time)
-                    LectureDataManager.shared.Save()
+            let weekday = EasyCalendar.GetWeekday(date: self.datePicker.date)
+            let bogangRoom = self.bogangRoom.text
+            if bogangRoom != nil && bogangRoom!.count > 0  {
+                let bogang = LectureTimeTable(room: bogangRoom!, lectureId: lecture.id, timeStart: t1, timeEnd: t2, weekDay: weekday, bogangDay: self.datePicker.date, hyugangDays: [])
+                
+                let lectures = LectureDataManager.shared.GetLectures()
+                var alreadyLectureExist = false
+                for lecture in lectures {
+                    for t in lecture.timeTables{
+                        if weekday == t.weekDay{
+                            continue
+                        }
+                        //혹시 휴강인것인지 체크
+                        var isHyugangDay = false
+                        for d in t.hyugangDays{
+                            if EasyCalendar.IsSameDay(date1: d, date2: self.datePicker.date) {
+                                isHyugangDay = true
+                            }
+                        }
+                        if isHyugangDay{
+                            continue
+                        }
+                        //-----------------
+                        
+                        //시간 충돌이 있나 체크
+                        let clash1 = t.timeStart < t1 && t1 < t.timeEnd;
+                        let clash2 = t.timeStart < t2 && t2 < t.timeEnd;
+                        let clash3 = t1 < t.timeStart && t.timeStart < t2;
+                        let clash4 = t1 < t.timeEnd && t.timeEnd < t2;
+                        
+                        if clash1 || clash2 || clash3 || clash4
+                        {
+                            alreadyLectureExist = true
+                            break
+                        }
+                        //-----------------
+                    }
+                    if alreadyLectureExist{
+                        break;
+                    }
                 }
-            }
-            else if self.mode == .BOGANG
-            {
-                var cal = Calendar.current
-                let date = self.datePicker.date
-                cal.timeZone = .current
-                var tttt1 = cal.dateComponents([.hour,.minute,.second], from: date)
-                var t1:Int = 0, t2:Int = 0
-                if let h = tttt1.hour , let m = tttt1.minute , let s = tttt1.second{
-                    t1 = h*3600 + m*60 + s
+                if alreadyLectureExist{
+                    dismissOk = false
+                    ShowAlert(title: "해당 기간에 다른 수업 있음", message: "그래도 추가할거임?", f: {(ok:Bool) in
+                        if ok{
+                            self.dismiss(animated: true)
+                            lecture.bogangTimeTables.append(bogang)
+                            LectureDataManager.shared.Save()
+                        }
+                        else
+                        {
+                            dismissOk = false
+                        }
+                    })
                 }
-                if let h = tttt1.hour , let m = tttt1.minute , let s = tttt1.second{
-                    t2 = h*3600 + m*60 + s
-                }
-                let weekday = cal.component(.weekday, from: date)
-                if let bogangRoom = self.bogangRoom.text {
-                    let bogang = LectureTimeTable(room: bogangRoom, lectureId: lecture.id, timeStart: t1, timeEnd: t2, weekDay: weekday, bogangDay: date, hyugangDays: [])
+                else{
+                    self.dismiss(animated: true)
                     lecture.bogangTimeTables.append(bogang)
                     LectureDataManager.shared.Save()
                 }
-                else{
-                    self.ShowAlert(title: "보강하는 방을 적어주세요!",message: "어디서 보강하죠?")
-                    return
-                }
-                LectureDataManager.shared.Save()
             }
+            else{
+                ShowAlert(title: "보강하는 방을 적어주세요!",message: "어디서 보강하죠?")
+                dismissOk = false
+            }
+        }
+        if dismissOk{
+            self.dismiss(animated: true)
         }
     }
     
@@ -138,7 +193,7 @@ class EditSuupViewController: UIViewController
     
     func OnLectureTimeSelected(lectureTime:LectureTimeTable?)
     {
-        if let time = lectureTime {
+        if lectureTime != nil {
             doneBtn.isEnabled = true
         }
         else {
@@ -146,16 +201,55 @@ class EditSuupViewController: UIViewController
         }
     }
     
-    func ShowAlert(title:String, message:String)
+    func ShowAlert(title:String, message:String, f:((Bool)->Void)?=nil)
     {
-        let alertController = UIAlertController(title: "수업 정보가 없습니다! x_x",message: "먼저 수업을 추가해주세요~", preferredStyle: UIAlertControllerStyle.alert)
+        let alertController = UIAlertController(title: title,message: message, preferredStyle: UIAlertControllerStyle.alert)
         
         //UIAlertActionStye.destructive 지정 글꼴 색상 변경
         let okAction = UIAlertAction(title: "확인", style: UIAlertActionStyle.default){ (action: UIAlertAction) in
-            self.cancel()
+            if let ff = f
+            {
+                ff(true)
+            }
         }
         alertController.addAction(okAction)
+        if let ff = f
+        {
+            let noAction = UIAlertAction(title: "취소", style: UIAlertActionStyle.default){ (action: UIAlertAction) in
+                ff(false)
+            }
+            alertController.addAction(noAction)
+        }
         self.present(alertController,animated: true,completion: nil)
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        animateViewMoving(up: true, moveValue: 150)
+    }
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        animateViewMoving(up: false, moveValue: 150)
+    }
+    
+    func animateViewMoving (up:Bool, moveValue :CGFloat){
+        let movementDuration:TimeInterval = 0.3
+        let movement:CGFloat = ( up ? -moveValue : moveValue)
+        /*
+        UIView.beginAnimations( "animateView", context: nil)
+        UIView.setAnimationBeginsFromCurrentState(true)
+        UIView.setAnimationDuration(movementDuration )
+        let rect = self.view.frame
+        rect.offsetBy(dx: 0, dy: movement)
+        self.view.frame = rect
+        UIView.commitAnimations()
+        */
+        UIView.animate(withDuration: movementDuration, animations: { () -> Void in
+            self.view.frame.origin.y += movement
+        })
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
     override func viewDidLoad() {
@@ -167,6 +261,7 @@ class EditSuupViewController: UIViewController
             hyugangTimePicker.SetLecture(lecture: lecture)
         }
         hyugangTimePicker.SetDate(date: datePicker.date)
+        bogangRoom.delegate = self
     }
 
     override func didReceiveMemoryWarning() {

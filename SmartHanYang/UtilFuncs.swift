@@ -11,6 +11,18 @@ import Foundation
 
 public class EasyCalendar
 {
+    public static func GetDayTimeSecond(date:Date) -> Int
+    {
+        var t = CurrentCalendar().dateComponents([.hour,.minute,.second], from: date)
+        var ret:Int = 0
+        
+        if let h = t.hour, let m = t.minute, let s = t.second
+        {
+            ret = h*3600 + m*60 + s
+        }
+        return ret
+    }
+    
     public static func GetAllComponents(date:Date) -> DateComponents
     {
         return CurrentCalendar().dateComponents([.year,.month,.day,.weekday,.hour,.minute,.second], from: date)

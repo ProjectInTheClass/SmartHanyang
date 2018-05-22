@@ -155,23 +155,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yma-pV-ugB">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <items>
-                                    <navigationItem title="휴강/보강 추가" id="Zg7-e0-lCf">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="uvi-gf-UzC">
-                                            <connections>
-                                                <action selector="cancel" destination="knN-vv-he9" id="NZT-4c-Iey"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="lel-As-HEg">
-                                            <connections>
-                                                <action selector="done" destination="knN-vv-he9" id="H4b-rz-5ic"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="IxS-Tv-VVq">
                                 <rect key="frame" x="37" y="69" width="300" height="29"/>
                                 <segments>
@@ -260,6 +243,23 @@
                                     <constraint firstItem="2wN-1L-YTb" firstAttribute="trailing" secondItem="Je4-Uz-avb" secondAttribute="trailing" id="vtr-jB-grD"/>
                                 </constraints>
                             </view>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yma-pV-ugB">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="휴강/보강 추가" id="Zg7-e0-lCf">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="uvi-gf-UzC">
+                                            <connections>
+                                                <action selector="cancel" destination="knN-vv-he9" id="NZT-4c-Iey"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="lel-As-HEg">
+                                            <connections>
+                                                <action selector="done" destination="knN-vv-he9" id="H4b-rz-5ic"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>

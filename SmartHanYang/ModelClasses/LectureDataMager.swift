@@ -155,6 +155,19 @@ class LectureDataManager
         return table
     }
     
+    public func GetSomedayLectures(date:Date) -> [LectureTimeTable]
+    {
+        var table:[LectureTimeTable] = []
+        for lecture in lectures
+        {
+            table.append(contentsOf:lecture.GetTodayTable())
+        }
+        table.sort { (l1, l2) -> Bool in
+            return l1.timeStart < l2.timeStart
+        }
+        return table
+    }
+    
     public func AddLecture(lecture:Lecture)
     {
         lectures.append(lecture)
