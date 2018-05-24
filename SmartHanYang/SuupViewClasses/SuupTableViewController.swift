@@ -55,22 +55,22 @@ class SuupTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, editActionsForRowAt: IndexPath) -> [UITableViewRowAction]? {
         
-        if isGonggangAndOriginIndex(i: editActionsForRowAt[1]).0
+
         {
             return []
         }
         
         let hyugang = UITableViewRowAction(style: .normal, title: "휴강") { action, index in
-            print("휴강 추가")
+
         }
         hyugang.backgroundColor = .lightGray
         
         let bogang = UITableViewRowAction(style: .normal, title: "보강") { action, index in
-            print("보강 추가")
+      
         }
         bogang.backgroundColor = UIColor(red:0.29, green:0.49, blue:0.75, alpha:1.0)
         let goajae = UITableViewRowAction(style: .normal, title: "과제") { action, index in
-            print("과제 추가")
+         
         }
         goajae.backgroundColor = UIColor(red:0.37, green:0.70, blue:0.62, alpha:1.0)
         
