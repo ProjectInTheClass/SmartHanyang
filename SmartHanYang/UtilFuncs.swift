@@ -40,6 +40,18 @@ public class EasyCalendar
         return c
     }
     
+    public static func isToday(date:Date) -> Bool
+    {
+        let today = GetAllComponents(date: Date())
+        let day = GetAllComponents(date: date)
+        
+        let c1 = day.year == today.year
+        let c2 = day.month == today.month
+        let c3 = day.day == today.day
+        
+        return c1 && c2 && c3
+    }
+    
     public static func IsSameDay(date1:Date, date2:Date) -> Bool
     {
         let cal = CurrentCalendar()

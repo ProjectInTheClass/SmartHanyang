@@ -141,18 +141,12 @@ class Lecture
         cal.timeZone = .current
         
         let weekDay = cal.component(.weekday, from: date)
-        let today = cal.dateComponents([.year,.month,.day], from: date)
         
         ret.append(contentsOf:timeTables.filter({$0.weekDay == weekDay}))
         ret.append(contentsOf:bogangTimeTables.filter({ (table) -> Bool in
             if let bogangDay = table.bogangDay
             {
-                let tableDay = cal.dateComponents([.year,.month,.day], from: bogangDay)
-                let c1 = tableDay.year == today.year
-                let c2 = tableDay.month == today.month
-                let c3 = tableDay.day == today.day
-                
-                return c1 && c2 && c3
+                return EasyCalendar.isToday(date: bogangDay)
             }
             else
             {
