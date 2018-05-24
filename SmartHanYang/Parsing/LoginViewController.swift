@@ -80,7 +80,7 @@ class LoginViewController : UIViewController {
                         {
                             print(str)
                             print("gogo: \(my_yoil)")
-                            ParseJson(json: str as String, yoil: my_yoil-1)
+                            ParseJson(json: str as String, yoil: my_yoil)
                         }
                     }
                 }).resume()
