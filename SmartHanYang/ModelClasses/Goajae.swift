@@ -11,16 +11,16 @@ import Foundation
 
 public class Goajae
 {
-    var id:Int
-    var title:String
-    var memo:String
-    var timeEnd:Date
-    var completed:Bool
-    var lectureId:Int?
+    var id:Int //
+    var title:String // 과목
+    var memo:String //  자세내용
+    var timeEnd:Date //데드라인
+    var completed:Bool //완성여부
+    var lectureId:Int? //
     
     init() {
         id = 0
-        title = "무제"
+        title = ""
         memo = ""
         completed = false
         timeEnd = Date()

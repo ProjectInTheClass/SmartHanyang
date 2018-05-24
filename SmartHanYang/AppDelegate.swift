@@ -20,9 +20,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         LectureDataManager.shared.Load()
         GoajaeDataManager.shared.Load()
         
-        ParseJson(json: json1)
-        ParseJson(json: json2)
-        
         return true
     }
 

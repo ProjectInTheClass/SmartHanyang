@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		17A2DED813E7E06C83C19482 /* Pods_SmartHanYang.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 666F3E54E112B992B392C915 /* Pods_SmartHanYang.framework */; };
+		E338217F20B697A1008FF652 /* GoajeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E338217E20B697A1008FF652 /* GoajeTableViewController.swift */; };
+		E3D6112F20B2AFC600DC98CC /* GoajaeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D6112E20B2AFC600DC98CC /* GoajaeTableViewCell.swift */; };
 		F90FB8EE20A8DC02001077E9 /* LectureDataMager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90FB8ED20A8DC02001077E9 /* LectureDataMager.swift */; };
 		F90FB8F020A8EB2C001077E9 /* Goajae.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90FB8EF20A8EB2C001077E9 /* Goajae.swift */; };
 		F90FB8F220A8EB6C001077E9 /* GoajaeDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90FB8F120A8EB6C001077E9 /* GoajaeDataManager.swift */; };
@@ -35,6 +37,8 @@
 		666F3E54E112B992B392C915 /* Pods_SmartHanYang.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartHanYang.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		88313F3567C407636023779F /* Pods-SmartHanYang.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartHanYang.release.xcconfig"; path = "Pods/Target Support Files/Pods-SmartHanYang/Pods-SmartHanYang.release.xcconfig"; sourceTree = "<group>"; };
 		CA3DD5FE608F5E983A631046 /* Pods-SmartHanYang.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartHanYang.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SmartHanYang/Pods-SmartHanYang.debug.xcconfig"; sourceTree = "<group>"; };
+		E338217E20B697A1008FF652 /* GoajeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoajeTableViewController.swift; sourceTree = "<group>"; };
+		E3D6112E20B2AFC600DC98CC /* GoajaeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoajaeTableViewCell.swift; sourceTree = "<group>"; };
 		F90FB8ED20A8DC02001077E9 /* LectureDataMager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureDataMager.swift; sourceTree = "<group>"; };
 		F90FB8EF20A8EB2C001077E9 /* Goajae.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goajae.swift; sourceTree = "<group>"; };
 		F90FB8F120A8EB6C001077E9 /* GoajaeDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoajaeDataManager.swift; sourceTree = "<group>"; };
@@ -87,6 +91,15 @@
 				88313F3567C407636023779F /* Pods-SmartHanYang.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		E338217920B696D4008FF652 /* GoajeViewClasses */ = {
+			isa = PBXGroup;
+			children = (
+				E3D6112E20B2AFC600DC98CC /* GoajaeTableViewCell.swift */,
+				E338217E20B697A1008FF652 /* GoajeTableViewController.swift */,
+			);
+			path = GoajeViewClasses;
 			sourceTree = "<group>";
 		};
 		F910BA7420A448CA00E15F90 /* SuupViewClasses */ = {
@@ -147,11 +160,12 @@
 		F96DFB9020A42E4300997614 /* SmartHanYang */ = {
 			isa = PBXGroup;
 			children = (
+				E338217920B696D4008FF652 /* GoajeViewClasses */,
 				F91DCFDF20A5884B003A4161 /* Parsing */,
 				F910BA7420A448CA00E15F90 /* SuupViewClasses */,
 				F96DFBAB20A4466400997614 /* ModelClasses */,
-				F96DFB9120A42E4300997614 /* AppDelegate.swift */,
 				F96DFB9320A42E4300997614 /* ViewController.swift */,
+				F96DFB9120A42E4300997614 /* AppDelegate.swift */,
 				F96DFB9D20A42E4400997614 /* Info.plist */,
 			);
 			path = SmartHanYang;
@@ -294,11 +308,13 @@
 				F90FB8F420A912A0001077E9 /* GonggangCell.swift in Sources */,
 				F96DFB9220A42E4300997614 /* AppDelegate.swift in Sources */,
 				F955201120A6886700FB08E8 /* LoginViewController.swift in Sources */,
+				E338217F20B697A1008FF652 /* GoajeTableViewController.swift in Sources */,
 				F98942B820AAC46400905CB2 /* LecturePicker.swift in Sources */,
 				F98942B420AABC7000905CB2 /* EditSuupViewController.swift in Sources */,
 				F96DFBAD20A4467D00997614 /* Lecture.swift in Sources */,
 				F96DFBA420A4315600997614 /* SuupTableViewController.swift in Sources */,
 				F98942BA20AADB3200905CB2 /* LectureTimePicker.swift in Sources */,
+				E3D6112F20B2AFC600DC98CC /* GoajaeTableViewCell.swift in Sources */,
 				F98942BC20AC0E1800905CB2 /* LectureDatePicker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
