@@ -100,8 +100,9 @@ func ParseJson(json:String, yoil:Int)
             arrangedLectureInfos.append(lec)
             lec = ("", "", "", 0.0, 0.0)
             continue
+        } if(i == lectureInfos.count - 1){
+            arrangedLectureInfos.append(lec)
         }
-        
         i += 1
     }
     
