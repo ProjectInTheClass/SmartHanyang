@@ -54,19 +54,41 @@ class SuupTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, editActionsForRowAt: IndexPath) -> [UITableViewRowAction]? {
-        
+
+        let checker = isGonggangAndOriginIndex(i: editActionsForRowAt[1])
+        if checker.0
 
         {
             return []
         }
         
+        let time = todayLectures[checker.1]
+        
         let hyugang = UITableViewRowAction(style: .normal, title: "휴강") { action, index in
+
+            let _child = self.storyboard?.instantiateViewController(withIdentifier: "editSuupViewController") as? EditSuupViewController?;
+            if let child = _child! {
+                child.modalPresentationStyle = .overCurrentContext
+                self.present(child, animated: true, completion: nil)
+                child.lecturePicker.select(lectureId: time.lectureId)
+                child.typeSelector.selectedSegmentIndex = 0
+                child.ShowHyugangView()
+            }
 
         }
         hyugang.backgroundColor = .lightGray
         
         let bogang = UITableViewRowAction(style: .normal, title: "보강") { action, index in
-      
+
+            let _child = self.storyboard?.instantiateViewController(withIdentifier: "editSuupViewController") as? EditSuupViewController?;
+            if let child = _child! {
+                child.modalPresentationStyle = .overCurrentContext
+                self.present(child, animated: true, completion: nil)
+                child.lecturePicker.select(lectureId: time.lectureId)
+                child.typeSelector.selectedSegmentIndex = 1
+                child.ShowBogangView()
+            }
+
         }
         bogang.backgroundColor = UIColor(red:0.29, green:0.49, blue:0.75, alpha:1.0)
         let goajae = UITableViewRowAction(style: .normal, title: "과제") { action, index in
