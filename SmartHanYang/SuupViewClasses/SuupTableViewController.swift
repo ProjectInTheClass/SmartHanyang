@@ -58,8 +58,10 @@ class SuupTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, editActionsForRowAt: IndexPath) -> [UITableViewRowAction]? {
+
         let checker = isGonggangAndOriginIndex(i: editActionsForRowAt[1])
         if checker.0
+
         {
             return []
         }
@@ -67,6 +69,7 @@ class SuupTableViewController: UITableViewController {
         let time = todayLectures[checker.1]
         
         let hyugang = UITableViewRowAction(style: .normal, title: "휴강") { action, index in
+
             let _child = self.storyboard?.instantiateViewController(withIdentifier: "editSuupViewController") as? EditSuupViewController?;
             if let child = _child! {
                 child.modalPresentationStyle = .overCurrentContext
@@ -75,10 +78,12 @@ class SuupTableViewController: UITableViewController {
                 child.typeSelector.selectedSegmentIndex = 0
                 child.ShowHyugangView()
             }
+
         }
         hyugang.backgroundColor = .lightGray
         
         let bogang = UITableViewRowAction(style: .normal, title: "보강") { action, index in
+
             let _child = self.storyboard?.instantiateViewController(withIdentifier: "editSuupViewController") as? EditSuupViewController?;
             if let child = _child! {
                 child.modalPresentationStyle = .overCurrentContext
@@ -87,10 +92,11 @@ class SuupTableViewController: UITableViewController {
                 child.typeSelector.selectedSegmentIndex = 1
                 child.ShowBogangView()
             }
+
         }
         bogang.backgroundColor = UIColor(red:0.29, green:0.49, blue:0.75, alpha:1.0)
         let goajae = UITableViewRowAction(style: .normal, title: "과제") { action, index in
-            print("과제 추가")
+         
         }
         goajae.backgroundColor = UIColor(red:0.37, green:0.70, blue:0.62, alpha:1.0)
         
