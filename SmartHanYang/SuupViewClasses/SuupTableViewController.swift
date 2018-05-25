@@ -10,7 +10,7 @@ import UIKit
 
 class SuupTableViewController: UITableViewController {
     var todayLectures:[LectureTimeTable] = []
-    var gonggangIndexes:[Int] = []
+    var gonggangIndexes:[Float] = []
     
     override func viewDidLoad() {
         
@@ -35,7 +35,7 @@ class SuupTableViewController: UITableViewController {
                 let t = l.timeStart - p.timeEnd
                 if t > 0
                 {
-                    gonggangIndexes.append(i)
+                    gonggangIndexes.append(Float(i)-0.5)
                 }
             }
             prev = l
@@ -50,6 +50,10 @@ class SuupTableViewController: UITableViewController {
     }
 
     override open func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath[1] == 0{
+            return 500
+        }
+        
         return isGonggangAndOriginIndex(i:indexPath[1]).0 ? 41 : 78
     }
     
@@ -95,7 +99,7 @@ class SuupTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return todayLectures.count + gonggangIndexes.count
+        return todayLectures.count + gonggangIndexes.count + 1
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -104,10 +108,15 @@ class SuupTableViewController: UITableViewController {
         let condition =  isGonggangAndOriginIndex(i:i)
         let originIndex = condition.1
         
+        if i == 0
+        {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "timetable", for: indexPath) as! TimeTableView
+            return cell
+        }
+        
         if condition.0
         {
             let cell = tableView.dequeueReusableCell(withIdentifier: "gonggangCell", for: indexPath) as! GonggangCell
-            
             
             cell.SetHyugangInfor(time1: todayLectures[originIndex], time2: todayLectures[originIndex+1] )
             return cell
@@ -124,19 +133,24 @@ class SuupTableViewController: UITableViewController {
     
     func isGonggangAndOriginIndex(i:Int) -> (Bool,Int)
     {
-        var originIndex = i
-        var index = 0
-        var isGongang = false
-        while index <= i
+        if i == 0
         {
-            isGongang = gonggangIndexes.contains(index)
-            if isGongang
-            {
-                originIndex -= 1
-            }
-            index += 1
+            return (true, -1)
         }
-        return (isGongang, originIndex)
+        var input = i-1
+        
+        var isGongang = false
+        for j in gonggangIndexes {
+            isGongang = false
+            if Float(input) > j{
+                input -= 1
+                if Float(input) < j{
+                    isGongang = true
+                    break
+                }
+            }
+        }
+        return (isGongang, input)
     }
 
 }
