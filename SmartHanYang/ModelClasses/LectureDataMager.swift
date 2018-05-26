@@ -13,6 +13,14 @@ import Foundation
 
 class LectureDataManager
 {
+    static let fileName: String = "data.brch"
+
+    static let documentPath = NSSearchPathForDirectoriesInDomains(
+        FileManager.SearchPathDirectory.documentDirectory,
+        FileManager.SearchPathDomainMask.userDomainMask, true)[0]
+    let filePath = "\(documentPath)/" + fileName
+    
+    
     static let shared = LectureDataManager();
     public var lectures:[Lecture] = [];
     var lastId:Int = -1
@@ -105,13 +113,25 @@ class LectureDataManager
         lectures.append(soundTec);
         lectures.append(computerStructure);
  */
+        
+        //위에처럼 따로따로 하지 않고 전체를 아카이브를 이용해서 저장하고 로드
+        if FileManager.default.fileExists(atPath: filePath) {
+            if let unarchArray = NSKeyedUnarchiver.unarchiveObject(withFile: filePath) as? [Lecture] {
+                lectures = unarchArray
+            } else {
+                //저장된 파일이 없을때 다시 인터넷에서 파싱해야함
+                
+            }
+        }
+        
         dispatchEvent()
     }
     
     public func Save()
     {
         dispatchEvent()
-        //TODO
+        
+        NSKeyedArchiver.archiveRootObject(lectures, toFile: filePath)
     }
     
     public func GetLecture(id:Int) -> Lecture?
