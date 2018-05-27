@@ -8,8 +8,24 @@
 
 import Foundation
 
-public class LectureTimeTable
+struct PropertyKey {
+    static let room = "room"
+    static let lectureId = "lectureId"
+    static let timeStart = "timeStart"
+    static let timeEnd = "timeEnd"
+    static let weekDay = "weekDay"
+    static let bogangDay = "bogangDay"
+    static let hyugangDays = "hyugangDays"
+    static let id = "id"
+    static let name = "name"
+    static let professor = "professor"
+    static let timeTables = "timeTables"
+    static let bogangTimeTables = "bogangTimeTables"
+}
+
+public class LectureTimeTable: NSObject, NSCoding
 {
+
     var room : String
     var lectureId : Int
     //하루 내에서의 시각. second.
@@ -82,10 +98,36 @@ public class LectureTimeTable
         self.weekDay = weekDay
         self.bogangDay = bogangDay
     }
+    
+    public func encode(with aCoder: NSCoder) {
+        aCoder.encode(self.room, forKey: PropertyKey.room)
+        aCoder.encode(self.lectureId, forKey: PropertyKey.lectureId)
+        aCoder.encode(self.timeStart, forKey: PropertyKey.timeStart)
+        aCoder.encode(self.timeEnd, forKey: PropertyKey.timeEnd)
+        aCoder.encode(self.weekDay, forKey: PropertyKey.timeEnd)
+        aCoder.encode(self.bogangDay, forKey: PropertyKey.bogangDay)
+        aCoder.encode(self.hyugangDays, forKey: PropertyKey.hyugangDays)
+    }
+    
+    public required init?(coder aDecoder: NSCoder) {
+        self.room = aDecoder.decodeObject(forKey: PropertyKey.room) as! String
+        self.lectureId = aDecoder.decodeInteger(forKey: PropertyKey.lectureId) as! Int
+        self.timeStart = aDecoder.decodeInteger(forKey: PropertyKey.timeStart) as! Int
+        self.timeEnd = aDecoder.decodeInteger(forKey: PropertyKey.timeEnd) as! Int
+        self.weekDay = aDecoder.decodeInteger(forKey: PropertyKey.weekDay) as! Int
+        self.bogangDay = aDecoder.decodeObject(forKey: PropertyKey.bogangDay) as! Date
+        self.hyugangDays = aDecoder.decodeObject(forKey: PropertyKey.hyugangDays) as! [Date]
+    }
+
+
 }
 
-class Lecture
+class Lecture: NSObject, NSCoding
 {
+    
+    
+
+    
     public var id : Int
     public var name : String
     public var professor : String
@@ -155,5 +197,21 @@ class Lecture
         }))
         
         return ret
+    }
+    
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(self.id, forKey: PropertyKey.id)
+        aCoder.encode(self.name, forKey: PropertyKey.name)
+        aCoder.encode(self.professor, forKey: PropertyKey.professor)
+        aCoder.encode(self.timeTables, forKey: PropertyKey.timeTables)
+        aCoder.encode(self.bogangTimeTables, forKey: PropertyKey.bogangTimeTables)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        self.id = aDecoder.decodeInteger(forKey: PropertyKey.id) as! Int
+        self.name = aDecoder.decodeObject(forKey: PropertyKey.name) as! String
+        self.professor = aDecoder.decodeObject(forKey:PropertyKey.professor) as! String
+        self.timeTables = aDecoder.decodeObject(forKey:PropertyKey.timeTables) as! [LectureTimeTable]
+        self.bogangTimeTables = aDecoder.decodeObject(forKey: PropertyKey.bogangTimeTables) as! [LectureTimeTable]
     }
 }

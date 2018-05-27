@@ -20,7 +20,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         LectureDataManager.shared.Load()
         GoajaeDataManager.shared.Load()
         
-        
         return true
     }
 

@@ -25,6 +25,13 @@ public class Goajae
         completed = false
         timeEnd = Date()
     }
+    init(title:String){
+        id = 0
+        self.title = title
+        memo = ""
+        completed = false
+        timeEnd = Date()
+    }
 }
 
 
