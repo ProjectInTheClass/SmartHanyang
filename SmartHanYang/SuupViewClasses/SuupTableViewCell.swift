@@ -77,6 +77,10 @@ class SuupTableViewCell: UITableViewCell
         else{
             progressBar.tintColor = defaultColor
             progressBar.progress = Float(t-table.timeStart)/Float(table.timeEnd-table.timeStart)
+            
+            titleLabel.isEnabled = true
+            locationLabel.isEnabled = true
+            timeLabel.isEnabled = true
         }
         
         if isHyugang {

@@ -11,6 +11,36 @@ import Foundation
 
 public class EasyCalendar
 {
+    public static func GetDateFromToday(day:Int = 0) -> Date
+    {
+        var date = Date()
+        date.addTimeInterval(TimeInterval(Float(day)*3600*24))
+        
+        return date
+    }
+    
+    public static func WeekdayToString(weekDay:Int) -> String
+    {
+        switch weekDay {
+        case 1:
+            return "일"
+        case 2:
+            return "월"
+        case 3:
+            return "화"
+        case 4:
+            return "수"
+        case 5:
+            return "목"
+        case 6:
+            return "금"
+        case 7:
+            return "토"
+        default:
+            return "?"
+        }
+    }
+    
     public static func GetDayTimeSecond(date:Date) -> Int
     {
         var t = CurrentCalendar().dateComponents([.hour,.minute,.second], from: date)

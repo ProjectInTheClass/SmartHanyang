@@ -18,8 +18,15 @@ class SuupTableViewController: UITableViewController {
             self.update()
             self.tableView.reloadData()
         }
+        
         super.viewDidLoad()
         update()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        self.tableView.scrollToRow(at: IndexPath(row: 1, section: 0), at: UITableViewScrollPosition.top, animated: false)
     }
     
     func update()
@@ -51,10 +58,25 @@ class SuupTableViewController: UITableViewController {
 
     override open func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath[1] == 0{
-            return 500
+            var h = UIScreen.main.bounds.height
+            h -= UIApplication.shared.statusBarFrame.size.height
+            h -= self.navigationController?.navigationBar.frame.height ?? 0.0
+            h -= self.tabBarController?.tabBar.frame.size.height ?? 0.0
+            
+            return h
+        }
+        let aa = isGonggangAndOriginIndex(i:indexPath[1])
+        if aa.1 > todayLectures.count - 1 {
+            var h = UIScreen.main.bounds.height
+            h -= CGFloat(gonggangIndexes.count * 41 + todayLectures.count * 78)
+            h -= UIApplication.shared.statusBarFrame.size.height
+            h -= self.navigationController?.navigationBar.frame.height ?? 0.0
+            h -= self.tabBarController?.tabBar.frame.size.height ?? 0.0
+            
+            return max(30, h)
         }
         
-        return isGonggangAndOriginIndex(i:indexPath[1]).0 ? 41 : 78
+        return aa.0 ? 41 : 78
     }
     
     override func tableView(_ tableView: UITableView, editActionsForRowAt: IndexPath) -> [UITableViewRowAction]? {
@@ -105,7 +127,7 @@ class SuupTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return todayLectures.count + gonggangIndexes.count + 1
+        return todayLectures.count + gonggangIndexes.count + 2
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -117,6 +139,11 @@ class SuupTableViewController: UITableViewController {
         if i == 0
         {
             let cell = tableView.dequeueReusableCell(withIdentifier: "timetable", for: indexPath) as! TimeTableView
+            return cell
+        }
+        
+        if condition.1 > todayLectures.count-1 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "blankCell", for: indexPath)
             return cell
         }
         
@@ -155,6 +182,9 @@ class SuupTableViewController: UITableViewController {
                     break
                 }
             }
+        }
+        if input > todayLectures.count-1 {
+            isGongang = true
         }
         return (isGongang, input)
     }
