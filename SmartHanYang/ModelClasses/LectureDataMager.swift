@@ -16,9 +16,23 @@ class LectureDataManager
     static let shared = LectureDataManager();
     public var lectures:[Lecture] = [];
     var lastId:Int = -1
+    var listeners:[()->Void] = []
     
     init() {
         
+    }
+    
+    public func addUpdateEventListener(f:@escaping ()->Void)
+    {
+        listeners.append(f)
+    }
+    
+    func dispatchEvent()
+    {
+        for f in listeners
+        {
+            f()
+        }
     }
     
     public func GetNewId() -> Int
@@ -48,7 +62,7 @@ class LectureDataManager
         
         //TODO
         //아래는 임시 테스트용 코드
-        
+        /*
         let softwareStudio1 = Lecture(name: "소프트웨어스튜디오1")
         softwareStudio1.professor = "윤성관"
         softwareStudio1.AddTime(day: 5, room: "IT/BT 509", timeStart: 16, timeEnd: 19)
@@ -90,10 +104,13 @@ class LectureDataManager
         lectures.append(os);
         lectures.append(soundTec);
         lectures.append(computerStructure);
+ */
+        dispatchEvent()
     }
     
     public func Save()
     {
+        dispatchEvent()
         //TODO
     }
     
@@ -114,6 +131,17 @@ class LectureDataManager
         return lectures
     }
     
+    public func GetLecture(name:String) -> Lecture?
+    {
+        for lecture in lectures
+        {
+            if lecture.name == name{
+                return lecture
+            }
+        }
+        return nil
+    }
+    
     public func GetTodayLectures() -> [LectureTimeTable]
     {
         var table:[LectureTimeTable] = []
@@ -127,4 +155,22 @@ class LectureDataManager
         return table
     }
     
+    public func GetSomedayLectures(date:Date) -> [LectureTimeTable]
+    {
+        var table:[LectureTimeTable] = []
+        for lecture in lectures
+        {
+            table.append(contentsOf:lecture.GetTodayTable())
+        }
+        table.sort { (l1, l2) -> Bool in
+            return l1.timeStart < l2.timeStart
+        }
+        return table
+    }
+    
+    public func AddLecture(lecture:Lecture)
+    {
+        lectures.append(lecture)
+        Save()
+    }
 }

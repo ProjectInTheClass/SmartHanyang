@@ -13,10 +13,12 @@ class SuupTableViewCell: UITableViewCell
     @IBOutlet weak public var titleLabel: UILabel!
     @IBOutlet weak public var locationLabel: UILabel!
     @IBOutlet weak public var timeLabel: UILabel!
+    @IBOutlet weak public var hyugangLabel: UILabel!
     @IBOutlet weak public var progressBar: UIProgressView!
     
     var timeTable:LectureTimeTable?
     var defaultColor:UIColor?
+    var isHyugang = false
     
     public func SetTimeTable(table:LectureTimeTable)
     {
@@ -32,6 +34,17 @@ class SuupTableViewCell: UITableViewCell
         }
         timeLabel.text = table.GetTimeText()
         locationLabel.text = table.room
+        
+        hyugangLabel.isHidden = true
+        isHyugang = false
+        for day in table.hyugangDays
+        {
+            if EasyCalendar.isToday(date: day) {
+                hyugangLabel.isHidden = false
+                isHyugang = true
+                break
+            }
+        }
         
         Update()
         
@@ -64,6 +77,14 @@ class SuupTableViewCell: UITableViewCell
         else{
             progressBar.tintColor = defaultColor
             progressBar.progress = Float(t-table.timeStart)/Float(table.timeEnd-table.timeStart)
+        }
+        
+        if isHyugang {
+            progressBar.tintColor = UIColor.black
+            
+            titleLabel.isEnabled = false
+            locationLabel.isEnabled = false
+            timeLabel.isEnabled = false
         }
     }
     

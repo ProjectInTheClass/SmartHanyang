@@ -32,6 +32,7 @@
 		F98942B820AAC46400905CB2 /* LecturePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98942B720AAC46400905CB2 /* LecturePicker.swift */; };
 		F98942BA20AADB3200905CB2 /* LectureTimePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98942B920AADB3200905CB2 /* LectureTimePicker.swift */; };
 		F98942BC20AC0E1800905CB2 /* LectureDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98942BB20AC0E1700905CB2 /* LectureDatePicker.swift */; };
+		F98942BF20AF2AB100905CB2 /* UtilFuncs.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98942BE20AF2AB100905CB2 /* UtilFuncs.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		F98942B720AAC46400905CB2 /* LecturePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LecturePicker.swift; sourceTree = "<group>"; };
 		F98942B920AADB3200905CB2 /* LectureTimePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureTimePicker.swift; sourceTree = "<group>"; };
 		F98942BB20AC0E1700905CB2 /* LectureDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureDatePicker.swift; sourceTree = "<group>"; };
+		F98942BE20AF2AB100905CB2 /* UtilFuncs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilFuncs.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +172,7 @@
 				F96DFB9320A42E4300997614 /* ViewController.swift */,
 				F96DFB9120A42E4300997614 /* AppDelegate.swift */,
 				F96DFB9D20A42E4400997614 /* Info.plist */,
+				F98942BE20AF2AB100905CB2 /* UtilFuncs.swift */,
 			);
 			path = SmartHanYang;
 			sourceTree = "<group>";
@@ -309,6 +312,7 @@
 				F90FB8F220A8EB6C001077E9 /* GoajaeDataManager.swift in Sources */,
 				F91DCFE520A58D10003A4161 /* ParseJson.swift in Sources */,
 				F90FB8F420A912A0001077E9 /* GonggangCell.swift in Sources */,
+				F98942BF20AF2AB100905CB2 /* UtilFuncs.swift in Sources */,
 				F96DFB9220A42E4300997614 /* AppDelegate.swift in Sources */,
 				F955201120A6886700FB08E8 /* LoginViewController.swift in Sources */,
 				E3FE2AD120B7029D007EA7C2 /* SaveGoajaeController.swift in Sources */,

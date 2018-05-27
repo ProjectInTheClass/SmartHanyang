@@ -66,6 +66,12 @@
                                         <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="vOD-xU-hFp">
                                             <rect key="frame" x="0.0" y="75.5" width="375" height="2"/>
                                         </progressView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="휴강" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LDF-zP-Er8">
+                                            <rect key="frame" x="335" y="5" width="30" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.73879679568527923" green="0.18200799667141385" blue="0.03183387985410837" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <rect key="contentStretch" x="0.0" y="0.0" width="1" height="0.0"/>
                                     <gestureRecognizers/>
@@ -80,6 +86,8 @@
                                         <constraint firstItem="R7p-t0-gV1" firstAttribute="width" secondItem="DMj-9n-5T9" secondAttribute="width" id="N3Z-ZV-jFs"/>
                                         <constraint firstItem="ezc-wQ-DYU" firstAttribute="width" secondItem="DMj-9n-5T9" secondAttribute="width" multiplier="0.4" id="NvJ-TT-GLf"/>
                                         <constraint firstItem="vOD-xU-hFp" firstAttribute="centerX" secondItem="DMj-9n-5T9" secondAttribute="centerX" id="Qxl-3L-NSz"/>
+                                        <constraint firstItem="LDF-zP-Er8" firstAttribute="top" secondItem="DMj-9n-5T9" secondAttribute="top" constant="5" id="eO2-Ib-Thv"/>
+                                        <constraint firstItem="LDF-zP-Er8" firstAttribute="trailing" secondItem="DMj-9n-5T9" secondAttribute="trailing" constant="-10" id="jUV-jp-hTk"/>
                                         <constraint firstItem="ezc-wQ-DYU" firstAttribute="bottom" secondItem="DMj-9n-5T9" secondAttribute="bottom" constant="-6.5" id="oHV-4N-otV"/>
                                         <constraint firstItem="R7p-t0-gV1" firstAttribute="centerX" secondItem="DMj-9n-5T9" secondAttribute="centerX" id="pUr-fb-Oj0"/>
                                         <constraint firstItem="nUu-w3-Xal" firstAttribute="width" relation="lessThanOrEqual" secondItem="DMj-9n-5T9" secondAttribute="width" multiplier="0.4" id="rMX-LU-PJ8"/>
@@ -88,6 +96,7 @@
                                 </tableViewCellContentView>
                                 <rect key="contentStretch" x="0.0" y="0.0" width="1" height="0.0"/>
                                 <connections>
+                                    <outlet property="hyugangLabel" destination="LDF-zP-Er8" id="953-kA-PHO"/>
                                     <outlet property="locationLabel" destination="nUu-w3-Xal" id="BP7-cd-agm"/>
                                     <outlet property="progressBar" destination="vOD-xU-hFp" id="c2g-ki-Q7w"/>
                                     <outlet property="timeLabel" destination="ezc-wQ-DYU" id="fFs-L3-QXq"/>
@@ -150,28 +159,11 @@
         <!--보강/휴강 추가-->
         <scene sceneID="BmN-gj-o4w">
             <objects>
-                <viewController title="보강/휴강 추가" id="knN-vv-he9" customClass="EditSuupViewController" customModule="SmartHanYang" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="editSuupViewController" title="보강/휴강 추가" useStoryboardIdentifierAsRestorationIdentifier="YES" id="knN-vv-he9" customClass="EditSuupViewController" customModule="SmartHanYang" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UrL-3g-Zjt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yma-pV-ugB">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <items>
-                                    <navigationItem title="휴강/보강 추가" id="Zg7-e0-lCf">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="uvi-gf-UzC">
-                                            <connections>
-                                                <action selector="cancel" destination="knN-vv-he9" id="NZT-4c-Iey"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="lel-As-HEg">
-                                            <connections>
-                                                <action selector="done" destination="knN-vv-he9" id="H4b-rz-5ic"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="IxS-Tv-VVq">
                                 <rect key="frame" x="37" y="69" width="300" height="29"/>
                                 <segments>
@@ -240,7 +232,7 @@
                                         <rect key="frame" x="94" y="0.0" width="187.5" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -260,6 +252,23 @@
                                     <constraint firstItem="2wN-1L-YTb" firstAttribute="trailing" secondItem="Je4-Uz-avb" secondAttribute="trailing" id="vtr-jB-grD"/>
                                 </constraints>
                             </view>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yma-pV-ugB">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="휴강/보강 추가" id="Zg7-e0-lCf">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="uvi-gf-UzC">
+                                            <connections>
+                                                <action selector="cancel" destination="knN-vv-he9" id="NZT-4c-Iey"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="lel-As-HEg">
+                                            <connections>
+                                                <action selector="done" destination="knN-vv-he9" id="H4b-rz-5ic"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>

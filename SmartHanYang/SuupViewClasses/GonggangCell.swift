@@ -23,7 +23,7 @@ class GonggangCell: UITableViewCell
         defaultColor = progressBar.tintColor
         let timeGap:Int = time2.timeStart - time1.timeEnd
         var str:String = "공강"
-        if timeGap > 3600
+        if timeGap >= 3600
         {
             str.append(" \(String(format:"%i",timeGap/3600))시간")
         }
