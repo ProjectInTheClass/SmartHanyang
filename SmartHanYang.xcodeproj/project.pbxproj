@@ -33,6 +33,7 @@
 		F98942BA20AADB3200905CB2 /* LectureTimePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98942B920AADB3200905CB2 /* LectureTimePicker.swift */; };
 		F98942BC20AC0E1800905CB2 /* LectureDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98942BB20AC0E1700905CB2 /* LectureDatePicker.swift */; };
 		F98942BF20AF2AB100905CB2 /* UtilFuncs.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98942BE20AF2AB100905CB2 /* UtilFuncs.swift */; };
+		F98942D820B6BAF300905CB2 /* TimeTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98942D720B6BAF300905CB2 /* TimeTableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		F98942B920AADB3200905CB2 /* LectureTimePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureTimePicker.swift; sourceTree = "<group>"; };
 		F98942BB20AC0E1700905CB2 /* LectureDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureDatePicker.swift; sourceTree = "<group>"; };
 		F98942BE20AF2AB100905CB2 /* UtilFuncs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilFuncs.swift; sourceTree = "<group>"; };
+		F98942D720B6BAF300905CB2 /* TimeTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 				F98942B720AAC46400905CB2 /* LecturePicker.swift */,
 				F98942B920AADB3200905CB2 /* LectureTimePicker.swift */,
 				F98942BB20AC0E1700905CB2 /* LectureDatePicker.swift */,
+				F98942D720B6BAF300905CB2 /* TimeTableView.swift */,
 			);
 			path = SuupViewClasses;
 			sourceTree = "<group>";
@@ -323,6 +326,7 @@
 				F96DFBAD20A4467D00997614 /* Lecture.swift in Sources */,
 				F96DFBA420A4315600997614 /* SuupTableViewController.swift in Sources */,
 				F98942BA20AADB3200905CB2 /* LectureTimePicker.swift in Sources */,
+				F98942D820B6BAF300905CB2 /* TimeTableView.swift in Sources */,
 				F98942BC20AC0E1800905CB2 /* LectureDatePicker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
