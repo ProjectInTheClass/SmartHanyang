@@ -6,17 +6,20 @@
 //  Copyright © 2018년 graph. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 
-public class EasyCalendar
+public class Easy
 {
-    public static func GetDateFromToday(day:Int = 0) -> Date
+    public static func TimeToText(time:Int) -> String
     {
-        var date = Date()
-        date.addTimeInterval(TimeInterval(Float(day)*3600*24))
+        var str = ""
         
-        return date
+        let hour:Int = (time/3600);
+        let min:Int = (time%3600)/60;
+        
+        str += " \(String(format: "%2.2i", hour)):\(String(format: "%2.2i", min))"
+        return str
     }
     
     public static func WeekdayToString(weekDay:Int) -> String
@@ -39,6 +42,17 @@ public class EasyCalendar
         default:
             return "?"
         }
+    }
+}
+
+public class EasyCalendar
+{
+    public static func GetDateFromToday(day:Int = 0) -> Date
+    {
+        var date = Date()
+        date.addTimeInterval(TimeInterval(Float(day)*3600*24))
+        
+        return date
     }
     
     public static func GetDayTimeSecond(date:Date) -> Int
@@ -92,5 +106,43 @@ public class EasyCalendar
         let components = cal.dateComponents([.day], from: date1, to: date2)
         
         return components.day == 0
+    }
+}
+
+extension UIColor {
+    convenience init(hexString: String, alpha: CGFloat = 1.0) {
+        let hexString: String = hexString.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+        let scanner = Scanner(string: hexString)
+        if (hexString.hasPrefix("#")) {
+            scanner.scanLocation = 1
+        }
+        var color: UInt32 = 0
+        scanner.scanHexInt32(&color)
+        let mask = 0x000000FF
+        let r = Int(color >> 16) & mask
+        let g = Int(color >> 8) & mask
+        let b = Int(color) & mask
+        let red   = CGFloat(r) / 255.0
+        let green = CGFloat(g) / 255.0
+        let blue  = CGFloat(b) / 255.0
+        self.init(red:red, green:green, blue:blue, alpha:alpha)
+    }
+    func toHexString() -> String {
+        var r:CGFloat = 0
+        var g:CGFloat = 0
+        var b:CGFloat = 0
+        var a:CGFloat = 0
+        getRed(&r, green: &g, blue: &b, alpha: &a)
+        let rgb:Int = (Int)(r*255)<<16 | (Int)(g*255)<<8 | (Int)(b*255)<<0
+        return String(format:"#%06x", rgb)
+    }
+    
+    func rgb() -> (Float, Float, Float) {
+        var fRed : CGFloat = 0
+        var fGreen : CGFloat = 0
+        var fBlue : CGFloat = 0
+        var fAlpha: CGFloat = 0
+        self.getRed(&fRed, green: &fGreen, blue: &fBlue, alpha: &fAlpha)
+        return (Float(fRed),Float(fGreen),Float(fBlue))
     }
 }

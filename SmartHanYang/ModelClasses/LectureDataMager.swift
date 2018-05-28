@@ -70,11 +70,12 @@ class LectureDataManager
         
         //TODO
         //아래는 임시 테스트용 코드
-        /*
+        
         let softwareStudio1 = Lecture(name: "소프트웨어스튜디오1")
         softwareStudio1.professor = "윤성관"
         softwareStudio1.AddTime(day: 5, room: "IT/BT 509", timeStart: 16, timeEnd: 19)
         softwareStudio1.AddTime(day: 6, room: "IT/BT 509", timeStart: 16, timeEnd: 18)
+        softwareStudio1.AddTime(day: 1, room: "IT/BT 509", timeStart: 16, timeEnd: 18)
         
         
         let storytelling = Lecture(name:"디지털스토리텔링의이해")
@@ -87,6 +88,7 @@ class LectureDataManager
         automata.professor = "박희진"
         automata.AddTime(day:4, room:"IT/BT 508", timeStart: 14.5, timeEnd: 16)
         automata.AddTime(day:6, room:"IT/BT 508", timeStart: 14.5, timeEnd: 16)
+        automata.AddTime(day:1, room:"IT/BT 508", timeStart: 14.5, timeEnd: 16)
         
         
         let os = Lecture(name:"운영체제")
@@ -94,6 +96,7 @@ class LectureDataManager
         os.AddTime(day: 2, room: "IT/BT 501", timeStart: 16, timeEnd: 18)
         os.AddTime(day: 4, room: "IT/BT 501", timeStart: 16, timeEnd: 18)
         os.AddTime(day: 6, room: "IT/BT 503", timeStart: 10, timeEnd: 12)
+        os.AddTime(day: 1, room: "IT/BT 503", timeStart: 10, timeEnd: 12)
         
         
         let soundTec = Lecture(name: "아트테크놀로지사운드")
@@ -105,6 +108,7 @@ class LectureDataManager
         computerStructure.professor = "박영준"
         computerStructure.AddTime(day: 5, room: "IT/BT 207", timeStart: 13, timeEnd: 14.5)
         computerStructure.AddTime(day: 6, room: "IT/BT 207", timeStart: 13, timeEnd: 14.5)
+        computerStructure.AddTime(day: 1, room: "IT/BT 207", timeStart: 13, timeEnd: 14.5)
         
         lectures.append(softwareStudio1);
         lectures.append(storytelling);
@@ -112,8 +116,8 @@ class LectureDataManager
         lectures.append(os);
         lectures.append(soundTec);
         lectures.append(computerStructure);
- */
-        
+ 
+        /*
         //위에처럼 따로따로 하지 않고 전체를 아카이브를 이용해서 저장하고 로드
         if FileManager.default.fileExists(atPath: filePath) {
             if let unarchArray = NSKeyedUnarchiver.unarchiveObject(withFile: filePath) as? [Lecture] {
@@ -123,7 +127,7 @@ class LectureDataManager
                 
             }
         }
-        
+ */
         dispatchEvent()
     }
     
@@ -180,7 +184,7 @@ class LectureDataManager
         var table:[LectureTimeTable] = []
         for lecture in lectures
         {
-            table.append(contentsOf:lecture.GetTodayTable())
+            table.append(contentsOf:lecture.GetSomedayTable(date:date))
         }
         table.sort { (l1, l2) -> Bool in
             return l1.timeStart < l2.timeStart
