@@ -6,7 +6,7 @@
 //  Copyright © 2018년 gameegg. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 struct PropertyKey {
     static let room = "room"
@@ -46,23 +46,12 @@ public class LectureTimeTable: NSObject, NSCoding
     
     public func GetTimeText() -> String
     {
-        return "\(TimeToText(time: timeStart)) - \(TimeToText(time: timeEnd))"
+        return "\(Easy.TimeToText(time: timeStart)) - \(Easy.TimeToText(time: timeEnd))"
     }
     
     public func GetTimeText2() -> String
     {
         return "\(TimeToText2(time: timeStart)) - \(TimeToText2(time: timeEnd))"
-    }
-    
-    private func TimeToText(time:Int) -> String
-    {
-        var str = ""
-        
-        let hour:Int = (time/3600);
-        let min:Int = (time%3600)/60;
-        
-        str += " \(String(format: "%2.2i", hour)):\(String(format: "%2.2i", min))"
-        return str
     }
     
     private func TimeToText2(time:Int) -> String
@@ -124,10 +113,7 @@ public class LectureTimeTable: NSObject, NSCoding
 
 class Lecture: NSObject, NSCoding
 {
-    
-    
-
-    
+    public var color : UIColor
     public var id : Int
     public var name : String
     public var professor : String
@@ -136,6 +122,7 @@ class Lecture: NSObject, NSCoding
     
     init(name:String)
     {
+        color = UIColor.gray
         self.name = name;
         professor = "알 수 없음"
         self.timeTables = []
@@ -178,11 +165,7 @@ class Lecture: NSObject, NSCoding
     {
         var ret:[LectureTimeTable] = []
         
-        let date = Date()
-        var cal = Calendar.current
-        cal.timeZone = .current
-        
-        let weekDay = cal.component(.weekday, from: date)
+        let weekDay = EasyCalendar.GetWeekday(date: Date())
         
         ret.append(contentsOf:timeTables.filter({$0.weekDay == weekDay}))
         ret.append(contentsOf:bogangTimeTables.filter({ (table) -> Bool in
@@ -199,7 +182,32 @@ class Lecture: NSObject, NSCoding
         return ret
     }
     
+    public func GetSomedayTable(date:Date) -> [LectureTimeTable]
+    {
+        var ret:[LectureTimeTable] = []
+        
+        let weekDay = EasyCalendar.GetWeekday(date: date)
+        
+        ret.append(contentsOf:timeTables.filter({$0.weekDay == weekDay}))
+        ret.append(contentsOf:bogangTimeTables.filter({ (table) -> Bool in
+            if let bogangDay = table.bogangDay
+            {
+                return EasyCalendar.IsSameDay(date1: bogangDay, date2: date)
+            }
+            else
+            {
+                return false
+            }
+        }))
+        
+        return ret
+    }
+    
     func encode(with aCoder: NSCoder) {
+        aCoder.encode(Float(color.), forKey: PropertyKey.id)
+        aCoder.encode(self.id, forKey: PropertyKey.id)
+        aCoder.encode(self.id, forKey: PropertyKey.id)
+        
         aCoder.encode(self.id, forKey: PropertyKey.id)
         aCoder.encode(self.name, forKey: PropertyKey.name)
         aCoder.encode(self.professor, forKey: PropertyKey.professor)
@@ -208,6 +216,10 @@ class Lecture: NSObject, NSCoding
     }
     
     required init?(coder aDecoder: NSCoder) {
+        let r = aDecoder.decodeFloat(forKey: "r")
+        let g = aDecoder.decodeFloat(forKey: "g")
+        let b = aDecoder.decodeFloat(forKey: "b")
+        self.color = UIColor(red: CGFloat(r), green: CGFloat(g), blue: CGFloat(b), alpha: 1)
         self.id = aDecoder.decodeInteger(forKey: PropertyKey.id) as! Int
         self.name = aDecoder.decodeObject(forKey: PropertyKey.name) as! String
         self.professor = aDecoder.decodeObject(forKey:PropertyKey.professor) as! String
