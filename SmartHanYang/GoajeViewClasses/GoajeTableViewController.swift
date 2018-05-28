@@ -29,6 +29,41 @@ class GoajeTableViewController: UITableViewController, SaveGoajae {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
     }
+    
+    // Mark: - Cell LEFT swipe DELETE action
+    
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let delete = deleteAction(at: indexPath)
+        return UISwipeActionsConfiguration(actions: [delete])
+    }
+    
+    func deleteAction(at indexPath: IndexPath) -> UIContextualAction {
+        let action = UIContextualAction(style: .destructive, title: "삭제") {(action, view, completion) in
+            self.goajaes.remove(at: indexPath.row)
+            self.tableView.deleteRows(at: [indexPath], with: .automatic)
+            completion(true)
+        }
+        action.backgroundColor = .red
+        
+        return action
+    }
+    
+    // Mark: - Cell RIGHT swipe COMPLETE action
+    
+    override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let complete = completeAction(at: indexPath)
+        return UISwipeActionsConfiguration(actions: [complete])
+    }
+    
+    func completeAction(at indexPath: IndexPath) -> UIContextualAction{
+        let action = UIContextualAction(style: .destructive, title: "완성") {(action, view, completion) in
+            self.goajaes.remove(at: indexPath.row)
+            self.tableView.deleteRows(at: [indexPath], with: .automatic)
+            completion(true)
+        }
+        action.backgroundColor = .green
+        return action
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
