@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 struct PropertyKey {
     static let room = "room"
     static let lectureId = "lectureId"
@@ -93,19 +94,22 @@ public class LectureTimeTable: NSObject, NSCoding
         aCoder.encode(self.lectureId, forKey: PropertyKey.lectureId)
         aCoder.encode(self.timeStart, forKey: PropertyKey.timeStart)
         aCoder.encode(self.timeEnd, forKey: PropertyKey.timeEnd)
-        aCoder.encode(self.weekDay, forKey: PropertyKey.timeEnd)
+        aCoder.encode(self.weekDay, forKey: PropertyKey.weekDay)
         aCoder.encode(self.bogangDay, forKey: PropertyKey.bogangDay)
         aCoder.encode(self.hyugangDays, forKey: PropertyKey.hyugangDays)
     }
     
-    public required init?(coder aDecoder: NSCoder) {
-        self.room = aDecoder.decodeObject(forKey: PropertyKey.room) as! String
-        self.lectureId = aDecoder.decodeInteger(forKey: PropertyKey.lectureId) as! Int
-        self.timeStart = aDecoder.decodeInteger(forKey: PropertyKey.timeStart) as! Int
-        self.timeEnd = aDecoder.decodeInteger(forKey: PropertyKey.timeEnd) as! Int
-        self.weekDay = aDecoder.decodeInteger(forKey: PropertyKey.weekDay) as! Int
-        self.bogangDay = aDecoder.decodeObject(forKey: PropertyKey.bogangDay) as! Date
-        self.hyugangDays = aDecoder.decodeObject(forKey: PropertyKey.hyugangDays) as! [Date]
+    public required convenience init?(coder aDecoder: NSCoder) {
+        let room = aDecoder.decodeObject(forKey: PropertyKey.room) as! String
+        let lectureId = aDecoder.decodeInteger(forKey: PropertyKey.lectureId) as! Int
+        let timeStart = aDecoder.decodeInteger(forKey: PropertyKey.timeStart) as! Int
+        let timeEnd = aDecoder.decodeInteger(forKey: PropertyKey.timeEnd) as! Int
+        let weekDay = aDecoder.decodeObject(forKey: PropertyKey.weekDay) as! Int //불완전 임시코드
+        let bogangDay = aDecoder.decodeObject(forKey: PropertyKey.bogangDay) as? Date
+        let hyugangDays = aDecoder.decodeObject(forKey: PropertyKey.hyugangDays) as! [Date]
+        
+        self.init(room:room, lectureId: lectureId, timeStart: timeStart, timeEnd: timeEnd, weekDay: weekDay, bogangDay: bogangDay, hyugangDays: hyugangDays)
+
     }
 
 

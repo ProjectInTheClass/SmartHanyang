@@ -19,7 +19,7 @@ class LectureDataManager
         FileManager.SearchPathDirectory.documentDirectory,
         FileManager.SearchPathDomainMask.userDomainMask, true)[0]
     let filePath = "\(documentPath)/" + fileName
-    
+
     
     static let shared = LectureDataManager();
     public var lectures:[Lecture] = [];
