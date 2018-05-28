@@ -208,9 +208,10 @@ class Lecture: NSObject, NSCoding
     }
     
     func encode(with aCoder: NSCoder) {
-        aCoder.encode(Float(color.), forKey: PropertyKey.id)
-        aCoder.encode(self.id, forKey: PropertyKey.id)
-        aCoder.encode(self.id, forKey: PropertyKey.id)
+        var rgb = color.rgb()
+        aCoder.encode(Float(rgb.0), forKey: "r")
+        aCoder.encode(Float(rgb.1), forKey: "g")
+        aCoder.encode(Float(rgb.2), forKey: "b")
         
         aCoder.encode(self.id, forKey: PropertyKey.id)
         aCoder.encode(self.name, forKey: PropertyKey.name)
