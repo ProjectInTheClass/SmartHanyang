@@ -25,16 +25,8 @@ class TimeTableView: UITableViewCell
     var cols:[TimeTableViewCol] = []
     var weekLectures:[[LectureTimeTable]] = []
     
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
-        cols.append(col1)
-        cols.append(col2)
-        cols.append(col3)
-        cols.append(col4)
-        cols.append(col5)
-        
+    public func DoIt()
+    {
         
         var startT = 3600*24
         var endT = 0
@@ -64,7 +56,7 @@ class TimeTableView: UITableViewCell
         }
         
         let goodStartT = startT - startT%3600
-        let goodEndT = (endT%3600 == 0) ? endT : endT%3600 + 3600
+        let goodEndT = (endT%3600 == 0) ? endT : endT-endT%3600 + 3600
         let rowCount = Int((goodEndT - goodStartT)/3600)
         
         let contentHeight = self.frame.height - CGFloat(TimeTableView.TOP_HEIGHT)
@@ -76,9 +68,25 @@ class TimeTableView: UITableViewCell
         
         InitCol0(startT: goodStartT, endT: goodEndT, width:width0, hourHeight: cellHourHeight)
     }
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        cols.append(col1)
+        cols.append(col2)
+        cols.append(col3)
+        cols.append(col4)
+        cols.append(col5)
+        
+        
+    }
     
     func InitCol0(startT:Int, endT:Int, width:CGFloat, hourHeight:CGFloat)
     {
+        col0.subviews.forEach { view in
+            view.removeFromSuperview()
+        }
+        
         let rowCount = Int((endT - startT)/3600)
         let w = Int(width)
         
@@ -129,6 +137,10 @@ class TimeTableViewCol: UIStackView
     
     public func Go(width:CGFloat, hourHeight:CGFloat, minTime:Int, maxTime:Int)
     {
+        self.subviews.forEach { view in
+            view.removeFromSuperview()
+        }
+        
         let hH = Int(hourHeight)
         var t = minTime
         
@@ -144,7 +156,7 @@ class TimeTableViewCol: UIStackView
             }
             
             let view = TimeTableViewCell()
-            view.Init(width: width, hourHeight: hourHeight, time: time, minTime: minTime)
+            view.Init(width: width, hourHeight: hourHeight, time: time, minTime: minTime, date:date)
             self.addSubview(view)
             
             t = time.timeEnd
@@ -175,7 +187,9 @@ class TimeTableViewCol: UIStackView
 
 class TimeTableViewCell: UIView
 {
-    public func Init(width:CGFloat, hourHeight:CGFloat, time:LectureTimeTable, minTime:Int)
+    var date:Date!
+    
+    public func Init(width:CGFloat, hourHeight:CGFloat, time:LectureTimeTable, minTime:Int, date:Date)
     {
         let hH = ceil(hourHeight)
         let y = Int(ceil(hH * CGFloat(time.timeStart-minTime)/3600)) + TimeTableView.TOP_HEIGHT + 1
@@ -183,6 +197,7 @@ class TimeTableViewCell: UIView
         
         self.backgroundColor = LectureDataManager.shared.GetLecture(id: time.lectureId)?.color
         self.frame = CGRect(x: 0, y: y, width: Int(width-1), height: h)
+        self.date = date
         
         AddLabels(time: time)
     }
@@ -202,15 +217,36 @@ class TimeTableViewCell: UIView
         self.addSubview(nameLabel)
         
         f = self.frame
-        let f0 = nameLabel.frame
+        var f0 = nameLabel.frame
         let label = UILabel(frame:CGRect (x: f.width * 0.05, y: f0.maxY + 2, width: f.width * 0.9, height: floor(f.height*0.5)))
         
         label.font = label.font.withSize(8)
         label.textColor = lecture?.color.mul(n:0.5)
-        label.numberOfLines = 0
         label.text = time.room
-        label.baselineAdjustment = .alignBaselines
         label.sizeToFit()
         self.addSubview(label)
+        
+        for day in time.hyugangDays {
+            if EasyCalendar.IsSameDay(date1: day, date2: self.date) {
+                self.alpha = 0.5
+                label.textColor = UIColor.red
+                label.text = "휴강"
+                break
+            }
+        }
+        
+        if let day = time.bogangDay {
+            if EasyCalendar.IsSameDay(date1: day, date2: self.date) {
+                
+                f0 = label.frame
+                let label = UILabel(frame:CGRect (x: f.width * 0.05, y: f0.minY, width: f.width * 0.9, height: f0.height))
+                
+                label.font = label.font.withSize(8)
+                label.textColor = UIColor(red: 0.3, green: 0.3, blue: 1, alpha: 1)
+                label.textAlignment = .right
+                label.text = "보강"
+                self.addSubview(label)
+            }
+        }
     }
 }

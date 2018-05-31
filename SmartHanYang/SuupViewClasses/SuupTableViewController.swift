@@ -139,6 +139,7 @@ class SuupTableViewController: UITableViewController {
         if i == 0
         {
             let cell = tableView.dequeueReusableCell(withIdentifier: "timetable", for: indexPath) as! TimeTableView
+            cell.DoIt()
             return cell
         }
         

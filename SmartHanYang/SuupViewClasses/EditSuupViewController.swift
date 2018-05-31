@@ -55,8 +55,11 @@ class EditSuupViewController: UIViewController, UITextFieldDelegate
         }
         else if self.mode == .BOGANG
         {
-            let t1 = EasyCalendar.GetDayTimeSecond(date: self.bogangStartTime.date)
-            let t2 = EasyCalendar.GetDayTimeSecond(date: self.bogangEndTime.date)
+            var t1 = EasyCalendar.GetDayTimeSecond(date: self.bogangStartTime.date)
+            var t2 = EasyCalendar.GetDayTimeSecond(date: self.bogangEndTime.date)
+            
+            t1 = t1 - t1%1800
+            t2 = t2 - t2%1800
             
             if t2 <= t1
             {
