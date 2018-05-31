@@ -11,6 +11,21 @@ import UIKit
 
 public class Easy
 {
+    static var GoodColors:[UIColor] = [
+        UIColor(hexString:"#16a085")
+        ,UIColor(hexString:"#f39c12")
+        ,UIColor(hexString:"#27ae60")
+        ,UIColor(hexString:"#d35400")
+        ,UIColor(hexString:"#2980b9")
+        ,UIColor(hexString:"#c0392b")
+        ,UIColor(hexString:"#8e44ad")
+        ,UIColor(hexString:"#34495e")
+    ]
+    
+    public static func GetGoodColor(n:Int)->UIColor {
+        return GoodColors[n%GoodColors.count]
+    }
+    
     public static func TimeToText(time:Int) -> String
     {
         var str = ""
@@ -144,5 +159,10 @@ extension UIColor {
         var fAlpha: CGFloat = 0
         self.getRed(&fRed, green: &fGreen, blue: &fBlue, alpha: &fAlpha)
         return (Float(fRed),Float(fGreen),Float(fBlue))
+    }
+    
+    func mul(n:CGFloat) -> UIColor {
+        let rgb = self.rgb()
+        return UIColor(red: CGFloat(rgb.0) * n, green: CGFloat(rgb.1) * n, blue: CGFloat(rgb.2) * n, alpha: 1)
     }
 }

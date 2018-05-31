@@ -181,7 +181,7 @@ class TimeTableViewCell: UIView
         let y = Int(ceil(hH * CGFloat(time.timeStart-minTime)/3600)) + TimeTableView.TOP_HEIGHT + 1
         let h = Int(ceil(hH * CGFloat(time.timeEnd-time.timeStart)/3600)) - 1
         
-        self.backgroundColor = UIColor.gray
+        self.backgroundColor = LectureDataManager.shared.GetLecture(id: time.lectureId)?.color
         self.frame = CGRect(x: 0, y: y, width: Int(width-1), height: h)
         
         AddLabels(time: time)
@@ -191,12 +191,13 @@ class TimeTableViewCell: UIView
     {
         var f = self.frame
         let nameLabel = UILabel(frame: CGRect(x: f.width * 0.05, y: 2, width: f.width * 0.9, height: CGFloat(floor(f.height*0.5))))
+        let lecture = LectureDataManager.shared.GetLecture(id: time.lectureId)
         
         nameLabel.font = nameLabel.font.withSize(9)
         nameLabel.textColor = UIColor.white
-        nameLabel.lineBreakMode = .byWordWrapping
-        nameLabel.numberOfLines = 5
-        nameLabel.text = LectureDataManager.shared.GetLecture(id: time.lectureId)?.name
+        nameLabel.lineBreakMode = .byCharWrapping
+        nameLabel.numberOfLines = 0
+        nameLabel.text = lecture?.name
         nameLabel.sizeToFit()
         self.addSubview(nameLabel)
         
@@ -205,8 +206,8 @@ class TimeTableViewCell: UIView
         let label = UILabel(frame:CGRect (x: f.width * 0.05, y: f0.maxY + 2, width: f.width * 0.9, height: floor(f.height*0.5)))
         
         label.font = label.font.withSize(8)
-        nameLabel.textColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1.0)
-        label.numberOfLines = 5
+        label.textColor = lecture?.color.mul(n:0.5)
+        label.numberOfLines = 0
         label.text = time.room
         label.baselineAdjustment = .alignBaselines
         label.sizeToFit()

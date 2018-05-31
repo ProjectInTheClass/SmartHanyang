@@ -132,6 +132,7 @@ class Lecture: NSObject, NSCoding
         self.timeTables = []
         self.id = LectureDataManager.shared.GetNewId()
         bogangTimeTables = []
+        self.color = Easy.GetGoodColor(n: self.id)
     }
     
     public func AddTime(day:Int, room:String, timeStart:Double, timeEnd:Double)
@@ -208,7 +209,7 @@ class Lecture: NSObject, NSCoding
     }
     
     func encode(with aCoder: NSCoder) {
-        var rgb = color.rgb()
+        let rgb = color.rgb()
         aCoder.encode(Float(rgb.0), forKey: "r")
         aCoder.encode(Float(rgb.1), forKey: "g")
         aCoder.encode(Float(rgb.2), forKey: "b")
