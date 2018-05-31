@@ -47,6 +47,8 @@ class innerRestaurantManager
                     var haengwonPark = InnerRestaurant(name: "행원파크",
                                                        location: "행원파크 지하 1층",
                                                        openTime: "[교직원코너 및 학생코너] 11:30 ~ 19:00(18:50 주문마감)\n[분식코너] 14:00 ~ 18:00")
+                    //todo 추가적인 데이터파싱이 필요함
+                    
                     innerRestaurants.append(studentRestaurant)
                     innerRestaurants.append(facultyRestaurant)
                     innerRestaurants.append(saragbang)
@@ -77,6 +79,8 @@ class outerRestaurantManager {
             if let unarchArray = NSKeyedUnarchiver.unarchiveObject(withFile: filePath) as? [OuterRstaurant] {
                 outerRestaurants = unarchArray
             } else {
+                outerRestaurants.removeAll()
+                //
                 
             }
         }
