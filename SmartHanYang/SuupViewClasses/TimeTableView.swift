@@ -44,6 +44,9 @@ class TimeTableView: UITableViewCell
             f = CGRect(x: 1+width0+width*CGFloat(i), y: f.minY, width: width-1, height: f.height)
             col.frame = f
             col.backgroundColor = UIColor.white
+            col.subviews.forEach { view in
+                view.removeFromSuperview()
+            }
             
             col.SetDate(date: EasyCalendar.GetDateFromToday(day: i))
             col.AddWeekDayLabel(width: width)
@@ -137,9 +140,6 @@ class TimeTableViewCol: UIStackView
     
     public func Go(width:CGFloat, hourHeight:CGFloat, minTime:Int, maxTime:Int)
     {
-        self.subviews.forEach { view in
-            view.removeFromSuperview()
-        }
         
         let hH = Int(hourHeight)
         var t = minTime
@@ -149,10 +149,12 @@ class TimeTableViewCol: UIStackView
             {
                 let t2 = min(time.timeStart, t + 3600)
                 
-                let v = UIView(frame: CGRect(x: 0, y: 1+TimeTableView.TOP_HEIGHT + Int(hH*(t-minTime)/3600), width: Int(width-1), height: Int(hH*(t2-t)/3600) - 1))
+                let h = Int(ceil(hourHeight*CGFloat(t2-t)/3600)) - 1
+                
+                let v = UIView(frame: CGRect(x: 0, y: 1+TimeTableView.TOP_HEIGHT + Int(hH*(t-minTime)/3600), width: Int(width-1), height: h))
                 v.backgroundColor = UIColor.white
                 self.addSubview(v)
-                t = t2
+                t = t2 - t2%1800
             }
             
             let view = TimeTableViewCell()
@@ -166,10 +168,12 @@ class TimeTableViewCol: UIStackView
             var t2 = min(maxTime, t + 3600)
             t2 -= t2%3600
             
-            let v = UIView(frame: CGRect(x: 0, y: 1+TimeTableView.TOP_HEIGHT + Int(hH*(t-minTime)/3600), width: Int(width-1), height: Int(hH*(t2-t)/3600) - 1))
+            let h = Int(ceil(hourHeight*CGFloat(t2-t)/3600)) - 1
+            
+            let v = UIView(frame: CGRect(x: 0, y: 1+TimeTableView.TOP_HEIGHT + Int(hH*(t-minTime)/3600), width: Int(width-1), height: h))
             v.backgroundColor = UIColor.white
             self.addSubview(v)
-            t = t2
+            t = t2 - t2%1800
         }
     }
     
@@ -191,9 +195,14 @@ class TimeTableViewCell: UIView
     
     public func Init(width:CGFloat, hourHeight:CGFloat, time:LectureTimeTable, minTime:Int, date:Date)
     {
-        let hH = ceil(hourHeight)
-        let y = Int(ceil(hH * CGFloat(time.timeStart-minTime)/3600)) + TimeTableView.TOP_HEIGHT + 1
-        let h = Int(ceil(hH * CGFloat(time.timeEnd-time.timeStart)/3600)) - 1
+        
+        
+        var y = Int(hourHeight * CGFloat(time.timeStart-minTime)/3600) + TimeTableView.TOP_HEIGHT + 1
+        var h = Int(ceil(hourHeight * CGFloat(time.timeEnd-time.timeStart)/3600)) - 1
+        if(time.timeStart%3600 != 0){
+            h-=1
+            y+=1
+        }
         
         self.backgroundColor = LectureDataManager.shared.GetLecture(id: time.lectureId)?.color
         self.frame = CGRect(x: 0, y: y, width: Int(width-1), height: h)
