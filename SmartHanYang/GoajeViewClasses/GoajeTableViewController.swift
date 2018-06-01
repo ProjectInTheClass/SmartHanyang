@@ -2,25 +2,21 @@
 //  GoajeTableViewController.swift
 //  SmartHanYang
 //
-//  Created by 현경우 on 2018. 5. 24..
+//  Created by gameegg on 2018. 6. 1..
 //  Copyright © 2018년 graph. All rights reserved.
 //
 
 import UIKit
 
-class GoajeTableViewController: UITableViewController, SaveGoajae {
+class GoajeTableViewController: UITableViewController {
     
-    var goajaes:[Goajae] = []
+    var goajes:[Goaje] = []
     
     @IBOutlet var tableOutlet: UITableView!
     
 
     override func viewDidLoad() {
-        goajaes.append(Goajae(title: "first"))
-        goajaes.append(Goajae(title: "second"))
-        
-        
-        goajaes = GoajaeDataManager.shared.GetGoajaes()
+        goajes = GoajeDataManager.shared.GetGoajes()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -39,7 +35,7 @@ class GoajeTableViewController: UITableViewController, SaveGoajae {
     
     func deleteAction(at indexPath: IndexPath) -> UIContextualAction {
         let action = UIContextualAction(style: .destructive, title: "삭제") {(action, view, completion) in
-            self.goajaes.remove(at: indexPath.row)
+            self.goajes.remove(at: indexPath.row)
             self.tableView.deleteRows(at: [indexPath], with: .automatic)
             completion(true)
         }
@@ -57,7 +53,7 @@ class GoajeTableViewController: UITableViewController, SaveGoajae {
     
     func completeAction(at indexPath: IndexPath) -> UIContextualAction{
         let action = UIContextualAction(style: .destructive, title: "완성") {(action, view, completion) in
-            self.goajaes.remove(at: indexPath.row)
+            self.goajes.remove(at: indexPath.row)
             self.tableView.deleteRows(at: [indexPath], with: .automatic)
             completion(true)
         }
@@ -70,40 +66,20 @@ class GoajeTableViewController: UITableViewController, SaveGoajae {
         // Dispose of any resources that can be recreated.
     }
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return goajaes.count
+        return goajes.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "goajaeCell", for: indexPath) as! GoajaeTableViewCell
-        cell.titleLabel.text = goajaes[indexPath.row].title
+        let cell = tableView.dequeueReusableCell(withIdentifier: "goajeCell", for: indexPath) as! GoajeTableViewCell
+        //cell.titleLabel.text = goajaes[indexPath.row].title
         //cell.timeLabel.text = "2018년 5월 1일"
         return cell
     }
     
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let vc = segue.destination as! SaveGoajaeController
-        vc.delegate = self
-        
-    }
-    func saveGoajae(title: String) {
-        goajaes.append(Goajae(title: title))
-        tableOutlet.reloadData()
-    }
     // MARK: - Table view data source
 
-
-    /*override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
-    }*/
 
     
     /*override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

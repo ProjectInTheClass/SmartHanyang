@@ -8,5 +8,6 @@ target 'SmartHanYang' do
 
   # Pods for SmartHanYang
 	pod 'WKZombie'	
+	pod 'BEMCheckBox'
 
 end

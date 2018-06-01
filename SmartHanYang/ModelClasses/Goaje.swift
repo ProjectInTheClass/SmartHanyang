@@ -9,7 +9,7 @@
 import Foundation
 
 
-public class Goajae
+public class Goaje
 {
     var id:Int
     var title:String

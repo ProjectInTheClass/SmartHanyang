@@ -1,20 +1,24 @@
 PODS:
+  - BEMCheckBox (1.4.1)
   - hpple (0.2.0)
   - WKZombie (1.1.1):
     - hpple (= 0.2.0)
 
 DEPENDENCIES:
+  - BEMCheckBox
   - WKZombie
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - BEMCheckBox
     - hpple
     - WKZombie
 
 SPEC CHECKSUMS:
+  BEMCheckBox: 5ba6e37ade3d3657b36caecc35c8b75c6c2b1a4e
   hpple: 3b765f96fc2cd56ad1a49aef6f7be5cb2aa64b57
   WKZombie: 345930c44980d4d3529d5b54b131df0dc04bbb0a
 
-PODFILE CHECKSUM: 1856b7dc9eaf2f2108191d7551834d5763b0c8e7
+PODFILE CHECKSUM: 22551fea584a8f92b04552301715f8867ee0777c
 
 COCOAPODS: 1.5.2

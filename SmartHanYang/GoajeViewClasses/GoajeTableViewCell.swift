@@ -2,15 +2,15 @@
 //  GoajaeTableViewCell.swift
 //  SmartHanYang
 //
-//  Created by 현경우 on 2018. 5. 21..
+//  Created by gameegg on 2018. 6. 1..
 //  Copyright © 2018년 graph. All rights reserved.
 //
 
 import UIKit
 
-class GoajaeTableViewCell: UITableViewCell {
+class GoajeTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var titleLabel: UILabel!
+    //@IBOutlet weak var titleLabel: UILabel!
     //IBOutlet weak var timeLabel: UILabel!
     
     

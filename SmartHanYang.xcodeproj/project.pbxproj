@@ -12,12 +12,12 @@
 		6F8DD1DF20BF7FFE00525298 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F8DD1DE20BF7FFE00525298 /* Meal.swift */; };
 		6F8DD1E120BF867B00525298 /* InnerRestaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F8DD1E020BF867B00525298 /* InnerRestaurant.swift */; };
 		6F8DD1E320BF95F400525298 /* ResataurantManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F8DD1E220BF95F400525298 /* ResataurantManager.swift */; };
-		E300793B20BA72550089A9D7 /* GoajaeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E300793820BA72540089A9D7 /* GoajaeTableViewCell.swift */; };
+		E300793B20BA72550089A9D7 /* GoajeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E300793820BA72540089A9D7 /* GoajeTableViewCell.swift */; };
 		E300793C20BA72550089A9D7 /* SaveGoajaeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E300793920BA72550089A9D7 /* SaveGoajaeController.swift */; };
 		E300793D20BA72550089A9D7 /* GoajeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E300793A20BA72550089A9D7 /* GoajeTableViewController.swift */; };
 		F90FB8EE20A8DC02001077E9 /* LectureDataMager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90FB8ED20A8DC02001077E9 /* LectureDataMager.swift */; };
-		F90FB8F020A8EB2C001077E9 /* Goajae.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90FB8EF20A8EB2C001077E9 /* Goajae.swift */; };
-		F90FB8F220A8EB6C001077E9 /* GoajaeDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90FB8F120A8EB6C001077E9 /* GoajaeDataManager.swift */; };
+		F90FB8F020A8EB2C001077E9 /* Goaje.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90FB8EF20A8EB2C001077E9 /* Goaje.swift */; };
+		F90FB8F220A8EB6C001077E9 /* GoajeDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90FB8F120A8EB6C001077E9 /* GoajeDataManager.swift */; };
 		F90FB8F420A912A0001077E9 /* GonggangCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90FB8F320A912A0001077E9 /* GonggangCell.swift */; };
 		F910BA7620A448EC00E15F90 /* SuupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F910BA7520A448EC00E15F90 /* SuupTableViewCell.swift */; };
 		F91DCFDA20A57F42003A4161 /* Suup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F91DCFD820A57F42003A4161 /* Suup.storyboard */; };
@@ -48,12 +48,12 @@
 		6F8DD1E220BF95F400525298 /* ResataurantManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResataurantManager.swift; sourceTree = "<group>"; };
 		88313F3567C407636023779F /* Pods-SmartHanYang.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartHanYang.release.xcconfig"; path = "Pods/Target Support Files/Pods-SmartHanYang/Pods-SmartHanYang.release.xcconfig"; sourceTree = "<group>"; };
 		CA3DD5FE608F5E983A631046 /* Pods-SmartHanYang.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartHanYang.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SmartHanYang/Pods-SmartHanYang.debug.xcconfig"; sourceTree = "<group>"; };
-		E300793820BA72540089A9D7 /* GoajaeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GoajaeTableViewCell.swift; path = GoajeViewClasses/GoajaeTableViewCell.swift; sourceTree = "<group>"; };
+		E300793820BA72540089A9D7 /* GoajeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GoajeTableViewCell.swift; path = GoajeViewClasses/GoajeTableViewCell.swift; sourceTree = "<group>"; };
 		E300793920BA72550089A9D7 /* SaveGoajaeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SaveGoajaeController.swift; path = GoajeViewClasses/SaveGoajaeController.swift; sourceTree = "<group>"; };
 		E300793A20BA72550089A9D7 /* GoajeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GoajeTableViewController.swift; path = GoajeViewClasses/GoajeTableViewController.swift; sourceTree = "<group>"; };
 		F90FB8ED20A8DC02001077E9 /* LectureDataMager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureDataMager.swift; sourceTree = "<group>"; };
-		F90FB8EF20A8EB2C001077E9 /* Goajae.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goajae.swift; sourceTree = "<group>"; };
-		F90FB8F120A8EB6C001077E9 /* GoajaeDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoajaeDataManager.swift; sourceTree = "<group>"; };
+		F90FB8EF20A8EB2C001077E9 /* Goaje.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goaje.swift; sourceTree = "<group>"; };
+		F90FB8F120A8EB6C001077E9 /* GoajeDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoajeDataManager.swift; sourceTree = "<group>"; };
 		F90FB8F320A912A0001077E9 /* GonggangCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GonggangCell.swift; sourceTree = "<group>"; };
 		F910BA7520A448EC00E15F90 /* SuupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuupTableViewCell.swift; sourceTree = "<group>"; };
 		F91DCFD920A57F42003A4161 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = SmartHanYang/Base.lproj/Suup.storyboard; sourceTree = "<group>"; };
@@ -118,13 +118,6 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		E338217920B696D4008FF652 /* GoajeViewClasses */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = GoajeViewClasses;
-			sourceTree = "<group>";
-		};
 		F910BA7420A448CA00E15F90 /* SuupViewClasses */ = {
 			isa = PBXGroup;
 			children = (
@@ -185,8 +178,7 @@
 		F96DFB9020A42E4300997614 /* SmartHanYang */ = {
 			isa = PBXGroup;
 			children = (
-				E338217920B696D4008FF652 /* GoajeViewClasses */,
-				E300793820BA72540089A9D7 /* GoajaeTableViewCell.swift */,
+				E300793820BA72540089A9D7 /* GoajeTableViewCell.swift */,
 				E300793A20BA72550089A9D7 /* GoajeTableViewController.swift */,
 				E300793920BA72550089A9D7 /* SaveGoajaeController.swift */,
 				F91DCFDF20A5884B003A4161 /* Parsing */,
@@ -205,8 +197,8 @@
 			children = (
 				F96DFBAC20A4467C00997614 /* Lecture.swift */,
 				F90FB8ED20A8DC02001077E9 /* LectureDataMager.swift */,
-				F90FB8EF20A8EB2C001077E9 /* Goajae.swift */,
-				F90FB8F120A8EB6C001077E9 /* GoajaeDataManager.swift */,
+				F90FB8EF20A8EB2C001077E9 /* Goaje.swift */,
+				F90FB8F120A8EB6C001077E9 /* GoajeDataManager.swift */,
 			);
 			path = ModelClasses;
 			sourceTree = "<group>";
@@ -308,11 +300,13 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SmartHanYang/Pods-SmartHanYang-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BEMCheckBox/BEMCheckBox.framework",
 				"${BUILT_PRODUCTS_DIR}/WKZombie/WKZombie.framework",
 				"${BUILT_PRODUCTS_DIR}/hpple/hpple.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BEMCheckBox.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WKZombie.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/hpple.framework",
 			);
@@ -328,13 +322,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F90FB8F020A8EB2C001077E9 /* Goajae.swift in Sources */,
+				F90FB8F020A8EB2C001077E9 /* Goaje.swift in Sources */,
 				F90FB8EE20A8DC02001077E9 /* LectureDataMager.swift in Sources */,
 				F96DFB9420A42E4300997614 /* ViewController.swift in Sources */,
-				E300793B20BA72550089A9D7 /* GoajaeTableViewCell.swift in Sources */,
+				E300793B20BA72550089A9D7 /* GoajeTableViewCell.swift in Sources */,
 				6F8DD1DF20BF7FFE00525298 /* Meal.swift in Sources */,
 				F910BA7620A448EC00E15F90 /* SuupTableViewCell.swift in Sources */,
-				F90FB8F220A8EB6C001077E9 /* GoajaeDataManager.swift in Sources */,
+				F90FB8F220A8EB6C001077E9 /* GoajeDataManager.swift in Sources */,
 				6F8DD1E120BF867B00525298 /* InnerRestaurant.swift in Sources */,
 				6F8DD1E320BF95F400525298 /* ResataurantManager.swift in Sources */,
 				F91DCFE520A58D10003A4161 /* ParseJson.swift in Sources */,

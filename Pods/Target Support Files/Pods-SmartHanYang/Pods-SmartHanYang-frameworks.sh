@@ -143,10 +143,12 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/BEMCheckBox/BEMCheckBox.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/WKZombie/WKZombie.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/hpple/hpple.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/BEMCheckBox/BEMCheckBox.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/WKZombie/WKZombie.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/hpple/hpple.framework"
 fi

@@ -70,15 +70,4 @@ class GonggangCell: UITableViewCell
             progressBar.progress = Float(t-time1.timeEnd)/Float(time2.timeStart-time1.timeEnd)
         }
     }
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        
-        // Configure the view for the selected state
-    }
 }

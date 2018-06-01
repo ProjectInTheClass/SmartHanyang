@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         LectureDataManager.shared.Load()
-        GoajaeDataManager.shared.Load()
+        GoajeDataManager.shared.Load()
         
         return true
     }
