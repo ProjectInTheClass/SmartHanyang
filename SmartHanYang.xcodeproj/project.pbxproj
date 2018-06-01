@@ -48,9 +48,9 @@
 		6F8DD1E220BF95F400525298 /* ResataurantManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResataurantManager.swift; sourceTree = "<group>"; };
 		88313F3567C407636023779F /* Pods-SmartHanYang.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartHanYang.release.xcconfig"; path = "Pods/Target Support Files/Pods-SmartHanYang/Pods-SmartHanYang.release.xcconfig"; sourceTree = "<group>"; };
 		CA3DD5FE608F5E983A631046 /* Pods-SmartHanYang.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartHanYang.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SmartHanYang/Pods-SmartHanYang.debug.xcconfig"; sourceTree = "<group>"; };
-		E300793820BA72540089A9D7 /* GoajeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GoajeTableViewCell.swift; path = GoajeViewClasses/GoajeTableViewCell.swift; sourceTree = "<group>"; };
-		E300793920BA72550089A9D7 /* SaveGoajaeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SaveGoajaeController.swift; path = GoajeViewClasses/SaveGoajaeController.swift; sourceTree = "<group>"; };
-		E300793A20BA72550089A9D7 /* GoajeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GoajeTableViewController.swift; path = GoajeViewClasses/GoajeTableViewController.swift; sourceTree = "<group>"; };
+		E300793820BA72540089A9D7 /* GoajeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoajeTableViewCell.swift; sourceTree = "<group>"; };
+		E300793920BA72550089A9D7 /* SaveGoajaeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveGoajaeController.swift; sourceTree = "<group>"; };
+		E300793A20BA72550089A9D7 /* GoajeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoajeTableViewController.swift; sourceTree = "<group>"; };
 		F90FB8ED20A8DC02001077E9 /* LectureDataMager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureDataMager.swift; sourceTree = "<group>"; };
 		F90FB8EF20A8EB2C001077E9 /* Goaje.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goaje.swift; sourceTree = "<group>"; };
 		F90FB8F120A8EB6C001077E9 /* GoajeDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoajeDataManager.swift; sourceTree = "<group>"; };
@@ -178,9 +178,7 @@
 		F96DFB9020A42E4300997614 /* SmartHanYang */ = {
 			isa = PBXGroup;
 			children = (
-				E300793820BA72540089A9D7 /* GoajeTableViewCell.swift */,
-				E300793A20BA72550089A9D7 /* GoajeTableViewController.swift */,
-				E300793920BA72550089A9D7 /* SaveGoajaeController.swift */,
+				F9D0D5E520C1369B0039BA67 /* GoajeViewClasses */,
 				F91DCFDF20A5884B003A4161 /* Parsing */,
 				F910BA7420A448CA00E15F90 /* SuupViewClasses */,
 				F96DFBAB20A4466400997614 /* ModelClasses */,
@@ -201,6 +199,17 @@
 				F90FB8F120A8EB6C001077E9 /* GoajeDataManager.swift */,
 			);
 			path = ModelClasses;
+			sourceTree = "<group>";
+		};
+		F9D0D5E520C1369B0039BA67 /* GoajeViewClasses */ = {
+			isa = PBXGroup;
+			children = (
+				E300793820BA72540089A9D7 /* GoajeTableViewCell.swift */,
+				E300793A20BA72550089A9D7 /* GoajeTableViewController.swift */,
+				E300793920BA72550089A9D7 /* SaveGoajaeController.swift */,
+			);
+			name = GoajeViewClasses;
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

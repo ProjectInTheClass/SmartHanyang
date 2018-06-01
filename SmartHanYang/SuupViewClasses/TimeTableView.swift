@@ -90,7 +90,7 @@ class TimeTableView: UITableViewCell
             view.removeFromSuperview()
         }
         
-        let rowCount = Int((endT - startT)/3600)
+        let rowCount = max(1,Int((endT - startT)/3600))
         let w = Int(width)
         
         let view = UIView(frame:CGRect(x: 0, y: 0, width: w, height:TimeTableView.TOP_HEIGHT))

@@ -37,6 +37,17 @@ public class Easy
         return str
     }
     
+    public static func DateToText(date:Date) -> String
+    {
+        var c = EasyCalendar.GetAllComponents(date: date)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy.MM.dd"
+        let s = dateFormatter.string(from: date)
+        
+        let str = "\(s)(\(WeekdayToString(weekDay: c.weekday!)))"
+        return str
+    }
+    
     public static func WeekdayToString(weekDay:Int) -> String
     {
         switch weekDay {
@@ -115,12 +126,17 @@ public class EasyCalendar
     {
         let cal = CurrentCalendar()
         
-        let date1_ = cal.startOfDay(for: date1)
-        let date2_ = cal.startOfDay(for: date2)
-        
         let components = cal.dateComponents([.day], from: date1, to: date2)
         
         return components.day == 0
+    }
+    
+    public static func DDay(from:Date,to:Date) -> Int
+    {
+        let c = CurrentCalendar()
+        let dc = c.dateComponents([.day], from:from, to: to)
+        
+        return dc.day ?? 0
     }
 }
 

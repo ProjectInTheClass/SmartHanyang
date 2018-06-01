@@ -6,6 +6,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -14,45 +16,79 @@
         <scene sceneID="CBb-uj-5j8">
             <objects>
                 <viewController id="TVY-mk-TrO" userLabel="과제" customClass="GoajeTableViewController" customModule="SmartHanYang" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="UHf-mr-tUb">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="UHf-mr-tUb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="goajeCell" rowHeight="70" id="H5U-c5-raF" userLabel="goajeCell" customClass="GoajeTableViewCell" customModule="SmartHanYang" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="70"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="goajeCell" rowHeight="60" id="H5U-c5-raF" userLabel="goajeCell" customClass="GoajeTableViewCell" customModule="SmartHanYang" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="H5U-c5-raF" id="qx3-HC-MDV">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="69.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2018.6.22 마감" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6zR-ML-Mfu" userLabel="time">
-                                            <rect key="frame" x="236" y="35" width="131" height="34"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="소스튜 과제" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A2q-Fe-rxA" userLabel="title">
+                                            <rect key="frame" x="60" y="7" width="262.5" height="29.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mES-KG-0ru">
-                                            <rect key="frame" x="163" y="7" width="49" height="31"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </switch>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="소스튜 과제" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A2q-Fe-rxA" userLabel="title">
-                                            <rect key="frame" x="40" y="3" width="345" height="35"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="D-1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pVE-gd-B6w" userLabel="dDay">
+                                            <rect key="frame" x="304" y="7" width="56" height="29.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="소프트웨어스튜디오1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I8O-tA-ma0" userLabel="time">
-                                            <rect key="frame" x="40" y="32" width="131" height="34"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="소프트웨어스튜디오1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I8O-tA-ma0" userLabel="lectureName">
+                                            <rect key="frame" x="60" y="39" width="375" height="17.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2018.6.22 마감" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6zR-ML-Mfu" userLabel="date">
+                                            <rect key="frame" x="247.5" y="39" width="112.5" height="17.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PHa-ib-YmR" userLabel="checkbox" customClass="BEMCheckBox">
+                                            <rect key="frame" x="18" y="18" width="23.5" height="23.5"/>
+                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="PHa-ib-YmR" secondAttribute="height" multiplier="1:1" id="EAD-Z5-MLg"/>
+                                            </constraints>
+                                        </view>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="pVE-gd-B6w" firstAttribute="height" secondItem="qx3-HC-MDV" secondAttribute="height" multiplier="0.5" id="11g-Pa-5tM"/>
+                                        <constraint firstItem="PHa-ib-YmR" firstAttribute="height" secondItem="qx3-HC-MDV" secondAttribute="height" multiplier="0.4" id="2pe-VF-NqP"/>
+                                        <constraint firstItem="A2q-Fe-rxA" firstAttribute="height" secondItem="qx3-HC-MDV" secondAttribute="height" multiplier="0.5" id="52J-7C-fGn"/>
+                                        <constraint firstItem="A2q-Fe-rxA" firstAttribute="width" secondItem="qx3-HC-MDV" secondAttribute="width" multiplier="0.7" id="5k0-H4-TwR"/>
+                                        <constraint firstItem="6zR-ML-Mfu" firstAttribute="width" secondItem="qx3-HC-MDV" secondAttribute="width" multiplier="0.3" id="Gb7-6W-wVu"/>
+                                        <constraint firstItem="I8O-tA-ma0" firstAttribute="height" secondItem="qx3-HC-MDV" secondAttribute="height" multiplier="0.3" id="M6F-19-Yiy"/>
+                                        <constraint firstItem="A2q-Fe-rxA" firstAttribute="leading" secondItem="qx3-HC-MDV" secondAttribute="leading" constant="60" id="MI7-32-wCY"/>
+                                        <constraint firstItem="PHa-ib-YmR" firstAttribute="leading" secondItem="qx3-HC-MDV" secondAttribute="leading" constant="18" id="MZ9-fC-hgg"/>
+                                        <constraint firstItem="6zR-ML-Mfu" firstAttribute="centerY" secondItem="qx3-HC-MDV" secondAttribute="centerY" constant="18" id="NVT-va-fBj"/>
+                                        <constraint firstItem="6zR-ML-Mfu" firstAttribute="trailing" secondItem="qx3-HC-MDV" secondAttribute="trailing" constant="-15" id="OhY-hl-ZOs"/>
+                                        <constraint firstItem="PHa-ib-YmR" firstAttribute="centerY" secondItem="qx3-HC-MDV" secondAttribute="centerY" id="XMU-PQ-e9C"/>
+                                        <constraint firstItem="I8O-tA-ma0" firstAttribute="leading" secondItem="qx3-HC-MDV" secondAttribute="leading" constant="60" id="cUd-HG-q7U"/>
+                                        <constraint firstItem="I8O-tA-ma0" firstAttribute="width" secondItem="qx3-HC-MDV" secondAttribute="width" id="cd2-4q-S8i"/>
+                                        <constraint firstItem="pVE-gd-B6w" firstAttribute="trailing" secondItem="qx3-HC-MDV" secondAttribute="trailing" constant="-15" id="gl5-20-TlF"/>
+                                        <constraint firstItem="pVE-gd-B6w" firstAttribute="width" secondItem="qx3-HC-MDV" secondAttribute="width" multiplier="0.15" id="hvh-jk-Ca9"/>
+                                        <constraint firstItem="6zR-ML-Mfu" firstAttribute="height" secondItem="qx3-HC-MDV" secondAttribute="height" multiplier="0.3" id="oad-Ps-WBa"/>
+                                        <constraint firstItem="A2q-Fe-rxA" firstAttribute="centerY" secondItem="qx3-HC-MDV" secondAttribute="centerY" constant="-8" id="qei-yh-v8J"/>
+                                        <constraint firstItem="I8O-tA-ma0" firstAttribute="centerY" secondItem="qx3-HC-MDV" secondAttribute="centerY" constant="18" id="u1f-Zy-cO9"/>
+                                        <constraint firstItem="pVE-gd-B6w" firstAttribute="centerY" secondItem="qx3-HC-MDV" secondAttribute="centerY" constant="-8" id="zgG-nx-Ad6"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="checkbox" destination="PHa-ib-YmR" id="SSw-AQ-n6o"/>
+                                    <outlet property="dDayLabel" destination="pVE-gd-B6w" id="6cv-PI-0tF"/>
+                                    <outlet property="dateLabel" destination="6zR-ML-Mfu" id="8O6-qe-FaO"/>
+                                    <outlet property="lectureNameLabel" destination="I8O-tA-ma0" id="gh1-eA-WYR"/>
+                                    <outlet property="titleLabel" destination="A2q-Fe-rxA" id="r3i-4k-Sil"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

@@ -73,8 +73,9 @@ class GoajeTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "goajeCell", for: indexPath) as! GoajeTableViewCell
-        //cell.titleLabel.text = goajaes[indexPath.row].title
-        //cell.timeLabel.text = "2018년 5월 1일"
+        
+        cell.SetGoaje(goaje: goajes[indexPath[1]])
+        
         return cell
     }
     
