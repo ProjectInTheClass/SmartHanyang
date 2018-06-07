@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ph5-zV-aTs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ph5-zV-aTs">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -15,11 +15,13 @@
         <scene sceneID="aTU-X3-hhu">
             <objects>
                 <navigationController id="Ph5-zV-aTs" userLabel="수업" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="수업" id="3S8-a8-rum" userLabel="수업"/>
+                    <tabBarItem key="tabBarItem" title="수업" image="icons8-class-30" id="3S8-a8-rum" userLabel="수업"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iY1-rv-QA4">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="iY1-rv-QA4">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.51764705879999995" green="0.89019607840000003" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.51764705879999995" green="0.89019607840000003" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="FAZ-ZB-bDh" kind="relationship" relationship="rootViewController" id="oOs-R9-b9T"/>
@@ -34,7 +36,7 @@
             <objects>
                 <tableViewController title="Suup" id="FAZ-ZB-bDh" customClass="SuupTableViewController" customModule="SmartHanYang" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" contentInsetAdjustmentBehavior="always" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="pcB-Bw-vPM">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
@@ -213,6 +215,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="수업 목록" id="WpS-Re-V2Q">
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="compose" id="2pE-it-Tna">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <segue destination="knN-vv-he9" kind="presentation" id="dQT-UG-HCZ"/>
                             </connections>
@@ -389,4 +392,8 @@
             <point key="canvasLocation" x="856.875" y="28.52112676056338"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icons8-class-30" width="30" height="30"/>
+    </resources>
+    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>
