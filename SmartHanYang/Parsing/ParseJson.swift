@@ -53,7 +53,15 @@ func ParseJson(json:String, yoil:Int)
                 
             case Tags.classroom:
                 var substrings: [String] = substring.components(separatedBy: [" "])
-                substring = substrings[1] + " " + substrings[2]
+                substrings.removeFirst()
+                substring = "";
+                for str in substrings {
+                    substring = "\(substring) \(str)"
+                }
+                substring.removeFirst()
+                substring = substring.replacingOccurrences(of: "강의실", with: "")
+                substring = substring.replacingOccurrences(of: "IT.BT관", with: "IT/BT")
+                substring = substring.replacingOccurrences(of: "정석현 ", with: "")
                 lec.classroom = substring
             case .startTime:
                 var timestr:String = substring.replacingOccurrences(of: ":", with:".")

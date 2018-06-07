@@ -19,7 +19,7 @@ public class Easy
         ,UIColor(hexString:"#2980b9")
         ,UIColor(hexString:"#c0392b")
         ,UIColor(hexString:"#8e44ad")
-        ,UIColor(hexString:"#34495e")
+        ,UIColor(hexString:"#44596e")
     ]
     
     public static func GetGoodColor(n:Int)->UIColor {
@@ -137,6 +137,13 @@ public class EasyCalendar
         let dc = c.dateComponents([.day], from:from, to: to)
         
         return dc.day ?? 0
+    }
+}
+
+
+extension URLRequest {
+    static func allowsAnyHTTPSCertificateForHost (host : String) -> Bool {
+        return true
     }
 }
 

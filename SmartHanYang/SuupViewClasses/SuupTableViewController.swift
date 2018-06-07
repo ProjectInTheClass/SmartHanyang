@@ -16,7 +16,9 @@ class SuupTableViewController: UITableViewController {
         
         LectureDataManager.shared.addUpdateEventListener {
             self.update()
-            self.tableView.reloadData()
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
         }
         
         super.viewDidLoad()
@@ -48,8 +50,10 @@ class SuupTableViewController: UITableViewController {
             prev = l
         }
         
-        tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 44
+        DispatchQueue.main.async {
+            self.tableView.rowHeight = UITableViewAutomaticDimension
+            self.tableView.estimatedRowHeight = 44
+        }
     }
 
     override func didReceiveMemoryWarning() {

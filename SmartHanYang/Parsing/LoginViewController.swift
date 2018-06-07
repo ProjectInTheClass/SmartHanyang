@@ -57,7 +57,6 @@ class LoginViewController : UIViewController {
         {
             let my_yoil = yoil
             
-            let date = Date()
             var cal = Calendar.current
             cal.timeZone = .current
             
@@ -66,6 +65,7 @@ class LoginViewController : UIViewController {
                 request.httpMethod = "GET"
                 request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
                 request.setValue(cookie, forHTTPHeaderField: "Cookie")
+                
                 
                 let session = URLSession.shared
                 session.dataTask(with: request, completionHandler: { (returnData, response, error) -> Void in
