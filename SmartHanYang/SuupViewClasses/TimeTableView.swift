@@ -231,6 +231,8 @@ class TimeTableViewCell: UIView
         
         label.font = label.font.withSize(8)
         label.textColor = lecture?.color.mul(n:0.5)
+        label.lineBreakMode = .byCharWrapping
+        label.numberOfLines = 0
         label.text = time.room
         label.sizeToFit()
         self.addSubview(label)

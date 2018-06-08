@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Qbd-cK-E6R">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Qbd-cK-E6R">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -98,10 +97,9 @@
                     </tableView>
                     <tabBarItem key="tabBarItem" title="과제" id="l9b-hX-6uf" userLabel="과제"/>
                     <navigationItem key="navigationItem" title="과제 목록" id="XGN-YX-329">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="HKB-O6-gnd">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="compose" id="HKB-O6-gnd">
                             <connections>
-                                <segue destination="Czv-tf-2UC" kind="show" id="4uG-Qi-avm"/>
+                                <segue destination="Czv-tf-2UC" kind="presentation" id="Ve7-39-Hwp"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -114,77 +112,101 @@
             </objects>
             <point key="canvasLocation" x="1712.8" y="-107.49625187406298"/>
         </scene>
-        <!--과제 추가-->
+        <!--Add Goaje View Controller-->
         <scene sceneID="28i-YP-7Jo">
             <objects>
-                <viewController id="Czv-tf-2UC" customClass="SaveGoajaeController" customModule="SmartHanYang" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Jcu-nV-ifO">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <viewController storyboardIdentifier="addGoajeView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Czv-tf-2UC" customClass="AddGoajeViewController" customModule="SmartHanYang" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6Am-Mc-KL4" customClass="GoajeTableViewCell" customModule="SmartHanYang" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="제목" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6K2-8P-Yzg">
-                                <rect key="frame" x="16" y="72" width="30" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2wl-p8-Oac">
-                                <rect key="frame" x="16" y="101" width="343" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="디테일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tL1-p5-LPV">
-                                <rect key="frame" x="16" y="139" width="45" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="자세히..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="mF0-Ox-VQT">
-                                <rect key="frame" x="16" y="168" width="343" height="188"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <datePicker contentMode="scaleToFill" verticalHuggingPriority="247" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="30" translatesAutoresizingMaskIntoConstraints="NO" id="EBC-TF-gHR">
+                                <rect key="frame" x="0.0" y="473" width="375" height="194"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="마감일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TiZ-7m-Bit">
-                                <rect key="frame" x="19" y="364" width="45" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <date key="date" timeIntervalSinceReferenceDate="548055037.78634202">
+                                    <!--2018-05-15 05:30:37 +0000-->
+                                </date>
+                                <locale key="locale" localeIdentifier="ko"/>
+                            </datePicker>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Lh-ck-VLc">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="과제 추가" id="X4G-J4-h85">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="WW7-Dy-df5">
+                                            <connections>
+                                                <action selector="Cancel" destination="Czv-tf-2UC" id="lcj-5c-raR"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="tKC-uM-RBy">
+                                            <connections>
+                                                <action selector="Done" destination="Czv-tf-2UC" id="L3c-lb-Qhw"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="과제 이름" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LMu-2h-pVc" userLabel="과제이름적기">
+                                <rect key="frame" x="0.0" y="100" width="375" height="45.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="과제 이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4al-gs-Aph" userLabel="과제이름">
+                                <rect key="frame" x="10" y="74" width="64" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aZo-1R-bZp">
-                                <rect key="frame" x="19" y="393" width="340" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="과목" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rdt-DR-gW5" userLabel="과목">
+                                <rect key="frame" x="10" y="174" width="30" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="shf-N1-hPf" userLabel="LecturePicker" customClass="LecturePicker" customModule="SmartHanYang" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="200" width="375" height="162"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <accessibility key="accessibilityConfiguration" label="ㅁㄴㅇㄹ"/>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="기한" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cN7-Px-EcK">
+                                <rect key="frame" x="10" y="447" width="30" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="g3L-YL-0kI"/>
+                        <color key="backgroundColor" red="0.97969543147208127" green="0.97969543147208127" blue="0.97969543147208127" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="shf-N1-hPf" firstAttribute="height" secondItem="e33-nU-gDj" secondAttribute="height" multiplier="0.25" id="16S-Vo-4Jd"/>
+                            <constraint firstItem="4al-gs-Aph" firstAttribute="bottom" secondItem="LMu-2h-pVc" secondAttribute="top" constant="-5" id="3Oh-k9-KYe"/>
+                            <constraint firstItem="Rdt-DR-gW5" firstAttribute="leading" secondItem="shf-N1-hPf" secondAttribute="leading" constant="10" id="9Gz-wM-oEp"/>
+                            <constraint firstItem="EBC-TF-gHR" firstAttribute="bottom" secondItem="e33-nU-gDj" secondAttribute="bottom" id="9pF-rS-EdI"/>
+                            <constraint firstItem="4al-gs-Aph" firstAttribute="leading" secondItem="LMu-2h-pVc" secondAttribute="leading" constant="10" id="GeB-cs-1gh"/>
+                            <constraint firstItem="shf-N1-hPf" firstAttribute="top" secondItem="LMu-2h-pVc" secondAttribute="top" constant="100" id="LVp-O3-GWp"/>
+                            <constraint firstItem="Rdt-DR-gW5" firstAttribute="bottom" secondItem="shf-N1-hPf" secondAttribute="top" constant="-5" id="ReM-qh-2uj"/>
+                            <constraint firstItem="6Lh-ck-VLc" firstAttribute="centerX" secondItem="e33-nU-gDj" secondAttribute="centerX" id="UAE-gv-R55"/>
+                            <constraint firstItem="6Lh-ck-VLc" firstAttribute="top" secondItem="e33-nU-gDj" secondAttribute="top" id="UIo-WG-BzT"/>
+                            <constraint firstItem="LMu-2h-pVc" firstAttribute="top" secondItem="e33-nU-gDj" secondAttribute="top" constant="80" id="cJ0-NK-Xs5"/>
+                            <constraint firstItem="6Lh-ck-VLc" firstAttribute="width" secondItem="e33-nU-gDj" secondAttribute="width" id="dEk-cb-Eyi"/>
+                            <constraint firstItem="shf-N1-hPf" firstAttribute="centerX" secondItem="e33-nU-gDj" secondAttribute="centerX" id="eja-TC-Xor"/>
+                            <constraint firstItem="shf-N1-hPf" firstAttribute="width" secondItem="e33-nU-gDj" secondAttribute="width" id="mdX-oi-9eI"/>
+                            <constraint firstItem="EBC-TF-gHR" firstAttribute="height" secondItem="e33-nU-gDj" secondAttribute="height" multiplier="0.3" id="n09-PM-TTz"/>
+                            <constraint firstItem="LMu-2h-pVc" firstAttribute="centerX" secondItem="6Am-Mc-KL4" secondAttribute="centerX" id="qa8-Us-ijb"/>
+                            <constraint firstItem="LMu-2h-pVc" firstAttribute="width" secondItem="e33-nU-gDj" secondAttribute="width" id="rxX-t3-nbr"/>
+                            <constraint firstItem="EBC-TF-gHR" firstAttribute="width" secondItem="e33-nU-gDj" secondAttribute="width" id="s7c-B6-Q3o"/>
+                            <constraint firstItem="LMu-2h-pVc" firstAttribute="height" secondItem="e33-nU-gDj" secondAttribute="height" multiplier="0.07" id="sQj-Wv-9kx"/>
+                            <constraint firstItem="EBC-TF-gHR" firstAttribute="centerX" secondItem="shf-N1-hPf" secondAttribute="centerX" id="vkT-99-9NG"/>
+                            <constraint firstItem="shf-N1-hPf" firstAttribute="centerX" secondItem="6Am-Mc-KL4" secondAttribute="centerX" id="wGj-DI-kYU"/>
+                            <constraint firstItem="cN7-Px-EcK" firstAttribute="leading" secondItem="EBC-TF-gHR" secondAttribute="leading" constant="10" id="xDg-eW-unR"/>
+                            <constraint firstItem="cN7-Px-EcK" firstAttribute="bottom" secondItem="EBC-TF-gHR" secondAttribute="top" constant="-5" id="zd6-VH-8zy"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="e33-nU-gDj"/>
                     </view>
-                    <navigationItem key="navigationItem" title="과제 추가" id="UtR-9m-jcH">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="rQt-oR-99Y">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="uaq-oH-L2K">
-                                <rect key="frame" x="276" y="7" width="83" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="              저장"/>
-                            </button>
-                            <connections>
-                                <action selector="saveAction:" destination="Czv-tf-2UC" id="64D-5J-0Nr"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
                     <connections>
-                        <outlet property="dateField" destination="aZo-1R-bZp" id="MXb-cU-hMv"/>
-                        <outlet property="detailOutlet" destination="mF0-Ox-VQT" id="bqQ-oT-IOD"/>
-                        <outlet property="titleOutlet" destination="2wl-p8-Oac" id="Vb5-5k-oMQ"/>
+                        <outlet property="datePicker" destination="EBC-TF-gHR" id="qgn-rb-7rQ"/>
+                        <outlet property="lecturePicker" destination="shf-N1-hPf" id="Y72-rW-Mg8"/>
+                        <outlet property="titleLabel" destination="LMu-2h-pVc" id="BlH-rI-wTn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qo5-hc-WT7" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -195,14 +217,12 @@
         <scene sceneID="EDL-tf-xPF">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Qbd-cK-E6R" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="과제" image="icons8-task-30" id="jR6-Gx-c3S"/>
+                    <tabBarItem key="tabBarItem" title="과제" id="jR6-Gx-c3S"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="gNp-Zk-mdf">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gNp-Zk-mdf">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.51764705879999995" green="0.89019607840000003" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="barTintColor" red="0.51764705879999995" green="0.89019607840000003" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -214,8 +234,4 @@
             <point key="canvasLocation" x="769" y="-107"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="icons8-task-30" width="30" height="30"/>
-    </resources>
-    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>

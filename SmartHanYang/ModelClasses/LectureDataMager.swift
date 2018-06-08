@@ -71,7 +71,7 @@ class LectureDataManager
         //TODO
         //아래는 임시 테스트용 코드
         
-        
+        /*
         let softwareStudio1 = Lecture(name: "소프트웨어스튜디오1")
         softwareStudio1.professor = "윤성관"
         softwareStudio1.AddTime(day: 5, room: "IT/BT 509", timeStart: 16, timeEnd: 19)
@@ -117,8 +117,8 @@ class LectureDataManager
         lectures.append(os);
         lectures.append(soundTec);
         lectures.append(computerStructure);
- 
-        /*
+ */
+        
         //위에처럼 따로따로 하지 않고 전체를 아카이브를 이용해서 저장하고 로드
         if FileManager.default.fileExists(atPath: filePath) {
             if let unarchArray = NSKeyedUnarchiver.unarchiveObject(withFile: filePath) as? [Lecture] {
@@ -128,13 +128,17 @@ class LectureDataManager
                 
             }
         }
- */
-        dispatchEvent()
+ 
+        DispatchQueue.main.async {
+            self.dispatchEvent()
+        }
     }
     
     public func Save()
     {
-        dispatchEvent()
+        DispatchQueue.main.async {
+            self.dispatchEvent()
+        }
         
         NSKeyedArchiver.archiveRootObject(lectures, toFile: filePath)
     }

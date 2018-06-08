@@ -16,7 +16,9 @@ class SuupTableViewController: UITableViewController {
         //self.navigationController?.navigationBar.isTranslucent = false
         LectureDataManager.shared.addUpdateEventListener {
             self.update()
-            self.tableView.reloadData()
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
         }
         
         super.viewDidLoad()
@@ -48,8 +50,10 @@ class SuupTableViewController: UITableViewController {
             prev = l
         }
         
-        tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 44
+        DispatchQueue.main.async {
+            self.tableView.rowHeight = UITableViewAutomaticDimension
+            self.tableView.estimatedRowHeight = 44
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -100,7 +104,6 @@ class SuupTableViewController: UITableViewController {
                 child.typeSelector.selectedSegmentIndex = 0
                 child.ShowHyugangView()
             }
-
         }
         hyugang.backgroundColor = .lightGray
         
@@ -118,7 +121,12 @@ class SuupTableViewController: UITableViewController {
         }
         bogang.backgroundColor = UIColor(red:0.29, green:0.49, blue:0.75, alpha:1.0)
         let goajae = UITableViewRowAction(style: .normal, title: "과제") { action, index in
-         
+            let _child = self.storyboard?.instantiateViewController(withIdentifier: "addGoajeView") as? AddGoajeViewController?;
+            if let child = _child! {
+                child.modalPresentationStyle = .overCurrentContext
+                self.present(child, animated: true, completion: nil)
+                child.lecturePicker.select(lectureId: time.lectureId)
+            }
         }
         goajae.backgroundColor = UIColor(red:0.37, green:0.70, blue:0.62, alpha:1.0)
         
