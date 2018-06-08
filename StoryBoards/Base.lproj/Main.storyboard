@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -29,10 +28,10 @@
             </objects>
             <point key="canvasLocation" x="-447" y="-1225"/>
         </scene>
-        <!--Login-->
+        <!--Setting-->
         <scene sceneID="Fiy-5i-aOD">
             <objects>
-                <viewControllerPlaceholder storyboardName="Login" id="khE-qH-vXS" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Setting" id="khE-qH-vXS" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="downloads" id="zf8-RS-IZW"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LKS-vz-gk6" userLabel="First Responder" sceneMemberID="firstResponder"/>

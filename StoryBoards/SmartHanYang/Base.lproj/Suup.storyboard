@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ph5-zV-aTs">
-    <device id="retina5_5" orientation="portrait">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -17,11 +16,9 @@
                 <navigationController id="Ph5-zV-aTs" userLabel="수업" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="수업" image="icons8-class-30" id="3S8-a8-rum" userLabel="수업"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="iY1-rv-QA4">
-                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iY1-rv-QA4">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.51764705879999995" green="0.89019607840000003" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="barTintColor" red="0.51764705879999995" green="0.89019607840000003" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="FAZ-ZB-bDh" kind="relationship" relationship="rootViewController" id="oOs-R9-b9T"/>
@@ -36,15 +33,15 @@
             <objects>
                 <tableViewController title="Suup" id="FAZ-ZB-bDh" customClass="SuupTableViewController" customModule="SmartHanYang" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" contentInsetAdjustmentBehavior="always" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="pcB-Bw-vPM">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="timetable" rowHeight="450" id="obO-Fv-c9k" userLabel="TimeTableCell" customClass="TimeTableView" customModule="SmartHanYang" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="450"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="450"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="obO-Fv-c9k" id="v7J-3Q-5qH" customClass="TimeTable" customModule="SmartHanYang" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="449.66666666666669"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="449.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="CEb-gb-AFj" userLabel="col0">
@@ -83,61 +80,38 @@
                                     <outlet property="col5" destination="RS0-ES-xD0" id="oqW-tU-JSu"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="blankCell" rowHeight="30" id="jYN-Hz-LJ9" userLabel="blankCell">
-                                <rect key="frame" x="0.0" y="478" width="414" height="30"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jYN-Hz-LJ9" id="9nL-Vk-e5e">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="29.666666666666668"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="위로 드래그하여 시간표를 볼 수 있습니다" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="icp-VY-hYc">
-                                            <rect key="frame" x="0.0" y="-0.33333333333333393" width="414" height="30"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="30" id="2eC-Px-7B3"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" name=".AppleSDGothicNeoI-Regular" family=".Apple SD Gothic NeoI" pointSize="10"/>
-                                            <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="icp-VY-hYc" firstAttribute="top" secondItem="9nL-Vk-e5e" secondAttribute="top" id="0bd-qy-iY7"/>
-                                        <constraint firstItem="icp-VY-hYc" firstAttribute="centerX" secondItem="9nL-Vk-e5e" secondAttribute="centerX" id="YkC-y0-iI2"/>
-                                        <constraint firstItem="icp-VY-hYc" firstAttribute="width" secondItem="9nL-Vk-e5e" secondAttribute="width" id="kcw-ps-gwQ"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                            </tableViewCell>
                             <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="suupCell" rowHeight="78" id="IzT-E2-Tl3" customClass="SuupTableViewCell" customModule="SmartHanYang" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="508" width="414" height="78"/>
+                                <rect key="frame" x="0.0" y="478" width="375" height="78"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IzT-E2-Tl3" id="DMj-9n-5T9">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="77.666666666666671"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="77.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14:30-16:30" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ezc-wQ-DYU" userLabel="time">
-                                            <rect key="frame" x="232.33333333333337" y="53" width="165.66666666666663" height="18"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <rect key="frame" x="209" y="54" width="150" height="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제2공학관 정석현 PC 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="nUu-w3-Xal" userLabel="location">
-                                            <rect key="frame" x="16" y="53" width="138.66666666666666" height="18"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <rect key="frame" x="16" y="54" width="129.5" height="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="소프트웨어스튜디오" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="11" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R7p-t0-gV1" userLabel="title">
-                                            <rect key="frame" x="0.0" y="15.666666666666666" width="414" height="26.333333333333336"/>
-                                            <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="22"/>
+                                            <rect key="frame" x="0.0" y="17" width="375" height="24"/>
+                                            <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="20"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="vOD-xU-hFp">
-                                            <rect key="frame" x="0.0" y="75.666666666666671" width="414" height="2"/>
+                                            <rect key="frame" x="0.0" y="75.5" width="375" height="2"/>
+                                            <color key="tintColor" red="0.2073075429" green="0.51295552359999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </progressView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="휴강" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LDF-zP-Er8">
-                                            <rect key="frame" x="374" y="5" width="30" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <rect key="frame" x="337" y="5" width="28" height="19.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" red="0.73879679568527923" green="0.18200799667141385" blue="0.03183387985410837" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -172,18 +146,42 @@
                                     <outlet property="titleLabel" destination="R7p-t0-gV1" id="4Tv-Wq-0l7"/>
                                 </connections>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="blankCell" rowHeight="30" id="jYN-Hz-LJ9" userLabel="blankCell">
+                                <rect key="frame" x="0.0" y="556" width="375" height="30"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jYN-Hz-LJ9" id="9nL-Vk-e5e">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="29.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="위로 드래그하여 시간표를 볼 수 있습니다" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="icp-VY-hYc">
+                                            <rect key="frame" x="0.0" y="-0.5" width="375" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="30" id="2eC-Px-7B3"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name=".AppleSDGothicNeoI-Regular" family=".Apple SD Gothic NeoI" pointSize="10"/>
+                                            <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="icp-VY-hYc" firstAttribute="top" secondItem="9nL-Vk-e5e" secondAttribute="top" id="0bd-qy-iY7"/>
+                                        <constraint firstItem="icp-VY-hYc" firstAttribute="centerX" secondItem="9nL-Vk-e5e" secondAttribute="centerX" id="YkC-y0-iI2"/>
+                                        <constraint firstItem="icp-VY-hYc" firstAttribute="width" secondItem="9nL-Vk-e5e" secondAttribute="width" id="kcw-ps-gwQ"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
                             <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="gonggangCell" rowHeight="41" id="5jg-1a-m2w" userLabel="gonggangCell" customClass="GonggangCell" customModule="SmartHanYang" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="586" width="414" height="41"/>
+                                <rect key="frame" x="0.0" y="586" width="375" height="41"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5jg-1a-m2w" id="VOu-0U-gT3">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="40.666666666666664"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="40.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="lzq-Uv-w48">
-                                            <rect key="frame" x="0.0" y="38.666666666666664" width="414" height="2"/>
+                                            <rect key="frame" x="0.0" y="38.5" width="375" height="2"/>
                                         </progressView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="휴강 1시간 30분" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VER-2F-kjJ">
-                                            <rect key="frame" x="0.0" y="10" width="414" height="21"/>
+                                            <rect key="frame" x="0.0" y="10" width="375" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -231,26 +229,27 @@
             <objects>
                 <viewController storyboardIdentifier="editSuupViewController" title="보강/휴강 추가" useStoryboardIdentifierAsRestorationIdentifier="YES" id="knN-vv-he9" customClass="EditSuupViewController" customModule="SmartHanYang" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UrL-3g-Zjt">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="IxS-Tv-VVq">
-                                <rect key="frame" x="41.333333333333343" y="69" width="331.33333333333326" height="29"/>
+                                <rect key="frame" x="37.5" y="69" width="300" height="29"/>
                                 <segments>
                                     <segment title="휴강"/>
                                     <segment title="보강"/>
                                 </segments>
+                                <color key="tintColor" red="0.2073075429" green="0.51295552359999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="typeChangedWithSender:" destination="knN-vv-he9" eventType="valueChanged" id="ajI-CZ-OBq"/>
                                 </connections>
                             </segmentedControl>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VRf-KG-S89" userLabel="LecturePicker" customClass="LecturePicker" customModule="SmartHanYang" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="102" width="414" height="179"/>
+                                <rect key="frame" x="0.0" y="102" width="375" height="162"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <accessibility key="accessibilityConfiguration" label="ㅁㄴㅇㄹ"/>
                             </pickerView>
                             <datePicker contentMode="scaleToFill" verticalHuggingPriority="247" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="30" translatesAutoresizingMaskIntoConstraints="NO" id="0Vs-8Z-Mm3">
-                                <rect key="frame" x="0.0" y="286" width="414" height="229.33333333333337"/>
+                                <rect key="frame" x="0.0" y="269" width="375" height="198"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <date key="date" timeIntervalSinceReferenceDate="548055037.78634202">
                                     <!--2018-05-15 05:30:37 +0000-->
@@ -261,10 +260,10 @@
                                 </connections>
                             </datePicker>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qPa-uO-28H" userLabel="HyugangView">
-                                <rect key="frame" x="-0.33333333333334281" y="521.33333333333337" width="414.66666666666674" height="214.66666666666663"/>
+                                <rect key="frame" x="0.0" y="473" width="375" height="194"/>
                                 <subviews>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9tg-iu-D3j" customClass="LectureTimePicker" customModule="SmartHanYang" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="414.66666666666669" height="214.66666666666666"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="194"/>
                                     </pickerView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -276,30 +275,30 @@
                                 </constraints>
                             </view>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Je4-Uz-avb" userLabel="BogangView">
-                                <rect key="frame" x="0.0" y="521.33333333333337" width="414" height="214.66666666666663"/>
+                                <rect key="frame" x="0.0" y="473" width="375" height="194"/>
                                 <subviews>
                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="30" translatesAutoresizingMaskIntoConstraints="NO" id="1oS-VZ-8Oa" userLabel="StartTime">
-                                        <rect key="frame" x="0.0" y="42.999999999999986" width="207.66666666666666" height="171.66666666666663"/>
+                                        <rect key="frame" x="0.0" y="39" width="188" height="155"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <date key="date" timeIntervalSinceReferenceDate="548055216.98325098">
                                             <!--2018-05-15 05:33:36 +0000-->
                                         </date>
                                     </datePicker>
                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="30" translatesAutoresizingMaskIntoConstraints="NO" id="2wN-1L-YTb" userLabel="EndTime">
-                                        <rect key="frame" x="207.66666666666663" y="42.999999999999986" width="206.33333333333337" height="171.66666666666663"/>
+                                        <rect key="frame" x="188" y="39" width="187" height="155"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <date key="date" timeIntervalSinceReferenceDate="548055166.66697299">
                                             <!--2018-05-15 05:32:46 +0000-->
                                         </date>
                                     </datePicker>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="~" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mr2-xJ-5ds">
-                                        <rect key="frame" x="201.66666666666666" y="118.66666666666663" width="11" height="21"/>
+                                        <rect key="frame" x="182" y="106" width="11" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="보강 장소 입력" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AFJ-Fm-gpz">
-                                        <rect key="frame" x="103.66666666666667" y="0.0" width="207.33333333333331" height="30"/>
+                                        <rect key="frame" x="93.5" y="0.0" width="188" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done"/>
@@ -323,15 +322,18 @@
                                 </constraints>
                             </view>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yma-pV-ugB">
-                                <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <color key="barTintColor" red="0.51764705879999995" green="0.89019607840000003" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <items>
                                     <navigationItem title="휴강/보강 추가" id="Zg7-e0-lCf">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="uvi-gf-UzC">
+                                            <color key="tintColor" red="0.2073075429" green="0.51295552359999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <connections>
                                                 <action selector="cancel" destination="knN-vv-he9" id="NZT-4c-Iey"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="lel-As-HEg">
+                                            <color key="tintColor" red="0.2073075429" green="0.51295552359999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <connections>
                                                 <action selector="done" destination="knN-vv-he9" id="H4b-rz-5ic"/>
                                             </connections>

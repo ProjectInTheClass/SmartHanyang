@@ -128,17 +128,13 @@ class LectureDataManager
                 
             }
         }
- 
-        DispatchQueue.main.async {
-            self.dispatchEvent()
-        }
+        
+        self.dispatchEvent()
     }
     
     public func Save()
     {
-        DispatchQueue.main.async {
-            self.dispatchEvent()
-        }
+        self.dispatchEvent()
         
         NSKeyedArchiver.archiveRootObject(lectures, toFile: filePath)
     }

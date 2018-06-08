@@ -63,10 +63,15 @@ class GoajeTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return goajes.count
+        return goajes.count + 1
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        if indexPath.row == goajes.count {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "addGoaje", for: indexPath)
+            return cell
+        }
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "goajeCell", for: indexPath) as! GoajeTableViewCell
         

@@ -60,7 +60,9 @@ class LecturePicker: UIPickerView, UIPickerViewDelegate, UIPickerViewDataSource 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder : aDecoder)
         lectures = LectureDataManager.shared.GetLectures()
-        selectedLectureId = lectures[0].id
+        if lectures.count > 0{
+            selectedLectureId = lectures[0].id
+        }
         self.delegate = self
         self.dataSource = self
     }

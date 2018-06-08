@@ -41,9 +41,16 @@ class SuupTableViewCell: UITableViewCell
         {
             if EasyCalendar.isToday(date: day) {
                 hyugangLabel.isHidden = false
+                hyugangLabel.textColor = .red
+                hyugangLabel.text = "휴강"
                 isHyugang = true
                 break
             }
+        }
+        if table.bogangDay != nil {
+            hyugangLabel.isHidden = false
+            hyugangLabel.textColor = .blue
+            hyugangLabel.text = "보강"
         }
         
         Update()
@@ -73,6 +80,7 @@ class SuupTableViewCell: UITableViewCell
             titleLabel.isEnabled = false
             locationLabel.isEnabled = false
             timeLabel.isEnabled = false
+            hyugangLabel.isEnabled = false
         }
         else{
             progressBar.tintColor = defaultColor
@@ -81,6 +89,7 @@ class SuupTableViewCell: UITableViewCell
             titleLabel.isEnabled = true
             locationLabel.isEnabled = true
             timeLabel.isEnabled = true
+            hyugangLabel.isEnabled = true
         }
         
         if isHyugang {

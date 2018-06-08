@@ -43,13 +43,28 @@ class GoajeTableViewCell: UITableViewCell,BEMCheckBoxDelegate {
         if let goaje = self.goaje {
             checkbox.on = goaje.completed
         }
+        ShowCompleted(compledted:goaje.completed)
     }
     
-    func animationDidStop(for checkBox: BEMCheckBox) {
+    func didTap(_ checkBox: BEMCheckBox) {
         goaje?.completed = checkbox.on
         if let goaje = self.goaje {
             GoajeDataManager.shared.EditGoaje(goaje: goaje)
+            ShowCompleted(compledted:goaje.completed)
         }
+    }
+    
+    func ShowCompleted(compledted:Bool)
+    {
+        let transition = {(label:UILabel) -> Void in
+            UIView.transition(with: label, duration: 0.4, options: .transitionCrossDissolve, animations: {
+                label.isEnabled = !compledted
+            }, completion: nil)
+        }
+        transition(titleLabel)
+        transition(dDayLabel)
+        transition(lectureNameLabel)
+        transition(dateLabel)
     }
 
 }

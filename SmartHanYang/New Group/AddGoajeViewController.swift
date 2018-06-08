@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddGoajeViewController: UIViewController
+class AddGoajeViewController: UITableViewController
 {
     @IBOutlet weak var titleLabel: UITextField!
     @IBOutlet weak var lecturePicker: LecturePicker!
@@ -61,6 +61,8 @@ class AddGoajeViewController: UIViewController
     {
         self.goaje = goaje
         lecturePicker.select(lectureId: goaje.lectureId!)
+        titleLabel.text = goaje.title
+        datePicker.setDate(goaje.timeEnd, animated: false)
     }
     
     override func viewDidLoad() {
