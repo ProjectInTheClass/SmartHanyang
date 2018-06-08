@@ -13,7 +13,7 @@ class SuupTableViewController: UITableViewController {
     var gonggangIndexes:[Float] = []
     
     override func viewDidLoad() {
-        
+        //self.navigationController?.navigationBar.isTranslucent = false
         LectureDataManager.shared.addUpdateEventListener {
             self.update()
             DispatchQueue.main.async {
