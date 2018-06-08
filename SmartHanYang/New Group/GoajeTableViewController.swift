@@ -17,24 +17,23 @@ class GoajeTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         goajes = GoajeDataManager.shared.GetGoajes()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        
+        GoajeDataManager.shared.addUpdateEventListener {
+            self.goajes = GoajeDataManager.shared.GetGoajes()
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
     }
-    
-    // Mark: - Cell LEFT swipe DELETE action
     
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let delete = deleteAction(at: indexPath)
-        return UISwipeActionsConfiguration(actions: [delete])
+        let edit = editAction(at: indexPath)
+        return UISwipeActionsConfiguration(actions: [delete,edit])
     }
     
     func deleteAction(at indexPath: IndexPath) -> UIContextualAction {
         let action = UIContextualAction(style: .destructive, title: "삭제") {(action, view, completion) in
+            GoajeDataManager.shared.RemoveGoaje(id: self.goajes[indexPath.row].id)
             self.goajes.remove(at: indexPath.row)
             self.tableView.deleteRows(at: [indexPath], with: .automatic)
             completion(true)
@@ -43,21 +42,18 @@ class GoajeTableViewController: UITableViewController {
         
         return action
     }
-    
-    // Mark: - Cell RIGHT swipe COMPLETE action
-    
-    override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let complete = completeAction(at: indexPath)
-        return UISwipeActionsConfiguration(actions: [complete])
-    }
-    
-    func completeAction(at indexPath: IndexPath) -> UIContextualAction{
-        let action = UIContextualAction(style: .destructive, title: "완성") {(action, view, completion) in
-            self.goajes.remove(at: indexPath.row)
-            self.tableView.deleteRows(at: [indexPath], with: .automatic)
-            completion(true)
+    func editAction(at indexPath: IndexPath) -> UIContextualAction {
+        let action = UIContextualAction(style: .destructive, title: "수정") {(action, view, completion) in
+            let _child = self.storyboard?.instantiateViewController(withIdentifier: "addGoajeView") as? AddGoajeViewController?;
+            if let child = _child! {
+                child.modalPresentationStyle = .overCurrentContext
+                self.present(child, animated: true, completion: nil)
+                child.EditGoaje(goaje: self.goajes[indexPath.row])
+            }
+            completion(false)
         }
-        action.backgroundColor = .green
+        action.backgroundColor = .gray
+        
         return action
     }
 
@@ -74,70 +70,9 @@ class GoajeTableViewController: UITableViewController {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "goajeCell", for: indexPath) as! GoajeTableViewCell
         
-        cell.SetGoaje(goaje: goajes[indexPath[1]])
+        cell.SetGoaje(goaje: goajes[indexPath.row])
         
         return cell
     }
-    
-    // MARK: - Table view data source
-
-
-    
-    /*override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "goajaeCell", for: indexPath) as! GoajaeTableViewCell
-
-        // Configure the cell...
-        cell.titleLabel.text = goajaes[indexPath.row].title
-        cell.timeLabel.text = "시간시간시간 구하는 코드"
-        
-
-        return cell
-    }*/
- 
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

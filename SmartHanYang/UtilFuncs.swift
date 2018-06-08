@@ -134,9 +134,8 @@ public class EasyCalendar
     public static func DDay(from:Date,to:Date) -> Int
     {
         let c = CurrentCalendar()
-        let dc = c.dateComponents([.day], from:from, to: to)
-        
-        return dc.day ?? 0
+        let dc = c.dateComponents([.day, .hour], from:from, to: to)
+        return dc.day! + ((dc.hour! > 0) ? 1:0)
     }
 }
 

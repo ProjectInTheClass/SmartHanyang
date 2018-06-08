@@ -9,7 +9,7 @@
 import UIKit
 import BEMCheckBox
 
-class GoajeTableViewCell: UITableViewCell {
+class GoajeTableViewCell: UITableViewCell,BEMCheckBoxDelegate {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dDayLabel: UILabel!
@@ -20,6 +20,8 @@ class GoajeTableViewCell: UITableViewCell {
     var goaje:Goaje?
     
     public func SetGoaje(goaje:Goaje) {
+        self.goaje = goaje
+        
         titleLabel.text = goaje.title
         lectureNameLabel.text = LectureDataManager.shared.GetLecture(id: goaje.lectureId!)?.name
         
@@ -35,8 +37,19 @@ class GoajeTableViewCell: UITableViewCell {
         let fill = checkbox.onCheckColor
         checkbox.onFillColor = fill
         checkbox.onCheckColor = .white
+        
+        checkbox.delegate = self
+        
+        if let goaje = self.goaje {
+            checkbox.on = goaje.completed
+        }
     }
     
-    
+    func animationDidStop(for checkBox: BEMCheckBox) {
+        goaje?.completed = checkbox.on
+        if let goaje = self.goaje {
+            GoajeDataManager.shared.EditGoaje(goaje: goaje)
+        }
+    }
 
 }

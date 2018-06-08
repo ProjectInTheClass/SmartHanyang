@@ -9,7 +9,7 @@
 import Foundation
 
 
-public class Goaje
+public class Goaje : Codable
 {
     var id:Int
     var title:String
@@ -19,14 +19,14 @@ public class Goaje
     var lectureId:Int?
     
     init() {
-        id = 0
+        id = GoajeDataManager.shared.GetNewId()
         title = "무제"
         memo = ""
         completed = false
         timeEnd = Date()
     }
     init(title:String){
-        id = 0
+        id = GoajeDataManager.shared.GetNewId()
         self.title = title
         memo = ""
         completed = false

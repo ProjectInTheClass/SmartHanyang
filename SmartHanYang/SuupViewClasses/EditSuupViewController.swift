@@ -172,21 +172,6 @@ class EditSuupViewController: UIViewController, UITextFieldDelegate
         
     }
     
-    public func InitLecture(lectureId:Int = -1)
-    {
-        let lectures = LectureDataManager.shared.GetLectures()
-        if lectures.count == 0
-        {
-            ShowAlert(title: "수업 정보가 없습니다! x_x",message: "먼저 수업을 추가해주세요~")
-            return
-        }
-        if lectureId == -1
-        {
-            return
-        }
-        lecturePicker.select(lectureId: lectureId)
-    }
-    
     func OnLectureSelected(lectureId:Int)
     {
         if let lecture = LectureDataManager.shared.GetLecture(id: lectureId){
