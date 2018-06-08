@@ -121,8 +121,9 @@ class SuupTableViewController: UITableViewController {
         }
         bogang.backgroundColor = UIColor(red:0.29, green:0.49, blue:0.75, alpha:1.0)
         let goajae = UITableViewRowAction(style: .normal, title: "과제") { action, index in
-            let _child = self.storyboard?.instantiateViewController(withIdentifier: "addGoajeView") as? AddGoajeViewController?;
-            if let child = _child! {
+            let storyboard = UIStoryboard(name: "Goaje", bundle: nil)
+            let _child = storyboard.instantiateViewController(withIdentifier: "addGoajeView") as? AddGoajeViewController;
+            if let child = _child {
                 child.modalPresentationStyle = .overCurrentContext
                 self.present(child, animated: true, completion: nil)
                 child.lecturePicker.select(lectureId: time.lectureId)
