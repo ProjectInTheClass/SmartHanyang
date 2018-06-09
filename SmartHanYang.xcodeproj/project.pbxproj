@@ -14,7 +14,7 @@
 		6F8DD1E320BF95F400525298 /* ResataurantManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F8DD1E220BF95F400525298 /* ResataurantManager.swift */; };
 		E300793B20BA72550089A9D7 /* GoajeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E300793820BA72540089A9D7 /* GoajeTableViewCell.swift */; };
 		E300793D20BA72550089A9D7 /* GoajeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E300793A20BA72550089A9D7 /* GoajeTableViewController.swift */; };
-		E347D91B20C505DA00E94ADA /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E347D91A20C505DA00E94ADA /* Launch Screen.storyboard */; };
+		E347D91B20C505DA00E94ADA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E347D91A20C505DA00E94ADA /* LaunchScreen.storyboard */; };
 		E34A1A4D20C2A2AF0067B743 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E34A1A4C20C2A2AF0067B743 /* Media.xcassets */; };
 		F90FB8EE20A8DC02001077E9 /* LectureDataMager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90FB8ED20A8DC02001077E9 /* LectureDataMager.swift */; };
 		F90FB8F020A8EB2C001077E9 /* Goaje.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90FB8EF20A8EB2C001077E9 /* Goaje.swift */; };
@@ -52,7 +52,7 @@
 		CA3DD5FE608F5E983A631046 /* Pods-SmartHanYang.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartHanYang.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SmartHanYang/Pods-SmartHanYang.debug.xcconfig"; sourceTree = "<group>"; };
 		E300793820BA72540089A9D7 /* GoajeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoajeTableViewCell.swift; sourceTree = "<group>"; };
 		E300793A20BA72550089A9D7 /* GoajeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoajeTableViewController.swift; sourceTree = "<group>"; };
-		E347D91A20C505DA00E94ADA /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		E347D91A20C505DA00E94ADA /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E34A1A4C20C2A2AF0067B743 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		F90FB8ED20A8DC02001077E9 /* LectureDataMager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureDataMager.swift; sourceTree = "<group>"; };
 		F90FB8EF20A8EB2C001077E9 /* Goaje.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goaje.swift; sourceTree = "<group>"; };
@@ -144,7 +144,7 @@
 				F91DCFD820A57F42003A4161 /* Suup.storyboard */,
 				F91DCFDC20A5814A003A4161 /* Goaje.storyboard */,
 				F955200E20A6882700FB08E8 /* Login.storyboard */,
-				E347D91A20C505DA00E94ADA /* Launch Screen.storyboard */,
+				E347D91A20C505DA00E94ADA /* LaunchScreen.storyboard */,
 				F969861920CA801100336B97 /* Setting.storyboard */,
 			);
 			path = StoryBoards;
@@ -279,7 +279,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F955200F20A6882700FB08E8 /* Login.storyboard in Resources */,
-				E347D91B20C505DA00E94ADA /* Launch Screen.storyboard in Resources */,
+				E347D91B20C505DA00E94ADA /* LaunchScreen.storyboard in Resources */,
 				E34A1A4D20C2A2AF0067B743 /* Media.xcassets in Resources */,
 				F91DCFDE20A5814A003A4161 /* Goaje.storyboard in Resources */,
 				F91DCFE320A58C3D003A4161 /* example in Resources */,
