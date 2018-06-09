@@ -1,6 +1,0 @@
-framework module Pods_SmartHanYang {
-  umbrella header "Pods-SmartHanYang-umbrella.h"
-
-  export *
-  module * { export * }
-}
