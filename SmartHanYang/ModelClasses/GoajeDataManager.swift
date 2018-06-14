@@ -177,4 +177,10 @@ class GoajeDataManager
         goajes.append(goaje)
         Save(dispatchE: false)
     }
+    
+    public func DeleteAll()
+    {
+        goajes = []
+        Save()
+    }
 }

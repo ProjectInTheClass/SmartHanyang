@@ -198,4 +198,10 @@ class LectureDataManager
         lectures.append(lecture)
         Save()
     }
+    
+    public func DeleteAll()
+    {
+        lectures = []
+        Save()
+    }
 }

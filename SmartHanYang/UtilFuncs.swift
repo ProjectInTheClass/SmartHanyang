@@ -69,6 +69,28 @@ public class Easy
             return "?"
         }
     }
+    
+    public static func ShowAlert(me:UIViewController, title:String, message:String, f:((Bool)->Void)?=nil)
+    {
+        let alertController = UIAlertController(title: title,message: message, preferredStyle: UIAlertControllerStyle.alert)
+        
+        //UIAlertActionStye.destructive 지정 글꼴 색상 변경
+        let okAction = UIAlertAction(title: "확인", style: .default){ (action: UIAlertAction) in
+            if let ff = f
+            {
+                ff(true)
+            }
+        }
+        alertController.addAction(okAction)
+        if let ff = f
+        {
+            let noAction = UIAlertAction(title: "취소", style: UIAlertActionStyle.default){ (action: UIAlertAction) in
+                ff(false)
+            }
+            alertController.addAction(noAction)
+        }
+        me.present(alertController,animated: true,completion: nil)
+    }
 }
 
 public class EasyCalendar

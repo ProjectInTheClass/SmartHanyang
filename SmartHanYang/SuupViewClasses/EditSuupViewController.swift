@@ -63,7 +63,7 @@ class EditSuupViewController: UIViewController, UITextFieldDelegate
             
             if t2 <= t1
             {
-                self.ShowAlert(title: "아니 이건 좀..", message: "질리언이세요?")
+                Easy.ShowAlert(me:self ,title: "아니 이건 좀..", message: "질리언이세요?")
                 return
             }
             
@@ -110,7 +110,7 @@ class EditSuupViewController: UIViewController, UITextFieldDelegate
                 }
                 if alreadyLectureExist{
                     dismissOk = false
-                    ShowAlert(title: "해당 기간에 다른 수업 있음", message: "그래도 추가할거임?", f: {(ok:Bool) in
+                    Easy.ShowAlert(me:self, title: "해당 기간에 다른 수업 있음", message: "그래도 추가할거임?", f: {(ok:Bool) in
                         if ok{
                             self.dismiss(animated: true)
                             lecture.bogangTimeTables.append(bogang)
@@ -129,7 +129,7 @@ class EditSuupViewController: UIViewController, UITextFieldDelegate
                 }
             }
             else{
-                ShowAlert(title: "보강하는 방을 적어주세요!",message: "어디서 보강하죠?")
+                Easy.ShowAlert(me:self, title: "보강하는 방을 적어주세요!",message: "어디서 보강하죠?")
                 dismissOk = false
             }
         }

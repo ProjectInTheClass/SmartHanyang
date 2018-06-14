@@ -40,6 +40,8 @@
 		F98942BF20AF2AB100905CB2 /* UtilFuncs.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98942BE20AF2AB100905CB2 /* UtilFuncs.swift */; };
 		F98942D820B6BAF300905CB2 /* TimeTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98942D720B6BAF300905CB2 /* TimeTableView.swift */; };
 		F9D0D5FA20C92ED50039BA67 /* AddGoajeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D0D5F920C92ED50039BA67 /* AddGoajeViewController.swift */; };
+		F9FC4DDE20D204E2001992DF /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FC4DDD20D204E2001992DF /* SettingsViewController.swift */; };
+		F9FC4DE020D20E9A001992DF /* LectureManager.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9FC4DDF20D20E9A001992DF /* LectureManager.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +82,8 @@
 		F98942BE20AF2AB100905CB2 /* UtilFuncs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilFuncs.swift; sourceTree = "<group>"; };
 		F98942D720B6BAF300905CB2 /* TimeTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTableView.swift; sourceTree = "<group>"; };
 		F9D0D5F920C92ED50039BA67 /* AddGoajeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGoajeViewController.swift; sourceTree = "<group>"; };
+		F9FC4DDD20D204E2001992DF /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		F9FC4DDF20D20E9A001992DF /* LectureManager.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LectureManager.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +150,7 @@
 				F955200E20A6882700FB08E8 /* Login.storyboard */,
 				E347D91A20C505DA00E94ADA /* LaunchScreen.storyboard */,
 				F969861920CA801100336B97 /* Setting.storyboard */,
+				F9FC4DDF20D20E9A001992DF /* LectureManager.storyboard */,
 			);
 			path = StoryBoards;
 			sourceTree = "<group>";
@@ -183,6 +188,7 @@
 		F96DFB9020A42E4300997614 /* SmartHanYang */ = {
 			isa = PBXGroup;
 			children = (
+				F9FC4DDC20D204BF001992DF /* SettingsView */,
 				F9D0D5E520C1369B0039BA67 /* GoajeViewClasses */,
 				F91DCFDF20A5884B003A4161 /* Parsing */,
 				F910BA7420A448CA00E15F90 /* SuupViewClasses */,
@@ -216,6 +222,14 @@
 			);
 			name = GoajeViewClasses;
 			path = "New Group";
+			sourceTree = "<group>";
+		};
+		F9FC4DDC20D204BF001992DF /* SettingsView */ = {
+			isa = PBXGroup;
+			children = (
+				F9FC4DDD20D204E2001992DF /* SettingsViewController.swift */,
+			);
+			path = SettingsView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -282,6 +296,7 @@
 				E347D91B20C505DA00E94ADA /* LaunchScreen.storyboard in Resources */,
 				E34A1A4D20C2A2AF0067B743 /* Media.xcassets in Resources */,
 				F91DCFDE20A5814A003A4161 /* Goaje.storyboard in Resources */,
+				F9FC4DE020D20E9A001992DF /* LectureManager.storyboard in Resources */,
 				F91DCFE320A58C3D003A4161 /* example in Resources */,
 				F96DFB9720A42E4300997614 /* Main.storyboard in Resources */,
 				F91DCFDA20A57F42003A4161 /* Suup.storyboard in Resources */,
@@ -347,6 +362,7 @@
 				F910BA7620A448EC00E15F90 /* SuupTableViewCell.swift in Sources */,
 				F90FB8F220A8EB6C001077E9 /* GoajeDataManager.swift in Sources */,
 				6F8DD1E120BF867B00525298 /* InnerRestaurant.swift in Sources */,
+				F9FC4DDE20D204E2001992DF /* SettingsViewController.swift in Sources */,
 				6F8DD1E320BF95F400525298 /* ResataurantManager.swift in Sources */,
 				F91DCFE520A58D10003A4161 /* ParseJson.swift in Sources */,
 				F90FB8F420A912A0001077E9 /* GonggangCell.swift in Sources */,
