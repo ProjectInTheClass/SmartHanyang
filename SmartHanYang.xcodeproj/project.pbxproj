@@ -25,8 +25,6 @@
 		F91DCFDE20A5814A003A4161 /* Goaje.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F91DCFDC20A5814A003A4161 /* Goaje.storyboard */; };
 		F91DCFE320A58C3D003A4161 /* example in Resources */ = {isa = PBXBuildFile; fileRef = F91DCFE220A58C3D003A4161 /* example */; };
 		F91DCFE520A58D10003A4161 /* ParseJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91DCFE420A58D10003A4161 /* ParseJson.swift */; };
-		F955200F20A6882700FB08E8 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F955200E20A6882700FB08E8 /* Login.storyboard */; };
-		F955201120A6886700FB08E8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F955201020A6886700FB08E8 /* LoginViewController.swift */; };
 		F969861A20CA801100336B97 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F969861920CA801100336B97 /* Setting.storyboard */; };
 		F96DFB9220A42E4300997614 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96DFB9120A42E4300997614 /* AppDelegate.swift */; };
 		F96DFB9420A42E4300997614 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96DFB9320A42E4300997614 /* ViewController.swift */; };
@@ -65,8 +63,6 @@
 		F91DCFDD20A5814A003A4161 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = SmartHanYang/Base.lproj/Goaje.storyboard; sourceTree = "<group>"; };
 		F91DCFE220A58C3D003A4161 /* example */ = {isa = PBXFileReference; lastKnownFileType = text; path = example; sourceTree = "<group>"; };
 		F91DCFE420A58D10003A4161 /* ParseJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseJson.swift; sourceTree = "<group>"; };
-		F955200E20A6882700FB08E8 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
-		F955201020A6886700FB08E8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F969861920CA801100336B97 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		F96DFB8E20A42E4300997614 /* SmartHanYang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartHanYang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F96DFB9120A42E4300997614 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -147,7 +143,6 @@
 				F96DFB9520A42E4300997614 /* Main.storyboard */,
 				F91DCFD820A57F42003A4161 /* Suup.storyboard */,
 				F91DCFDC20A5814A003A4161 /* Goaje.storyboard */,
-				F955200E20A6882700FB08E8 /* Login.storyboard */,
 				E347D91A20C505DA00E94ADA /* LaunchScreen.storyboard */,
 				F969861920CA801100336B97 /* Setting.storyboard */,
 				F9FC4DDF20D20E9A001992DF /* LectureManager.storyboard */,
@@ -158,7 +153,6 @@
 		F91DCFDF20A5884B003A4161 /* Parsing */ = {
 			isa = PBXGroup;
 			children = (
-				F955201020A6886700FB08E8 /* LoginViewController.swift */,
 				F91DCFE220A58C3D003A4161 /* example */,
 				F91DCFE420A58D10003A4161 /* ParseJson.swift */,
 			);
@@ -292,7 +286,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F955200F20A6882700FB08E8 /* Login.storyboard in Resources */,
 				E347D91B20C505DA00E94ADA /* LaunchScreen.storyboard in Resources */,
 				E34A1A4D20C2A2AF0067B743 /* Media.xcassets in Resources */,
 				F91DCFDE20A5814A003A4161 /* Goaje.storyboard in Resources */,
@@ -368,7 +361,6 @@
 				F90FB8F420A912A0001077E9 /* GonggangCell.swift in Sources */,
 				F98942BF20AF2AB100905CB2 /* UtilFuncs.swift in Sources */,
 				F96DFB9220A42E4300997614 /* AppDelegate.swift in Sources */,
-				F955201120A6886700FB08E8 /* LoginViewController.swift in Sources */,
 				F98942B820AAC46400905CB2 /* LecturePicker.swift in Sources */,
 				E300793D20BA72550089A9D7 /* GoajeTableViewController.swift in Sources */,
 				F98942B420AABC7000905CB2 /* EditSuupViewController.swift in Sources */,
