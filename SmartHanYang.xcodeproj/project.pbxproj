@@ -515,6 +515,7 @@
 			baseConfigurationReference = CA3DD5FE608F5E983A631046 /* Pods-SmartHanYang.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2KRC6U6Q7S;
 				INFOPLIST_FILE = SmartHanYang/Info.plist;
@@ -535,6 +536,7 @@
 			baseConfigurationReference = 88313F3567C407636023779F /* Pods-SmartHanYang.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2KRC6U6Q7S;
 				INFOPLIST_FILE = SmartHanYang/Info.plist;
