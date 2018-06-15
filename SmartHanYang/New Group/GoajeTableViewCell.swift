@@ -35,8 +35,7 @@ class GoajeTableViewCell: UITableViewCell,BEMCheckBoxDelegate {
         checkbox.onAnimationType = .fill
         checkbox.offAnimationType = .bounce
         
-        let fill = checkbox.onCheckColor
-        checkbox.onFillColor = fill
+        checkbox.onFillColor = UIColor.init(hexString: "#007aff")
         checkbox.onCheckColor = .white
         
         checkbox.delegate = self
