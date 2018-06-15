@@ -24,7 +24,7 @@ class LecturePicker: UIPickerView, UIPickerViewDelegate, UIPickerViewDataSource 
                 index = i
             }
         }
-        self.selectRow(index, inComponent: 0, animated: false)
+        self.selectRow(index, inComponent: 0, animated: true)
         
     }
     

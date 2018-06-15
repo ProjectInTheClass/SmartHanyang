@@ -15,6 +15,7 @@ class AddGoajeViewController: UITableViewController
     @IBOutlet weak var datePicker: UIDatePicker!
     
     var goaje:Goaje?
+    var selectedLectureId:Int = -1
     
     @IBAction func Cancel()
     {
@@ -62,6 +63,10 @@ class AddGoajeViewController: UITableViewController
     {
         self.goaje = goaje
     }
+    public func SelectLecture(lectureId:Int)
+    {
+        self.selectedLectureId = lectureId
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,6 +75,10 @@ class AddGoajeViewController: UITableViewController
             lecturePicker.select(lectureId: ggg.lectureId!)
             titleLabel.text = ggg.title
             datePicker.setDate(ggg.timeEnd, animated: false)
+        }
+        
+        if selectedLectureId != -1 {
+            lecturePicker.select(lectureId: selectedLectureId)
         }
     }
 
