@@ -31,6 +31,7 @@ class GoajeTableViewCell: UITableViewCell,BEMCheckBoxDelegate {
         let a = EasyCalendar.DDay(from:Date() , to: goaje.timeEnd)
         dDayLabel.text = "D-\(a)"
         
+        
         checkbox.onAnimationType = .fill
         checkbox.offAnimationType = .bounce
         
@@ -54,6 +55,7 @@ class GoajeTableViewCell: UITableViewCell,BEMCheckBoxDelegate {
         }
     }
     
+    
     func ShowCompleted(compledted:Bool)
     {
         let transition = {(label:UILabel) -> Void in
@@ -66,5 +68,7 @@ class GoajeTableViewCell: UITableViewCell,BEMCheckBoxDelegate {
         transition(lectureNameLabel)
         transition(dateLabel)
     }
+    
+    
 
 }

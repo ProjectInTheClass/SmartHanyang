@@ -14,7 +14,7 @@ class SettingsViewController: UITableViewController {
     fileprivate let url = URL(string: "https://m.hanyang.ac.kr/login.page")!
     
     
-    @IBAction func DeleteAllData(){
+    @IBAction func DeleteAllData(_ sender: Any){
         Easy.ShowAlert(me: self, title: "데이터를 초기화합니다", message: "신학기가 시작되었나보군요") { (b) in
             if b {
                 LectureDataManager.shared.DeleteAll()
@@ -23,7 +23,7 @@ class SettingsViewController: UITableViewController {
         }
     }
     
-    @IBAction func DataDownload() {
+    @IBAction func DataDownload(_ sender: Any) {
         
         let alertController = UIAlertController(title: "시간표 가져오기", message: "", preferredStyle: .alert)
         alertController.addTextField { (textField : UITextField!) -> Void in
@@ -66,7 +66,7 @@ class SettingsViewController: UITableViewController {
         
     }
     func handleResult1(result: JavaScriptResult?) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             execute("document.cookie")
                 === self.handleResult2
         }
