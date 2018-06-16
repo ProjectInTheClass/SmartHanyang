@@ -120,7 +120,7 @@
                             <outlet property="delegate" destination="TVY-mk-TrO" id="UNk-aC-9JB"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="과제" image="icons8-task-30" selectedImage="icons8-task-30" id="l9b-hX-6uf" userLabel="과제"/>
+                    <tabBarItem key="tabBarItem" title="과제" image="icons8-attendance-100" selectedImage="icons8-task-30" id="l9b-hX-6uf" userLabel="과제"/>
                     <navigationItem key="navigationItem" title="과제 목록" id="XGN-YX-329">
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="edit" id="HKB-O6-gnd">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -278,7 +278,7 @@
         <scene sceneID="EDL-tf-xPF">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Qbd-cK-E6R" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="과제" selectedImage="icons8-task-30" id="jR6-Gx-c3S"/>
+                    <tabBarItem key="tabBarItem" title="과제" image="icons8-task-69" id="jR6-Gx-c3S"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="gNp-Zk-mdf">
@@ -300,6 +300,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="icons8-attendance-100" width="100" height="100"/>
         <image name="icons8-task-30" width="30" height="30"/>
+        <image name="icons8-task-69" width="23" height="23"/>
     </resources>
 </document>
