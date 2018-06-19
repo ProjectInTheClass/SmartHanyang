@@ -15,22 +15,31 @@ class GoajeTableViewController: UITableViewController {
     
     @IBOutlet var tableOutlet: UITableView!
     
-
-    override func viewWillAppear(_ animated: Bool)
-    {
-        super.viewWillAppear(animated)
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.editButtonItem.tintColor = .white
+        self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
         goajes = GoajeDataManager.shared.GetGoajes()
+        LectureDataManager.shared.addUpdateEventListener(key:"GoajeTableViewController") {
+            self.goajes = GoajeDataManager.shared.GetGoajes()
+            self.tableView.reloadData()
+        }
         GoajeDataManager.shared.addUpdateEventListener(key:"GoajeTableViewController") {
             self.goajes = GoajeDataManager.shared.GetGoajes()
             self.tableView.reloadData()
         }
-        
-        self.editButtonItem.tintColor = .white
-        self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        GoajeDataManager.shared.removeEventListener(key:"GoajeTableViewController")
+
+    override func viewWillAppear(_ animated: Bool)
+    {
+        super.viewWillAppear(animated)
+        
+        if LectureDataManager.shared.GetLectures().count == 0 {
+            self.navigationItem.rightBarButtonItem = nil
+        }
     }
     
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
@@ -65,6 +74,10 @@ class GoajeTableViewController: UITableViewController {
         
         if indexPath.row == goajes.count {
             let cell = tableView.dequeueReusableCell(withIdentifier: "addGoaje", for: indexPath)
+            if LectureDataManager.shared.GetLectures().count == 0 && cell.textLabel != nil {
+                cell.textLabel!.text = "설정에서 수업을 추가해주세요."
+                cell.isUserInteractionEnabled = false
+            }
             return cell
         }
         
@@ -73,6 +86,28 @@ class GoajeTableViewController: UITableViewController {
         cell.SetGoaje(goaje: goajes[indexPath.row])
         
         return cell
+    }
+    
+    override open func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if LectureDataManager.shared.GetLectures().count == 0 {
+            var h = UIScreen.main.bounds.height
+            h -= UIApplication.shared.statusBarFrame.size.height
+            h -= self.navigationController?.navigationBar.frame.height ?? 0.0
+            h -= self.tabBarController?.tabBar.frame.size.height ?? 0.0
+            return h
+        }
+        return 60
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == goajes.count {
+            let _child = self.storyboard?.instantiateViewController(withIdentifier: "addGoajeView") as? UINavigationController;
+            
+            if let child = _child {
+                child.modalPresentationStyle = .fullScreen
+                self.present(child, animated: true, completion: nil)
+            }
+        }
     }
 
 }

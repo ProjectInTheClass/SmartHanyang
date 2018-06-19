@@ -19,7 +19,12 @@ class SuupTableViewController: UITableViewController {
         }
         
         update()
-        self.tableView.scrollToRow(at: IndexPath(row: 1, section: 0), at: UITableViewScrollPosition.top, animated: false)
+        if LectureDataManager.shared.GetLectures().count > 0 {
+            self.tableView.scrollToRow(at: IndexPath(row: 1, section: 0), at: UITableViewScrollPosition.top, animated: false)
+        }
+        else {
+            self.navigationItem.rightBarButtonItem = nil
+        }
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -56,6 +61,14 @@ class SuupTableViewController: UITableViewController {
     }
 
     override open func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if LectureDataManager.shared.GetLectures().count == 0 {
+            var h = UIScreen.main.bounds.height
+            h -= UIApplication.shared.statusBarFrame.size.height
+            h -= self.navigationController?.navigationBar.frame.height ?? 0.0
+            h -= self.tabBarController?.tabBar.frame.size.height ?? 0.0
+            return h
+        }
+        
         if indexPath[1] == 0{
             var h = UIScreen.main.bounds.height
             h -= UIApplication.shared.statusBarFrame.size.height
@@ -138,12 +151,20 @@ class SuupTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if LectureDataManager.shared.GetLectures().count == 0 {
+            return 1
+        }
         
         return todayLectures.count + gonggangIndexes.count + 2
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let i = indexPath[1]
+        
+        if LectureDataManager.shared.GetLectures().count == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "helpCell", for: indexPath) as! UITableViewCell
+            return cell
+        }
         
         let condition =  isGonggangAndOriginIndex(i:i)
         let originIndex = condition.1
