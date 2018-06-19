@@ -11,6 +11,7 @@ import UIKit
 class GoajeTableViewController: UITableViewController {
     
     var goajes:[Goaje] = []
+    var showCompletedGoaje = false
     
     @IBOutlet var tableOutlet: UITableView!
     
@@ -23,43 +24,33 @@ class GoajeTableViewController: UITableViewController {
                 self.tableView.reloadData()
             }
         }
+        
+        self.editButtonItem.tintColor = .white
+        self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
-    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let delete = deleteAction(at: indexPath)
-        let edit = editAction(at: indexPath)
-        return UISwipeActionsConfiguration(actions: [delete,edit])
-    }
-    
-    func deleteAction(at indexPath: IndexPath) -> UIContextualAction {
-        let action = UIContextualAction(style: .destructive, title: "삭제") {(action, view, completion) in
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        
+        let delete = UITableViewRowAction(style: .default, title: "삭제") { (action, indexPath) in
             GoajeDataManager.shared.RemoveGoaje(id: self.goajes[indexPath.row].id)
             self.goajes.remove(at: indexPath.row)
             self.tableView.deleteRows(at: [indexPath], with: .automatic)
-            completion(true)
         }
-        action.backgroundColor = .red
-        
-        return action
-    }
-    func editAction(at indexPath: IndexPath) -> UIContextualAction {
-        let action = UIContextualAction(style: .destructive, title: "수정") {(action, view, completion) in
-            let _child = self.storyboard?.instantiateViewController(withIdentifier: "addGoajeView") as? AddGoajeViewController?;
+        let edit = UITableViewRowAction(style: .destructive, title: "수정") {(action, indexPath) in
+            let _child = self.storyboard?.instantiateViewController(withIdentifier: "addGoajeView") as? UINavigationController?;
             if let child = _child! {
-                child.modalPresentationStyle = .overCurrentContext
+                //                self.navigationController?.show(child, sender: self)
                 self.present(child, animated: true, completion: nil)
-                child.EditGoaje(goaje: self.goajes[indexPath.row])
+                let g = child.viewControllers.first as! AddGoajeViewController?
+                g?.EditGoaje(goaje: self.goajes[indexPath.row])
             }
-            completion(false)
         }
-        action.backgroundColor = .gray
-        
-        return action
+        edit.backgroundColor = .gray
+        return [delete,edit]
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return indexPath.row < goajes.count
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

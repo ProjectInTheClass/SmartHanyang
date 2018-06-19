@@ -52,7 +52,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         else if shortcutItem.type == "com.hanyang.graph.SmartHanYang.editSuup" {
             let vc1 = UIStoryboard(name: "Suup", bundle: nil)
-            let editSuup = vc1.instantiateViewController(withIdentifier: "editSuupViewController") as! EditSuupViewController
+            let editSuup = vc1.instantiateViewController(withIdentifier: "editSuupViewController") as! UINavigationController
             self.window?.rootViewController?.present(editSuup, animated: true, completion: nil)
         }
     }
