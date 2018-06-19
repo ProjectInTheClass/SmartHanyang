@@ -12,23 +12,19 @@ class SuupTableViewController: UITableViewController {
     var todayLectures:[LectureTimeTable] = []
     var gonggangIndexes:[Float] = []
     
-    override func viewDidLoad() {
-        //self.navigationController?.navigationBar.isTranslucent = false
-        LectureDataManager.shared.addUpdateEventListener {
-            self.update()
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        }
-        
-        super.viewDidLoad()
-        update()
-    }
-    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        LectureDataManager.shared.addUpdateEventListener(key:"SuupTableViewController") {
+            self.update()
+        }
         
+        update()
         self.tableView.scrollToRow(at: IndexPath(row: 1, section: 0), at: UITableViewScrollPosition.top, animated: false)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        LectureDataManager.shared.removeEventListener(key:"SuupTableViewController")
     }
     
     func update()
@@ -50,10 +46,9 @@ class SuupTableViewController: UITableViewController {
             prev = l
         }
         
-        DispatchQueue.main.async {
-            self.tableView.rowHeight = UITableViewAutomaticDimension
-            self.tableView.estimatedRowHeight = 44
-        }
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.estimatedRowHeight = 44
+        self.tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {

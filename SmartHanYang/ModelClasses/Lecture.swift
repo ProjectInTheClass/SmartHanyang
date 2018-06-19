@@ -55,6 +55,11 @@ public class LectureTimeTable: NSObject, NSCoding
         return "\(TimeToText2(time: timeStart)) - \(TimeToText2(time: timeEnd))"
     }
     
+    public func GetDayAndTimeText() -> String
+    {
+        return "\(Easy.WeekdayToString(weekDay: weekDay!)) (\(GetTimeText()))"
+    }
+    
     private func TimeToText2(time:Int) -> String
     {
         var str = ""
@@ -74,12 +79,12 @@ public class LectureTimeTable: NSObject, NSCoding
         return str
     }
     
-    public init(room:String,
-              lectureId: Int,
-              timeStart: Int,
-        timeEnd: Int,
-        weekDay: Int,
-        bogangDay: Date?, hyugangDays: [Date])
+    public init(room:String = "",
+              lectureId: Int = -1,
+              timeStart: Int = 8 * 3600,
+              timeEnd: Int = 8 * 3600,
+              weekDay: Int = 1,
+            bogangDay: Date? = nil, hyugangDays: [Date] = [])
     {
         self.room = room
         self.lectureId = lectureId
@@ -101,9 +106,9 @@ public class LectureTimeTable: NSObject, NSCoding
     
     public required convenience init?(coder aDecoder: NSCoder) {
         let room = aDecoder.decodeObject(forKey: PropertyKey.room) as! String
-        let lectureId = aDecoder.decodeInteger(forKey: PropertyKey.lectureId) as! Int
-        let timeStart = aDecoder.decodeInteger(forKey: PropertyKey.timeStart) as! Int
-        let timeEnd = aDecoder.decodeInteger(forKey: PropertyKey.timeEnd) as! Int
+        let lectureId = aDecoder.decodeInteger(forKey: PropertyKey.lectureId)
+        let timeStart = aDecoder.decodeInteger(forKey: PropertyKey.timeStart)
+        let timeEnd = aDecoder.decodeInteger(forKey: PropertyKey.timeEnd)
         let weekDay = aDecoder.decodeObject(forKey: PropertyKey.weekDay) as! Int //불완전 임시코드
         let bogangDay = aDecoder.decodeObject(forKey: PropertyKey.bogangDay) as? Date
         let hyugangDays = aDecoder.decodeObject(forKey: PropertyKey.hyugangDays) as! [Date]

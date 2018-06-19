@@ -146,7 +146,7 @@
                         <sections>
                             <tableViewSection id="0X8-B3-vTj">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="44" id="V0z-Hm-X7Z">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="44" id="V0z-Hm-X7Z" customClass="TextCell" customModule="SmartHanYang" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="35" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="V0z-Hm-X7Z" id="WB7-WB-aDD">
@@ -157,7 +157,7 @@
                                                     <rect key="frame" x="10" y="-1" width="300" height="44"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -167,6 +167,9 @@
                                                 <constraint firstItem="aqK-N9-wnt" firstAttribute="centerX" secondItem="WB7-WB-aDD" secondAttribute="centerX" id="nPb-Ip-UoZ"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="textField" destination="aqK-N9-wnt" id="lBP-3k-ulk"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>

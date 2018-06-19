@@ -18,11 +18,9 @@ class GoajeTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         goajes = GoajeDataManager.shared.GetGoajes()
-        GoajeDataManager.shared.addUpdateEventListener {
+        GoajeDataManager.shared.addUpdateEventListener(key:"GoajeTableViewController") {
             self.goajes = GoajeDataManager.shared.GetGoajes()
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
+            self.tableView.reloadData()
         }
         
         self.editButtonItem.tintColor = .white

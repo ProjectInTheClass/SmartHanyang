@@ -13,7 +13,7 @@ class GoajeDataManager
 {
     static let shared = GoajeDataManager();
     var goajes:[Goaje] = []
-    var listeners:[()->Void] = []
+    var listeners:[String:()->Void] = [:]
     
     static let fileName: String = "goajedata.brch"
     static let documentPath = NSSearchPathForDirectoriesInDomains(
@@ -21,16 +21,21 @@ class GoajeDataManager
         FileManager.SearchPathDomainMask.userDomainMask, true)[0]
     let filePath = "\(documentPath)/" + fileName
     
-    public func addUpdateEventListener(f:@escaping ()->Void)
+    public func addUpdateEventListener(key:String,f:@escaping ()->Void)
     {
-        listeners.append(f)
+        listeners[key] = f
+    }
+    
+    public func removeEventListener(key:String)
+    {
+        listeners.removeValue(forKey: key)
     }
     
     public func dispatchEvent()
     {
         for f in listeners
         {
-            f()
+            f.1()
         }
     }
     
