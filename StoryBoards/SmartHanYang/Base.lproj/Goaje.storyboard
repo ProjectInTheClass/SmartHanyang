@@ -45,10 +45,10 @@
                                     </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="goajeCell" rowHeight="60" id="H5U-c5-raF" userLabel="goajeCell" customClass="GoajeTableViewCell" customModule="SmartHanYang" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="goajeCell" rowHeight="60" id="H5U-c5-raF" userLabel="goajeCell" customClass="GoajeTableViewCell" customModule="SmartHanYang" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="88" width="320" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="H5U-c5-raF" id="qx3-HC-MDV">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="H5U-c5-raF" id="qx3-HC-MDV">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="59.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
@@ -120,9 +120,9 @@
                             <outlet property="delegate" destination="TVY-mk-TrO" id="UNk-aC-9JB"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="과제" image="icons8-task-30" selectedImage="icons8-task-30" id="l9b-hX-6uf" userLabel="과제"/>
+                    <tabBarItem key="tabBarItem" title="과제" image="icons8-attendance-100" selectedImage="icons8-task-30" id="l9b-hX-6uf" userLabel="과제"/>
                     <navigationItem key="navigationItem" title="과제 목록" id="XGN-YX-329">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="compose" id="HKB-O6-gnd">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="edit" id="HKB-O6-gnd">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </barButtonItem>
                     </navigationItem>
@@ -138,7 +138,7 @@
         <!--과제 추가-->
         <scene sceneID="BSc-Ls-uSW">
             <objects>
-                <tableViewController storyboardIdentifier="addGoaje" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gon-6Y-YtD" customClass="AddGoajeViewController" customModule="SmartHanYang" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="addGoajeViewChild" id="gon-6Y-YtD" customClass="AddGoajeViewController" customModule="SmartHanYang" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="ZvI-zc-NR9">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -257,7 +257,7 @@
         <!--Navigation Controller-->
         <scene sceneID="LaF-pa-0h4">
             <objects>
-                <navigationController useStoryboardIdentifierAsRestorationIdentifier="YES" id="BEh-t1-KAb" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="addGoajeView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BEh-t1-KAb" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="weW-Mq-OPk">
                         <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -278,7 +278,7 @@
         <scene sceneID="EDL-tf-xPF">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Qbd-cK-E6R" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="과제" selectedImage="icons8-task-30" id="jR6-Gx-c3S"/>
+                    <tabBarItem key="tabBarItem" title="과제" image="icons8-task-69" id="jR6-Gx-c3S"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="gNp-Zk-mdf">
@@ -300,6 +300,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="icons8-attendance-100" width="100" height="100"/>
         <image name="icons8-task-30" width="30" height="30"/>
+        <image name="icons8-task-69" width="23" height="23"/>
     </resources>
 </document>

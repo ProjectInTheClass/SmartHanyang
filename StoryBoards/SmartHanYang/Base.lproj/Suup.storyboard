@@ -14,7 +14,7 @@
         <scene sceneID="aTU-X3-hhu">
             <objects>
                 <navigationController id="Ph5-zV-aTs" userLabel="수업" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="수업" image="icons8-class-30" id="3S8-a8-rum" userLabel="수업"/>
+                    <tabBarItem key="tabBarItem" title="수업" image="icons8-class-69" id="3S8-a8-rum" userLabel="수업"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="iY1-rv-QA4">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -36,7 +36,7 @@
         <scene sceneID="EXo-L1-hoJ">
             <objects>
                 <tableViewController title="Suup" id="FAZ-ZB-bDh" customClass="SuupTableViewController" customModule="SmartHanYang" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" contentInsetAdjustmentBehavior="always" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="pcB-Bw-vPM">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" contentInsetAdjustmentBehavior="always" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="1" sectionHeaderHeight="28" sectionFooterHeight="28" id="pcB-Bw-vPM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -45,7 +45,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="450"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="obO-Fv-c9k" id="v7J-3Q-5qH" customClass="TimeTable" customModule="SmartHanYang" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="449.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="450"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="CEb-gb-AFj" userLabel="col0">
@@ -88,7 +88,7 @@
                                 <rect key="frame" x="0.0" y="478" width="375" height="78"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IzT-E2-Tl3" id="DMj-9n-5T9">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="77.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="78"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14:30-16:30" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ezc-wQ-DYU" userLabel="time">
@@ -154,7 +154,7 @@
                                 <rect key="frame" x="0.0" y="556" width="375" height="30"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jYN-Hz-LJ9" id="9nL-Vk-e5e">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="29.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="위로 드래그하여 시간표를 볼 수 있습니다" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="icp-VY-hYc">
@@ -178,12 +178,12 @@
                                 <rect key="frame" x="0.0" y="586" width="375" height="41"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5jg-1a-m2w" id="VOu-0U-gT3">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="40.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="41"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="lzq-Uv-w48">
-                                            <rect key="frame" x="0.0" y="38.5" width="375" height="2"/>
-                                            <color key="progressTintColor" red="0.2073075429" green="0.51295552359999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <rect key="frame" x="0.0" y="39" width="375" height="2"/>
+                                            <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </progressView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="휴강 1시간 30분" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VER-2F-kjJ">
                                             <rect key="frame" x="0.0" y="10" width="375" height="21"/>
@@ -220,7 +220,7 @@
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="compose" id="2pE-it-Tna">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <segue destination="knN-vv-he9" kind="presentation" id="dQT-UG-HCZ"/>
+                                <segue destination="cvw-56-BIq" kind="show" id="s27-ab-jox"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -229,10 +229,30 @@
             </objects>
             <point key="canvasLocation" x="30.434782608695656" y="29.347826086956523"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="GS1-Ak-tu3">
+            <objects>
+                <navigationController storyboardIdentifier="editSuupViewController" id="cvw-56-BIq" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="14Z-f3-acl">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.090196078430000007" green="0.27058823529999998" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="knN-vv-he9" kind="relationship" relationship="rootViewController" id="jcP-WE-Wzr"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a5i-yZ-Qax" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="874" y="28"/>
+        </scene>
         <!--보강/휴강 추가-->
         <scene sceneID="BmN-gj-o4w">
             <objects>
-                <viewController storyboardIdentifier="editSuupViewController" title="보강/휴강 추가" useStoryboardIdentifierAsRestorationIdentifier="YES" id="knN-vv-he9" customClass="EditSuupViewController" customModule="SmartHanYang" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="보강/휴강 추가" useStoryboardIdentifierAsRestorationIdentifier="YES" id="knN-vv-he9" customClass="EditSuupViewController" customModule="SmartHanYang" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UrL-3g-Zjt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -249,13 +269,11 @@
                                 </connections>
                             </segmentedControl>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VRf-KG-S89" userLabel="LecturePicker" customClass="LecturePicker" customModule="SmartHanYang" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="102" width="375" height="162"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="0.0" y="102" width="375" height="138.5"/>
                                 <accessibility key="accessibilityConfiguration" label="ㅁㄴㅇㄹ"/>
                             </pickerView>
                             <datePicker contentMode="scaleToFill" verticalHuggingPriority="247" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="30" translatesAutoresizingMaskIntoConstraints="NO" id="0Vs-8Z-Mm3">
-                                <rect key="frame" x="0.0" y="269" width="375" height="198"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="0.0" y="245.5" width="375" height="167.5"/>
                                 <date key="date" timeIntervalSinceReferenceDate="548055037.78634202">
                                     <!--2018-05-15 05:30:37 +0000-->
                                 </date>
@@ -265,13 +283,12 @@
                                 </connections>
                             </datePicker>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qPa-uO-28H" userLabel="HyugangView">
-                                <rect key="frame" x="0.0" y="473" width="375" height="194"/>
+                                <rect key="frame" x="0.0" y="418.5" width="375" height="199.5"/>
                                 <subviews>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9tg-iu-D3j" customClass="LectureTimePicker" customModule="SmartHanYang" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="194"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="199.5"/>
                                     </pickerView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="9tg-iu-D3j" firstAttribute="centerX" secondItem="qPa-uO-28H" secondAttribute="centerX" id="9gv-qx-N81"/>
                                     <constraint firstItem="9tg-iu-D3j" firstAttribute="height" secondItem="qPa-uO-28H" secondAttribute="height" id="A3M-Jx-YUt"/>
@@ -280,24 +297,22 @@
                                 </constraints>
                             </view>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Je4-Uz-avb" userLabel="BogangView">
-                                <rect key="frame" x="0.0" y="473" width="375" height="194"/>
+                                <rect key="frame" x="0.0" y="418.5" width="375" height="199.5"/>
                                 <subviews>
                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="30" translatesAutoresizingMaskIntoConstraints="NO" id="1oS-VZ-8Oa" userLabel="StartTime">
-                                        <rect key="frame" x="0.0" y="39" width="188" height="155"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <rect key="frame" x="0.0" y="39.5" width="188" height="160"/>
                                         <date key="date" timeIntervalSinceReferenceDate="548055216.98325098">
                                             <!--2018-05-15 05:33:36 +0000-->
                                         </date>
                                     </datePicker>
                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="30" translatesAutoresizingMaskIntoConstraints="NO" id="2wN-1L-YTb" userLabel="EndTime">
-                                        <rect key="frame" x="188" y="39" width="187" height="155"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <rect key="frame" x="188" y="39.5" width="187" height="160"/>
                                         <date key="date" timeIntervalSinceReferenceDate="548055166.66697299">
                                             <!--2018-05-15 05:32:46 +0000-->
                                         </date>
                                     </datePicker>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="~" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mr2-xJ-5ds">
-                                        <rect key="frame" x="182" y="106" width="11" height="21"/>
+                                        <rect key="frame" x="182" y="109.5" width="11" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -309,7 +324,6 @@
                                         <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                     </textField>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="1oS-VZ-8Oa" firstAttribute="width" secondItem="Je4-Uz-avb" secondAttribute="width" multiplier="0.5" id="2i2-XL-Qmz"/>
                                     <constraint firstAttribute="bottom" secondItem="2wN-1L-YTb" secondAttribute="bottom" id="7Gp-Hb-odg"/>
@@ -326,55 +340,29 @@
                                     <constraint firstItem="2wN-1L-YTb" firstAttribute="trailing" secondItem="Je4-Uz-avb" secondAttribute="trailing" id="vtr-jB-grD"/>
                                 </constraints>
                             </view>
-                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yma-pV-ugB">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <color key="barTintColor" red="0.090196078430000007" green="0.27058823529999998" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <textAttributes key="titleTextAttributes">
-                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </textAttributes>
-                                <items>
-                                    <navigationItem title="휴강/보강 추가" id="Zg7-e0-lCf">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="uvi-gf-UzC">
-                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <connections>
-                                                <action selector="cancel" destination="knN-vv-he9" id="NZT-4c-Iey"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="lel-As-HEg">
-                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <connections>
-                                                <action selector="done" destination="knN-vv-he9" id="H4b-rz-5ic"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="IxS-Tv-VVq" firstAttribute="top" secondItem="ag7-7r-xTK" secondAttribute="top" constant="5" id="00P-C6-6FR"/>
                             <constraint firstItem="0Vs-8Z-Mm3" firstAttribute="top" secondItem="VRf-KG-S89" secondAttribute="bottom" constant="5" id="5B1-me-GD6"/>
                             <constraint firstItem="IxS-Tv-VVq" firstAttribute="width" secondItem="ag7-7r-xTK" secondAttribute="width" multiplier="0.8" id="5Gi-k5-1Dh"/>
                             <constraint firstItem="qPa-uO-28H" firstAttribute="height" secondItem="Je4-Uz-avb" secondAttribute="height" id="5bh-6v-KVF"/>
                             <constraint firstItem="qPa-uO-28H" firstAttribute="width" secondItem="Je4-Uz-avb" secondAttribute="width" id="66Z-9u-k7C"/>
                             <constraint firstItem="qPa-uO-28H" firstAttribute="centerX" secondItem="ag7-7r-xTK" secondAttribute="centerX" id="7NS-4D-NEi"/>
-                            <constraint firstItem="IxS-Tv-VVq" firstAttribute="top" secondItem="yma-pV-ugB" secondAttribute="bottom" constant="5" id="7gC-QZ-dD8"/>
                             <constraint firstItem="IxS-Tv-VVq" firstAttribute="centerX" secondItem="ag7-7r-xTK" secondAttribute="centerX" id="ARJ-yk-zHo"/>
                             <constraint firstItem="VRf-KG-S89" firstAttribute="height" secondItem="ag7-7r-xTK" secondAttribute="height" multiplier="0.25" id="FBE-4T-uyW"/>
-                            <constraint firstItem="0Vs-8Z-Mm3" firstAttribute="height" secondItem="ag7-7r-xTK" secondAttribute="height" multiplier="0.45" constant="-93" id="M5y-0j-3wM"/>
+                            <constraint firstItem="0Vs-8Z-Mm3" firstAttribute="height" secondItem="ag7-7r-xTK" secondAttribute="height" multiplier="0.47" constant="-93" id="M5y-0j-3wM"/>
                             <constraint firstItem="VRf-KG-S89" firstAttribute="width" secondItem="ag7-7r-xTK" secondAttribute="width" id="NlT-Ab-3uj"/>
-                            <constraint firstItem="yma-pV-ugB" firstAttribute="centerX" secondItem="ag7-7r-xTK" secondAttribute="centerX" id="PGz-Wa-ciK"/>
                             <constraint firstItem="0Vs-8Z-Mm3" firstAttribute="width" secondItem="ag7-7r-xTK" secondAttribute="width" id="YhC-E8-afX"/>
                             <constraint firstItem="qPa-uO-28H" firstAttribute="bottom" secondItem="ag7-7r-xTK" secondAttribute="bottom" id="bhg-n5-SC0"/>
                             <constraint firstItem="0Vs-8Z-Mm3" firstAttribute="top" secondItem="VRf-KG-S89" secondAttribute="bottom" priority="250" constant="5" id="hNE-a7-4hG"/>
                             <constraint firstItem="VRf-KG-S89" firstAttribute="top" secondItem="IxS-Tv-VVq" secondAttribute="bottom" constant="5" id="iuM-1U-gNK"/>
                             <constraint firstItem="0Vs-8Z-Mm3" firstAttribute="centerX" secondItem="ag7-7r-xTK" secondAttribute="centerX" id="jFf-sY-2xt"/>
                             <constraint firstItem="Je4-Uz-avb" firstAttribute="width" secondItem="ag7-7r-xTK" secondAttribute="width" id="jVG-dt-taO"/>
-                            <constraint firstItem="yma-pV-ugB" firstAttribute="width" secondItem="ag7-7r-xTK" secondAttribute="width" id="jca-iv-YT6"/>
                             <constraint firstItem="VRf-KG-S89" firstAttribute="centerX" secondItem="ag7-7r-xTK" secondAttribute="centerX" id="mYy-zo-zDU"/>
-                            <constraint firstItem="yma-pV-ugB" firstAttribute="top" secondItem="ag7-7r-xTK" secondAttribute="top" id="n2c-GN-Eqh"/>
                             <constraint firstItem="Je4-Uz-avb" firstAttribute="centerX" secondItem="UrL-3g-Zjt" secondAttribute="centerX" id="nEA-Fh-7CE"/>
                             <constraint firstItem="Je4-Uz-avb" firstAttribute="bottom" secondItem="ag7-7r-xTK" secondAttribute="bottom" id="r3G-II-rGs"/>
-                            <constraint firstItem="Je4-Uz-avb" firstAttribute="height" secondItem="ag7-7r-xTK" secondAttribute="height" multiplier="0.3" id="swM-l8-KVk"/>
+                            <constraint firstItem="Je4-Uz-avb" firstAttribute="height" secondItem="ag7-7r-xTK" secondAttribute="height" multiplier="0.36" id="swM-l8-KVk"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ag7-7r-xTK"/>
                         <variation key="default">
@@ -383,6 +371,20 @@
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" title="휴강/보강 추가" id="Zg7-e0-lCf">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="uvi-gf-UzC">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="cancel" destination="knN-vv-he9" id="NZT-4c-Iey"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="lel-As-HEg">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="done" destination="knN-vv-he9" id="H4b-rz-5ic"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="bogangEndTime" destination="2wN-1L-YTb" id="HHA-Qs-cQr"/>
                         <outlet property="bogangRoom" destination="AFJ-Fm-gpz" id="1bc-ck-Kfp"/>
@@ -399,11 +401,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eZX-EP-DUm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="856.875" y="28.52112676056338"/>
+            <point key="canvasLocation" x="1697" y="29"/>
         </scene>
     </scenes>
     <resources>
-        <image name="icons8-class-30" width="30" height="30"/>
+        <image name="icons8-class-69" width="23" height="23"/>
     </resources>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>

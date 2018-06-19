@@ -26,7 +26,7 @@ class GoajeDataManager
         listeners.append(f)
     }
     
-    func dispatchEvent()
+    public func dispatchEvent()
     {
         for f in listeners
         {

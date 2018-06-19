@@ -31,11 +31,11 @@ class GoajeTableViewCell: UITableViewCell,BEMCheckBoxDelegate {
         let a = EasyCalendar.DDay(from:Date() , to: goaje.timeEnd)
         dDayLabel.text = "D-\(a)"
         
+        
         checkbox.onAnimationType = .fill
         checkbox.offAnimationType = .bounce
         
-        let fill = checkbox.onCheckColor
-        checkbox.onFillColor = fill
+        checkbox.onFillColor = UIColor.init(hexString: "#007aff")
         checkbox.onCheckColor = .white
         
         checkbox.delegate = self
@@ -54,6 +54,7 @@ class GoajeTableViewCell: UITableViewCell,BEMCheckBoxDelegate {
         }
     }
     
+    
     func ShowCompleted(compledted:Bool)
     {
         let transition = {(label:UILabel) -> Void in
@@ -66,5 +67,7 @@ class GoajeTableViewCell: UITableViewCell,BEMCheckBoxDelegate {
         transition(lectureNameLabel)
         transition(dateLabel)
     }
+    
+    
 
 }

@@ -63,7 +63,7 @@ class TimeTableView: UITableViewCell
         let rowCount = Int((goodEndT - goodStartT)/3600)
         
         let contentHeight = self.frame.height - CGFloat(TimeTableView.TOP_HEIGHT)
-        let cellHourHeight = ceil(CGFloat(contentHeight / CGFloat(rowCount)))
+        let cellHourHeight = ceil(CGFloat(contentHeight / CGFloat(rowCount)))-1
         
         for col in cols {
             col.Go(width:width,hourHeight:cellHourHeight, minTime: goodStartT, maxTime: goodEndT)
@@ -93,7 +93,7 @@ class TimeTableView: UITableViewCell
         let rowCount = max(1,Int((endT - startT)/3600))
         let w = Int(width)
         
-        let view = UIView(frame:CGRect(x: 0, y: 0, width: w, height:TimeTableView.TOP_HEIGHT))
+        let view = UIView(frame:CGRect(x: 0, y: 1, width: w, height:TimeTableView.TOP_HEIGHT-1))
         view.backgroundColor = UIColor.white
         col0.addSubview(view)
         
@@ -179,7 +179,7 @@ class TimeTableViewCol: UIStackView
     
     public func AddWeekDayLabel(width:CGFloat)
     {
-        let label = UILabel(frame:CGRect(x: 0, y: 0, width: Int(width-1), height: TimeTableView.TOP_HEIGHT))
+        let label = UILabel(frame:CGRect(x: 0, y: 1, width: Int(width-1), height: TimeTableView.TOP_HEIGHT-1))
         label.text = Easy.WeekdayToString(weekDay: EasyCalendar.GetWeekday(date: date))
         label.font = label.font.withSize(10)
         label.backgroundColor = UIColor.white

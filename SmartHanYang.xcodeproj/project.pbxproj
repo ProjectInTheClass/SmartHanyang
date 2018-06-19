@@ -26,7 +26,6 @@
 		F90FB8F220A8EB6C001077E9 /* GoajeDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90FB8F120A8EB6C001077E9 /* GoajeDataManager.swift */; };
 		F90FB8F420A912A0001077E9 /* GonggangCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90FB8F320A912A0001077E9 /* GonggangCell.swift */; };
 		F910BA7620A448EC00E15F90 /* SuupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F910BA7520A448EC00E15F90 /* SuupTableViewCell.swift */; };
-		F91DCFDA20A57F42003A4161 /* Suup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F91DCFD820A57F42003A4161 /* Suup.storyboard */; };
 		F91DCFDE20A5814A003A4161 /* Goaje.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F91DCFDC20A5814A003A4161 /* Goaje.storyboard */; };
 		F91DCFE320A58C3D003A4161 /* example in Resources */ = {isa = PBXBuildFile; fileRef = F91DCFE220A58C3D003A4161 /* example */; };
 		F91DCFE520A58D10003A4161 /* ParseJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91DCFE420A58D10003A4161 /* ParseJson.swift */; };
@@ -36,6 +35,7 @@
 		F96DFB9720A42E4300997614 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F96DFB9520A42E4300997614 /* Main.storyboard */; };
 		F96DFBA420A4315600997614 /* SuupTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96DFBA320A4315600997614 /* SuupTableViewController.swift */; };
 		F96DFBAD20A4467D00997614 /* Lecture.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96DFBAC20A4467C00997614 /* Lecture.swift */; };
+		F9864A3E20D3E1AC00B2C846 /* Suup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9864A3C20D3E1AC00B2C846 /* Suup.storyboard */; };
 		F98942B420AABC7000905CB2 /* EditSuupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98942B320AABC7000905CB2 /* EditSuupViewController.swift */; };
 		F98942B820AAC46400905CB2 /* LecturePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98942B720AAC46400905CB2 /* LecturePicker.swift */; };
 		F98942BA20AADB3200905CB2 /* LectureTimePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98942B920AADB3200905CB2 /* LectureTimePicker.swift */; };
@@ -45,6 +45,8 @@
 		F9D0D5FA20C92ED50039BA67 /* AddGoajeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D0D5F920C92ED50039BA67 /* AddGoajeViewController.swift */; };
 		F9FC4DDE20D204E2001992DF /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FC4DDD20D204E2001992DF /* SettingsViewController.swift */; };
 		F9FC4DE020D20E9A001992DF /* LectureManager.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9FC4DDF20D20E9A001992DF /* LectureManager.storyboard */; };
+		F9FC4DE220D2686B001992DF /* LectureManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FC4DE120D2686B001992DF /* LectureManagerViewController.swift */; };
+		F9FC4DE420D26CDA001992DF /* EditLectureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FC4DE320D26CDA001992DF /* EditLectureViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,7 +71,6 @@
 		F90FB8F120A8EB6C001077E9 /* GoajeDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoajeDataManager.swift; sourceTree = "<group>"; };
 		F90FB8F320A912A0001077E9 /* GonggangCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GonggangCell.swift; sourceTree = "<group>"; };
 		F910BA7520A448EC00E15F90 /* SuupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuupTableViewCell.swift; sourceTree = "<group>"; };
-		F91DCFD920A57F42003A4161 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = SmartHanYang/Base.lproj/Suup.storyboard; sourceTree = "<group>"; };
 		F91DCFDD20A5814A003A4161 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = SmartHanYang/Base.lproj/Goaje.storyboard; sourceTree = "<group>"; };
 		F91DCFE220A58C3D003A4161 /* example */ = {isa = PBXFileReference; lastKnownFileType = text; path = example; sourceTree = "<group>"; };
 		F91DCFE420A58D10003A4161 /* ParseJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseJson.swift; sourceTree = "<group>"; };
@@ -81,6 +82,7 @@
 		F96DFB9D20A42E4400997614 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F96DFBA320A4315600997614 /* SuupTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuupTableViewController.swift; sourceTree = "<group>"; };
 		F96DFBAC20A4467C00997614 /* Lecture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lecture.swift; sourceTree = "<group>"; };
+		F9864A3D20D3E1AC00B2C846 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = SmartHanYang/Base.lproj/Suup.storyboard; sourceTree = "<group>"; };
 		F98942B320AABC7000905CB2 /* EditSuupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditSuupViewController.swift; sourceTree = "<group>"; };
 		F98942B720AAC46400905CB2 /* LecturePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LecturePicker.swift; sourceTree = "<group>"; };
 		F98942B920AADB3200905CB2 /* LectureTimePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureTimePicker.swift; sourceTree = "<group>"; };
@@ -90,6 +92,8 @@
 		F9D0D5F920C92ED50039BA67 /* AddGoajeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGoajeViewController.swift; sourceTree = "<group>"; };
 		F9FC4DDD20D204E2001992DF /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		F9FC4DDF20D20E9A001992DF /* LectureManager.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LectureManager.storyboard; sourceTree = "<group>"; };
+		F9FC4DE120D2686B001992DF /* LectureManagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureManagerViewController.swift; sourceTree = "<group>"; };
+		F9FC4DE320D26CDA001992DF /* EditLectureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditLectureViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,8 +165,8 @@
 		F91DCFDB20A57F4B003A4161 /* StoryBoards */ = {
 			isa = PBXGroup;
 			children = (
+				F9864A3C20D3E1AC00B2C846 /* Suup.storyboard */,
 				F96DFB9520A42E4300997614 /* Main.storyboard */,
-				F91DCFD820A57F42003A4161 /* Suup.storyboard */,
 				F91DCFDC20A5814A003A4161 /* Goaje.storyboard */,
 				E347D91A20C505DA00E94ADA /* LaunchScreen.storyboard */,
 				F969861920CA801100336B97 /* Setting.storyboard */,
@@ -245,6 +249,8 @@
 			isa = PBXGroup;
 			children = (
 				F9FC4DDD20D204E2001992DF /* SettingsViewController.swift */,
+				F9FC4DE120D2686B001992DF /* LectureManagerViewController.swift */,
+				F9FC4DE320D26CDA001992DF /* EditLectureViewController.swift */,
 			);
 			path = SettingsView;
 			sourceTree = "<group>";
@@ -313,10 +319,10 @@
 				E34A1A4D20C2A2AF0067B743 /* Media.xcassets in Resources */,
 				6FB7DB5920D3B287002303DA /* Restaurant.storyboard in Resources */,
 				F91DCFDE20A5814A003A4161 /* Goaje.storyboard in Resources */,
+				F9864A3E20D3E1AC00B2C846 /* Suup.storyboard in Resources */,
 				F9FC4DE020D20E9A001992DF /* LectureManager.storyboard in Resources */,
 				F91DCFE320A58C3D003A4161 /* example in Resources */,
 				F96DFB9720A42E4300997614 /* Main.storyboard in Resources */,
-				F91DCFDA20A57F42003A4161 /* Suup.storyboard in Resources */,
 				F969861A20CA801100336B97 /* Setting.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -372,6 +378,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F90FB8F020A8EB2C001077E9 /* Goaje.swift in Sources */,
+				F9FC4DE220D2686B001992DF /* LectureManagerViewController.swift in Sources */,
 				F90FB8EE20A8DC02001077E9 /* LectureDataMager.swift in Sources */,
 				F96DFB9420A42E4300997614 /* ViewController.swift in Sources */,
 				E300793B20BA72550089A9D7 /* GoajeTableViewCell.swift in Sources */,
@@ -380,6 +387,8 @@
 				6FB7DB5220D3B07A002303DA /* restaurantsForRoulette.swift in Sources */,
 				6FB7DB4F20D3B07A002303DA /* InnerRestaurant.swift in Sources */,
 				F9FC4DDE20D204E2001992DF /* SettingsViewController.swift in Sources */,
+				6F8DD1E320BF95F400525298 /* ResataurantManager.swift in Sources */,
+				F9FC4DE420D26CDA001992DF /* EditLectureViewController.swift in Sources */,
 				F91DCFE520A58D10003A4161 /* ParseJson.swift in Sources */,
 				F90FB8F420A912A0001077E9 /* GonggangCell.swift in Sources */,
 				F98942BF20AF2AB100905CB2 /* UtilFuncs.swift in Sources */,
@@ -405,14 +414,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		F91DCFD820A57F42003A4161 /* Suup.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F91DCFD920A57F42003A4161 /* Base */,
-			);
-			name = Suup.storyboard;
-			sourceTree = "<group>";
-		};
 		F91DCFDC20A5814A003A4161 /* Goaje.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -427,6 +428,14 @@
 				F96DFB9620A42E4300997614 /* Base */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F9864A3C20D3E1AC00B2C846 /* Suup.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F9864A3D20D3E1AC00B2C846 /* Base */,
+			);
+			name = Suup.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -553,7 +562,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2KRC6U6Q7S;
+				DEVELOPMENT_TEAM = 9B2N693J8C;
 				INFOPLIST_FILE = SmartHanYang/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -574,7 +583,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2KRC6U6Q7S;
+				DEVELOPMENT_TEAM = 9B2N693J8C;
 				INFOPLIST_FILE = SmartHanYang/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (

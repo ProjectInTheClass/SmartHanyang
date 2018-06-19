@@ -199,6 +199,14 @@ class LectureDataManager
         Save()
     }
     
+    public func RemoveLecture(id:Int)
+    {
+        lectures = lectures.filter({ (lecture) -> Bool in
+            lecture.id != id
+        })
+        Save()
+    }
+    
     public func DeleteAll()
     {
         lectures = []

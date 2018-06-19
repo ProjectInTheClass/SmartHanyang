@@ -15,6 +15,7 @@ class AddGoajeViewController: UITableViewController
     @IBOutlet weak var datePicker: UIDatePicker!
     
     var goaje:Goaje?
+    var selectedLectureId:Int = -1
     
     @IBAction func Cancel()
     {
@@ -50,6 +51,7 @@ class AddGoajeViewController: UITableViewController
         goajeF.timeEnd = date
         if isEditMode {
             GoajeDataManager.shared.EditGoaje(goaje: goajeF)
+            GoajeDataManager.shared.dispatchEvent();
         }
         else {
             GoajeDataManager.shared.AddGoaje(goaje:goajeF)
@@ -60,15 +62,24 @@ class AddGoajeViewController: UITableViewController
     public func EditGoaje(goaje:Goaje)
     {
         self.goaje = goaje
-        lecturePicker.select(lectureId: goaje.lectureId!)
-        titleLabel.text = goaje.title
-        datePicker.setDate(goaje.timeEnd, animated: false)
+    }
+    public func SelectLecture(lectureId:Int)
+    {
+        self.selectedLectureId = lectureId
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        if let ggg = goaje {
+            lecturePicker.select(lectureId: ggg.lectureId!)
+            titleLabel.text = ggg.title
+            datePicker.setDate(ggg.timeEnd, animated: false)
+        }
+        
+        if selectedLectureId != -1 {
+            lecturePicker.select(lectureId: selectedLectureId)
+        }
     }
 
     override func didReceiveMemoryWarning() {
