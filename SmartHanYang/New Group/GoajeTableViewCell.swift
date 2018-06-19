@@ -29,7 +29,14 @@ class GoajeTableViewCell: UITableViewCell,BEMCheckBoxDelegate {
         
         
         let a = EasyCalendar.DDay(from:Date() , to: goaje.timeEnd)
-        dDayLabel.text = "D-\(a)"
+        
+        if a >= 0 {
+            dDayLabel.text = "D-\(a)"
+        }
+        else {
+            dDayLabel.text = "늦음"
+            dDayLabel.textColor = UIColor.init(hexString: "#990000")
+        }
         
         
         checkbox.onAnimationType = .fill
@@ -42,6 +49,10 @@ class GoajeTableViewCell: UITableViewCell,BEMCheckBoxDelegate {
         
         if let goaje = self.goaje {
             checkbox.on = goaje.completed
+            
+            if goaje.completed {
+                dDayLabel.text = "완료"
+            }
         }
         ShowCompleted(compledted:goaje.completed)
     }

@@ -16,7 +16,9 @@ class GoajeTableViewController: UITableViewController {
     @IBOutlet var tableOutlet: UITableView!
     
 
-    override func viewDidLoad() {
+    override func viewWillAppear(_ animated: Bool)
+    {
+        super.viewWillAppear(animated)
         goajes = GoajeDataManager.shared.GetGoajes()
         GoajeDataManager.shared.addUpdateEventListener(key:"GoajeTableViewController") {
             self.goajes = GoajeDataManager.shared.GetGoajes()
@@ -25,6 +27,10 @@ class GoajeTableViewController: UITableViewController {
         
         self.editButtonItem.tintColor = .white
         self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        GoajeDataManager.shared.removeEventListener(key:"GoajeTableViewController")
     }
     
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {

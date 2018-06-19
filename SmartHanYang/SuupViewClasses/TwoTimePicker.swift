@@ -79,5 +79,7 @@ class TwoTimePicker: UIPickerView, UIPickerViewDelegate, UIPickerViewDataSource
         super.init(coder : aDecoder)
         self.delegate = self
         self.dataSource = self
+        
+        Select(timeStart: 8*3600, timeEnd: 8*3600)
     }
 }

@@ -299,45 +299,24 @@
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Je4-Uz-avb" userLabel="BogangView">
                                 <rect key="frame" x="0.0" y="418.5" width="375" height="199.5"/>
                                 <subviews>
-                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="30" translatesAutoresizingMaskIntoConstraints="NO" id="1oS-VZ-8Oa" userLabel="StartTime">
-                                        <rect key="frame" x="0.0" y="39.5" width="188" height="160"/>
-                                        <date key="date" timeIntervalSinceReferenceDate="548055216.98325098">
-                                            <!--2018-05-15 05:33:36 +0000-->
-                                        </date>
-                                    </datePicker>
-                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="30" translatesAutoresizingMaskIntoConstraints="NO" id="2wN-1L-YTb" userLabel="EndTime">
-                                        <rect key="frame" x="188" y="39.5" width="187" height="160"/>
-                                        <date key="date" timeIntervalSinceReferenceDate="548055166.66697299">
-                                            <!--2018-05-15 05:32:46 +0000-->
-                                        </date>
-                                    </datePicker>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="~" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mr2-xJ-5ds">
-                                        <rect key="frame" x="182" y="109.5" width="11" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="보강 장소 입력" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AFJ-Fm-gpz">
                                         <rect key="frame" x="93.5" y="0.0" width="188" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                     </textField>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jMZ-KU-ljY" customClass="TwoTimePicker" customModule="SmartHanYang" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="40" width="375" height="159"/>
+                                    </pickerView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="1oS-VZ-8Oa" firstAttribute="width" secondItem="Je4-Uz-avb" secondAttribute="width" multiplier="0.5" id="2i2-XL-Qmz"/>
-                                    <constraint firstAttribute="bottom" secondItem="2wN-1L-YTb" secondAttribute="bottom" id="7Gp-Hb-odg"/>
-                                    <constraint firstItem="Mr2-xJ-5ds" firstAttribute="centerX" secondItem="Je4-Uz-avb" secondAttribute="centerX" id="CHx-Pr-kxW"/>
-                                    <constraint firstItem="Mr2-xJ-5ds" firstAttribute="centerY" secondItem="Je4-Uz-avb" secondAttribute="centerY" multiplier="1.2" id="EKR-fG-8a3"/>
-                                    <constraint firstItem="1oS-VZ-8Oa" firstAttribute="height" secondItem="Je4-Uz-avb" secondAttribute="height" multiplier="0.8" id="GJO-go-ey4"/>
-                                    <constraint firstAttribute="bottom" secondItem="1oS-VZ-8Oa" secondAttribute="bottom" id="TCF-X8-IZS"/>
+                                    <constraint firstAttribute="bottom" secondItem="jMZ-KU-ljY" secondAttribute="bottom" id="JCP-Om-eiG"/>
+                                    <constraint firstItem="jMZ-KU-ljY" firstAttribute="height" secondItem="Je4-Uz-avb" secondAttribute="height" multiplier="0.8" id="XzL-lk-x88"/>
                                     <constraint firstItem="AFJ-Fm-gpz" firstAttribute="centerX" secondItem="Je4-Uz-avb" secondAttribute="centerX" id="ZAi-d8-0Cn"/>
                                     <constraint firstItem="AFJ-Fm-gpz" firstAttribute="width" secondItem="Je4-Uz-avb" secondAttribute="width" multiplier="0.5" id="cZR-t0-MnG"/>
                                     <constraint firstItem="AFJ-Fm-gpz" firstAttribute="top" secondItem="Je4-Uz-avb" secondAttribute="top" id="ed5-DO-aI3"/>
-                                    <constraint firstItem="2wN-1L-YTb" firstAttribute="width" secondItem="Je4-Uz-avb" secondAttribute="width" multiplier="0.5" id="fyC-Zx-cz8"/>
-                                    <constraint firstItem="2wN-1L-YTb" firstAttribute="height" secondItem="Je4-Uz-avb" secondAttribute="height" multiplier="0.8" id="spA-8e-heE"/>
-                                    <constraint firstItem="1oS-VZ-8Oa" firstAttribute="leading" secondItem="Je4-Uz-avb" secondAttribute="leading" id="tVh-MK-CUA"/>
-                                    <constraint firstItem="2wN-1L-YTb" firstAttribute="trailing" secondItem="Je4-Uz-avb" secondAttribute="trailing" id="vtr-jB-grD"/>
+                                    <constraint firstItem="jMZ-KU-ljY" firstAttribute="centerX" secondItem="Je4-Uz-avb" secondAttribute="centerX" id="oVK-xz-9ge"/>
+                                    <constraint firstItem="jMZ-KU-ljY" firstAttribute="width" secondItem="Je4-Uz-avb" secondAttribute="width" id="yD7-c3-7SS"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -386,9 +365,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="bogangEndTime" destination="2wN-1L-YTb" id="HHA-Qs-cQr"/>
                         <outlet property="bogangRoom" destination="AFJ-Fm-gpz" id="1bc-ck-Kfp"/>
-                        <outlet property="bogangStartTime" destination="1oS-VZ-8Oa" id="PgC-Ke-S2J"/>
+                        <outlet property="bogangTimePicker" destination="jMZ-KU-ljY" id="1W2-jh-cED"/>
                         <outlet property="bogangView" destination="Je4-Uz-avb" id="3Tr-v1-6pH"/>
                         <outlet property="cancelBtn" destination="uvi-gf-UzC" id="Xpm-Eg-EDG"/>
                         <outlet property="datePicker" destination="0Vs-8Z-Mm3" id="arX-YH-n3g"/>
@@ -405,7 +383,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="icons8-class-69" width="23" height="23"/>
+        <image name="icons8-class-69" width="34" height="34"/>
     </resources>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>
