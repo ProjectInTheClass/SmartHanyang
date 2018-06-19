@@ -26,6 +26,7 @@ class InnerRestaurant: NSObject, NSCoding {
     func addMeal(day: Int, meal: Meal) {
         meals[day].append(meal)
     }
+    
     func encode(with aCoder: NSCoder) {
         aCoder.encode(name,forKey: "name")
         aCoder.encode(location, forKey: "location")
