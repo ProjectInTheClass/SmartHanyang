@@ -17,6 +17,7 @@ class OuterRstaurant: NSObject, NSCoding {
     init(name: String, meals: [Meal]) {
         self.name = name
         self.meals = meals
+        
     }
     
     init(name: String) {
@@ -33,6 +34,8 @@ class OuterRstaurant: NSObject, NSCoding {
         let aMeal = Meal(image: image, menu: menu)
         self.meals.append(aMeal!)
     }
+    
+    
     
     
     func encode(with aCoder: NSCoder) {

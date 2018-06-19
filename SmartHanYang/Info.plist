@@ -2,25 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>UIApplicationShortcutItems</key>
-	<array>
-		<dict>
-			<key>UIApplicationShortcutItemIconType</key>
-			<string>UIApplicationShortcutIconTypeCompose</string>
-			<key>UIApplicationShortcutItemTitle</key>
-			<string>과제 추가</string>
-			<key>UIApplicationShortcutItemType</key>
-			<string>com.hanyang.graph.SmartHanYang.addGoaje</string>
-		</dict>
-		<dict>
-			<key>UIApplicationShortcutItemIconType</key>
-			<string>UIApplicationShortcutIconTypeTime</string>
-			<key>UIApplicationShortcutItemTitle</key>
-			<string>휴강/보강 추가</string>
-			<key>UIApplicationShortcutItemType</key>
-			<string>com.hanyang.graph.SmartHanYang.editSuup</string>
-		</dict>
-	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
@@ -58,6 +39,25 @@
 			</dict>
 		</dict>
 	</dict>
+	<key>UIApplicationShortcutItems</key>
+	<array>
+		<dict>
+			<key>UIApplicationShortcutItemIconType</key>
+			<string>UIApplicationShortcutIconTypeCompose</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>과제 추가</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>com.hanyang.graph.SmartHanYang.addGoaje</string>
+		</dict>
+		<dict>
+			<key>UIApplicationShortcutItemIconType</key>
+			<string>UIApplicationShortcutIconTypeTime</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>휴강/보강 추가</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>com.hanyang.graph.SmartHanYang.editSuup</string>
+		</dict>
+	</array>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>

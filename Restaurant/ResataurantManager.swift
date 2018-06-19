@@ -8,7 +8,7 @@
 
 import Foundation
 
-class innerRestaurantManager
+class InnerRestaurantManager
 {
     static let fileName: String = "innerRestaurants.brch"
     
@@ -66,7 +66,7 @@ class innerRestaurantManager
     }
 }
 
-class outerRestaurantManager {
+class OuterRestaurantManager {
     static let fileName: String = "outerRestaurants.brch"
     
     static let documentPath = NSSearchPathForDirectoriesInDomains(
