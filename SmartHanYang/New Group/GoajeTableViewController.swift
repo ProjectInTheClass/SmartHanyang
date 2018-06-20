@@ -22,14 +22,25 @@ class GoajeTableViewController: UITableViewController {
         self.editButtonItem.tintColor = .white
         self.navigationItem.rightBarButtonItem = self.editButtonItem
         
-        goajes = GoajeDataManager.shared.GetGoajes()
+        updateGoajes()
         LectureDataManager.shared.addUpdateEventListener(key:"GoajeTableViewController") {
-            self.goajes = GoajeDataManager.shared.GetGoajes()
+            self.updateGoajes()
             self.tableView.reloadData()
         }
         GoajeDataManager.shared.addUpdateEventListener(key:"GoajeTableViewController") {
-            self.goajes = GoajeDataManager.shared.GetGoajes()
+            self.updateGoajes()
             self.tableView.reloadData()
+        }
+    }
+    
+    func updateGoajes() {
+        if showCompletedGoaje {
+            self.goajes = GoajeDataManager.shared.GetGoajes()
+        }
+        else {
+            self.goajes = GoajeDataManager.shared.GetGoajes().filter({ (g) -> Bool in
+                return !g.completed
+            })
         }
     }
 
@@ -67,16 +78,26 @@ class GoajeTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return goajes.count + 1
+        if LectureDataManager.shared.GetLectures().count == 0 {
+            return 1
+        }
+        return goajes.count + 2
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if indexPath.row == goajes.count {
+        if indexPath.row == goajes.count + 1 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "addGoaje", for: indexPath)
+            return cell
+        }
+        else if indexPath.row == goajes.count {
             let cell = tableView.dequeueReusableCell(withIdentifier: "addGoaje", for: indexPath)
             if LectureDataManager.shared.GetLectures().count == 0 && cell.textLabel != nil {
                 cell.textLabel!.text = "설정에서 수업을 추가해주세요."
                 cell.isUserInteractionEnabled = false
+            }
+            else if cell.textLabel != nil {
+                cell.textLabel!.text = (showCompletedGoaje) ? "완료된 과제 접기" : "완료된 과제 펼치기"
             }
             return cell
         }
@@ -100,12 +121,21 @@ class GoajeTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == goajes.count {
+        self.tableView.deselectRow(at: indexPath, animated: true)
+        if indexPath.row == goajes.count + 1 || LectureDataManager.shared.GetLectures().count == 0  {
             let _child = self.storyboard?.instantiateViewController(withIdentifier: "addGoajeView") as? UINavigationController;
             
             if let child = _child {
                 child.modalPresentationStyle = .fullScreen
                 self.present(child, animated: true, completion: nil)
+            }
+        }
+        else if indexPath.row == goajes.count {
+            showCompletedGoaje = !showCompletedGoaje
+            updateGoajes()
+            self.tableView.reloadData()
+            if !showCompletedGoaje {
+                self.tableView.scrollToRow(at: IndexPath(row:0,section:0), at: .top, animated: true)
             }
         }
     }

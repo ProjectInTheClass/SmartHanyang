@@ -27,18 +27,6 @@ class GoajeTableViewCell: UITableViewCell,BEMCheckBoxDelegate {
         
         dateLabel.text = Easy.DateToText(date: goaje.timeEnd)
         
-        
-        let a = EasyCalendar.DDay(from:Date() , to: goaje.timeEnd)
-        
-        if a >= 0 {
-            dDayLabel.text = "D-\(a)"
-        }
-        else {
-            dDayLabel.text = "늦음"
-            dDayLabel.textColor = UIColor.init(hexString: "#990000")
-        }
-        
-        
         checkbox.onAnimationType = .fill
         checkbox.offAnimationType = .bounce
         
@@ -47,14 +35,11 @@ class GoajeTableViewCell: UITableViewCell,BEMCheckBoxDelegate {
         
         checkbox.delegate = self
         
-        if let goaje = self.goaje {
-            checkbox.on = goaje.completed
+        checkbox.on = goaje.completed
             
-            if goaje.completed {
-                dDayLabel.text = "완료"
-            }
-        }
-        ShowCompleted(compledted:goaje.completed)
+        updateText()
+        
+        ShowCompleted(compledted:goaje.completed,withAnim:false)
     }
     
     func didTap(_ checkBox: BEMCheckBox) {
@@ -66,12 +51,19 @@ class GoajeTableViewCell: UITableViewCell,BEMCheckBoxDelegate {
     }
     
     
-    func ShowCompleted(compledted:Bool)
+    func ShowCompleted(compledted:Bool, withAnim:Bool = true)
     {
         let transition = {(label:UILabel) -> Void in
-            UIView.transition(with: label, duration: 0.4, options: .transitionCrossDissolve, animations: {
+            if withAnim {
+                UIView.transition(with: label, duration: 0.4, options: .transitionCrossDissolve, animations: {
+                    label.isEnabled = !compledted
+                    self.updateText()
+                }, completion: nil)
+            }
+            else {
                 label.isEnabled = !compledted
-            }, completion: nil)
+                self.updateText()
+            }
         }
         transition(titleLabel)
         transition(dDayLabel)
@@ -79,6 +71,26 @@ class GoajeTableViewCell: UITableViewCell,BEMCheckBoxDelegate {
         transition(dateLabel)
     }
     
+    func updateText(){
+        if self.goaje == nil {
+            return
+        }
+        
+        let a = EasyCalendar.DDay(from:Date() , to: self.goaje!.timeEnd)
+        
+        if a >= 0 {
+            dDayLabel.text = "D-\(a)"
+            dDayLabel.textColor = UIColor.black
+        }
+        else {
+            dDayLabel.text = "늦음"
+            dDayLabel.textColor = UIColor.init(hexString: "#990000")
+        }
+        
+        if self.goaje!.completed {
+            dDayLabel.text = "완료"
+        }
+    }
     
 
 }
