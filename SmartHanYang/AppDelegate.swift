@@ -47,7 +47,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
         if shortcutItem.type == "com.hanyang.graph.SmartHanYang.addGoaje" {
             let vc = UIStoryboard(name: "Goaje", bundle: nil)
-            let addGoaje = vc.instantiateViewController(withIdentifier: "addGoaje") as! AddGoajeViewController
+            let addGoaje = vc.instantiateViewController(withIdentifier: "addGoajeViewChild") as! AddGoajeViewController
             self.window?.rootViewController?.present(addGoaje, animated: true, completion: nil)
         }
         else if shortcutItem.type == "com.hanyang.graph.SmartHanYang.editSuup" {
