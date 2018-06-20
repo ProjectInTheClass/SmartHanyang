@@ -19,6 +19,7 @@
 		6F2B020220D9A4C200970313 /* Meal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F2B020120D9A4C200970313 /* Meal.storyboard */; };
 		6FB7DB5C20D3B35B002303DA /* RouletteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FB7DB5B20D3B35B002303DA /* RouletteViewController.swift */; };
 		6FBBDE7020DA5C400038EE15 /* MealDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FBBDE6F20DA5C400038EE15 /* MealDataManager.swift */; };
+		6FC1B32320DAD3E700136A77 /* Meal1.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6FC1B32220DAD3E600136A77 /* Meal1.storyboard */; };
 		E300793B20BA72550089A9D7 /* GoajeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E300793820BA72540089A9D7 /* GoajeTableViewCell.swift */; };
 		E300793D20BA72550089A9D7 /* GoajeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E300793A20BA72550089A9D7 /* GoajeTableViewController.swift */; };
 		E347D91B20C505DA00E94ADA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E347D91A20C505DA00E94ADA /* LaunchScreen.storyboard */; };
@@ -69,6 +70,7 @@
 		6F2B020120D9A4C200970313 /* Meal.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Meal.storyboard; sourceTree = "<group>"; };
 		6FB7DB5B20D3B35B002303DA /* RouletteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouletteViewController.swift; sourceTree = "<group>"; };
 		6FBBDE6F20DA5C400038EE15 /* MealDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDataManager.swift; sourceTree = "<group>"; };
+		6FC1B32220DAD3E600136A77 /* Meal1.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Meal1.storyboard; sourceTree = "<group>"; };
 		88313F3567C407636023779F /* Pods-SmartHanYang.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartHanYang.release.xcconfig"; path = "Pods/Target Support Files/Pods-SmartHanYang/Pods-SmartHanYang.release.xcconfig"; sourceTree = "<group>"; };
 		CA3DD5FE608F5E983A631046 /* Pods-SmartHanYang.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartHanYang.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SmartHanYang/Pods-SmartHanYang.debug.xcconfig"; sourceTree = "<group>"; };
 		E300793820BA72540089A9D7 /* GoajeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoajeTableViewCell.swift; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 		F91DCFDB20A57F4B003A4161 /* StoryBoards */ = {
 			isa = PBXGroup;
 			children = (
+				6FC1B32220DAD3E600136A77 /* Meal1.storyboard */,
 				6F2B020120D9A4C200970313 /* Meal.storyboard */,
 				F9864A3C20D3E1AC00B2C846 /* Suup.storyboard */,
 				F96DFB9520A42E4300997614 /* Main.storyboard */,
@@ -346,6 +349,7 @@
 				F91DCFE320A58C3D003A4161 /* example in Resources */,
 				F96DFB9720A42E4300997614 /* Main.storyboard in Resources */,
 				F969861A20CA801100336B97 /* Setting.storyboard in Resources */,
+				6FC1B32320DAD3E700136A77 /* Meal1.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
