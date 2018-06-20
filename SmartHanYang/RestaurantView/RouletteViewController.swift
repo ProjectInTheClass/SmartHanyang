@@ -149,8 +149,8 @@ class RouletteViewController: UIViewController {
     {
         
         let strokeTextAttributes = [
-            NSAttributedStringKey.strokeColor : UIColor.black,
-            NSAttributedStringKey.foregroundColor : UIColor.white,
+            NSAttributedStringKey.strokeColor : UIColor.gray,
+            NSAttributedStringKey.foregroundColor : UIColor.black,
             NSAttributedStringKey.strokeWidth : -3.0,
             NSAttributedStringKey.font : UIFont.boldSystemFont(ofSize: 30)]
             as [NSAttributedStringKey : Any]
