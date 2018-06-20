@@ -17,17 +17,17 @@ class RouletteViewController: UIViewController {
     @IBOutlet weak var rotateButton: UIButton!
     
     var fromAngle: Double = 0.0
-    
-
 
     @IBOutlet weak var rotateImage: UIImageView!
     
     @IBOutlet var rotateResultView: UIView!
     @IBOutlet weak var rotateResultText: UITextField!
     @IBOutlet weak var backButton: UIButton!
-  
+    @IBOutlet weak var resultLabel:UILabel!
     
-   
+    var roulette: Roulette?
+    var ticks:[AVAudioPlayer] = []
+    var tickIndex = 0
     
     func stopAnimationForView(_ myView: UIView) {
         
@@ -46,58 +46,53 @@ class RouletteViewController: UIViewController {
     
     
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        //viewDidAppear , ViewWillAppear
-        // Do any additional setup after loading the view, typically from a nib.
+    override func viewWillAppear(_ animated: Bool) {
+        self.view.backgroundColor = UIColor.white
+        super.viewWillAppear(animated)
         
-        self.view.backgroundColor = UIColor.purple
-        rotateImage.layer.bounds.size.width = 400
-        rotateImage.layer.bounds.size.height = rotateImage.layer.bounds.size.width
         
-        let theRoulette = roulette
-        rotateImage.image = theRoulette.asImage()
+        roulette = Roulette(texts:exTexts1, frame: self.view.frame)
+        
+        if let r = roulette {
+            self.view.insertSubview(r, at: 1)
+            
+            r.layer.bounds.size.width = self.view.frame.width*0.9
+            r.layer.bounds.size.height = self.view.frame.width*0.9
+            r.layer.position = CGPoint(x:self.view.frame.width*0.5, y:self.view.frame.height*0.5)
+            r.drawView()
+        }
         
         rotateButton.layer.cornerRadius = 0.5 * rotateButton.bounds.size.width
         
-//        rotateImage.translatesAutoresizingMaskIntoConstraints = false
-//        rotateImage.topAnchor.constraint(equalTo: view.topAnchor, constant: 100).isActive = true
-//        rotateImage.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -7).isActive = true
-//        rotateImage.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 7).isActive = true
-//        rotateImage.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-//        rotateImage.layer.cornerRadius = 0.5 * rotateImage.bounds.size.width
-//        rotateButton.centerXAnchor.constraint(equalTo: rotateImage.centerXAnchor)
-//        rotateButton.centerYAnchor.constraint(equalTo: rotateImage.centerYAnchor)
+        updateResultLabel(str: "오늘의 식사는 무엇일까!")
         
-        
-        
-        
+        if let sound = NSDataAsset(name: "tick") {
+            do {
+                try! AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+                try! AVAudioSession.sharedInstance().setActive(true)
+                for _ in 0...4 {
+                    let tick = try AVAudioPlayer(data: sound.data, fileTypeHint:".wav")
+                    ticks.append(tick)
+                }
+            }
+            catch {
+                print("error initializing AVAudioPlayer")
+            }
+        }
     }
     
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func playTick()
+    {
+        ticks[tickIndex].stop()
+        ticks[tickIndex].play()
+        tickIndex = (tickIndex+1)%ticks.count
     }
-    
     
     @IBAction func rotate(_ sender: Any) {
         let random = arc4random()
         
         let toAngle: Double = .pi * (Double(random) / Double(UINT32_MAX) * 14.0 + 6.0) // 6 ~ 20 random float number
         
-        //        UIView.animate(withDuration: 0.5, animations: ({
-        //            self.rotateImage.transform = CATransform3DGetAffineTransform(CATransform3DMakeRotation(CGFloat(Float.pi), 0.0, 0.0, 1.0))
-        //        }))
-        //
-        //        UIView.animate(withDuration: 0.5, delay: 0.55, options: UIViewAnimationOptions.curveEaseIn, animations: { () -> Void in self.rotateImage.transform = CGAffineTransform(rotationAngle: CGFloat(M_PI * 2))
-        //        }, completion: nil)
-        
-        //        UIView.animate(withDuration: 0.5) {
-        //            self.rotateImage.transform = self.rotateImage.transform.rotated(by: CGFloat.pi)
-        //        }
-        //
-        //        rotateView(targetView: rotateImage, duration: 0.5)
         let rotationAnimation : CABasicAnimation = CABasicAnimation(keyPath: "transform.rotation")
         //rotationAnimation.fromValue = NSNumber(value: .pi * 0.5)
         rotationAnimation.fromValue = NSNumber(value: self.fromAngle)
@@ -107,52 +102,62 @@ class RouletteViewController: UIViewController {
         rotationAnimation.isCumulative = true
         rotationAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
         
-        self.rotateImage.layer.add(rotationAnimation, forKey: "rotationAnimation")
+        var prevIndex = 0
         
-        
-        
-        let timer1 = Timer.scheduledTimer(withTimeInterval: 3.999, repeats: false) { (timer) in
-            print("interval")
-            print(roulette.texts.count - 1 - Int((fmod(toAngle, M_PI * 2) / (2 * M_PI) ) * Double(roulette.texts.count)))
-            print(roulette.texts[roulette.texts.count - 1 - Int((fmod(toAngle, M_PI * 2) / (2 * M_PI) ) * Double(roulette.texts.count))])
+        self.roulette!.layer.add(rotationAnimation, forKey: "rotationAnimation")
+        let t = Timer.scheduledTimer(withTimeInterval: 0.02, repeats: true) { (t) in
+            let transform = self.roulette!.layer.presentation()?.transform
             
-            let transform = self.rotateImage.layer.presentation()?.transform
-            self.rotateImage.layer.transform = transform!
-            self.rotateImage.layer.removeAllAnimations()
+            let angle = Double(atan2(transform!.m12, transform!.m11))+Double.pi*2;
+            let newIndex = self.roulette!.texts.count - 1 - Int((fmod(angle, Double.pi * 2) / (2 * Double.pi) ) * Double(self.roulette!.texts.count))
+            if prevIndex != newIndex {
+                let text = self.roulette!.texts[newIndex]
+                self.updateResultLabel(str: text)
+                self.playTick()
+                prevIndex = newIndex
+            }
+        }
+        
+        playTick()
+        AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+        _ = Timer.scheduledTimer(withTimeInterval: 3.999, repeats: false) { (timer) in
+            
+            self.roulette!.layer.removeAllAnimations()
+            
+            let transform = self.roulette!.layer.presentation()?.transform
+            self.roulette!.layer.transform = transform!
             
             self.rotateButton.isEnabled = true
-            self.fromAngle = fmod(toAngle, M_PI * 2) / (2 * M_PI)
+            
+            let angle = Double(atan2(transform!.m12, transform!.m11))+Double.pi*2;
+            self.fromAngle = angle
         
-            self.rotateResultText.text = roulette.texts[roulette.texts.count - 1 - Int((fmod(toAngle, M_PI * 2) / (2 * M_PI) ) * Double(roulette.texts.count))]
-            self.view.addSubview(self.rotateResultView)
-            self.rotateResultView.center = self.view.center
+            let text = self.roulette!.texts[self.roulette!.texts.count - 1 - Int((fmod(angle, Double.pi * 2) / (2 * Double.pi) ) * Double(self.roulette!.texts.count))]
+            self.updateResultLabel(str: text)
+            t.invalidate()
+            
         }
         
         
         rotateButton.isEnabled = false
         print("rotate")
+    }
+    
+    func updateResultLabel(str:String)
+    {
         
+        let strokeTextAttributes = [
+            NSAttributedStringKey.strokeColor : UIColor.black,
+            NSAttributedStringKey.foregroundColor : UIColor.white,
+            NSAttributedStringKey.strokeWidth : -3.0,
+            NSAttributedStringKey.font : UIFont.boldSystemFont(ofSize: 30)]
+            as [NSAttributedStringKey : Any]
         
+        resultLabel.attributedText = NSAttributedString(string: str, attributes: strokeTextAttributes)
     }
     
     @IBAction func backButton(_ sender: Any) {
         self.rotateResultView.removeFromSuperview()
     }
     
-    
-    @IBAction func resetButton(_ sender: Any) {
-        AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
-        //Get the current transform from the layer's presentation layer
-        //(The presentation layer has the state of the "in flight" animation)
-        let transform = rotateImage.layer.presentation()?.transform
-        
-        //Set the layer's transform to the current state of the transform
-        //from the "in-flight" animation
-        rotateImage.layer.transform = transform!
-        
-        //Now remove the animation
-        //and the view's layer will keep the current rotation
-        rotateImage.layer.removeAllAnimations()
-        print("reset")
-    }
 }

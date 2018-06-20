@@ -135,11 +135,7 @@ class MealTableViewController: UITableViewController {
 
             }
             
-            var smaller = view.bounds.width
-            if(smaller > view.bounds.height) {
-                smaller = view.bounds.height
-            }
-            roulette = Roulette(texts: texts, frame: CGRect(x: 0, y: 0, width: smaller, height: smaller))
+            //roulette = Roulette(texts: texts, frame: CGRect(x: 0, y: 0, width: smaller, height: smaller))
             
             
         default:

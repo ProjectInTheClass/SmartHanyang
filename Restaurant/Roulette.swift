@@ -14,8 +14,8 @@ let exTexts2: [String] = ["7080술집", "한양플라자", "몰라아아아아�
 
 
 
-class Roulette: UIView {
-    var texts: [String]
+class Roulette: UIImageView {
+    var texts: [String] = exTexts1
     var path: UIBezierPath!
     
     override init(frame: CGRect) {
@@ -35,14 +35,11 @@ class Roulette: UIView {
         super.init(coder: aDecoder)
     }
     
-    override func draw(_ rect: CGRect) {
-        
+    public func drawView() {
         
         self.createRectangle()
         self.createPieces(texts: texts)
         self.createRing()
-        
-        
     }
     
     func createRectangle() {
@@ -57,44 +54,40 @@ class Roulette: UIView {
         path.fill()
     }
     
-    
-    
     func createRing() {
-        path = UIBezierPath()
-        var smallerSize = self.frame.size.width
-        if(smallerSize > self.frame.size.height) {
-            smallerSize = self.frame.size.height
+        
+        let roulette_bg = UIImage(named: "roulette_bg")
+        if let bg = roulette_bg {
+            self.image = bg
         }
         
-        path.addArc(withCenter: CGPoint(x: smallerSize / 2, y: smallerSize / 2), radius: smallerSize / 2, startAngle: CGFloat(0), endAngle: CGFloat(Double.pi * 2), clockwise: true)
-        
-        
-        UIColor.white.setStroke()
-        path.lineWidth = 3.0
-        path.stroke()
     }
     
-    
+    func getSize() -> CGFloat {
+        return self.frame.size.width
+    }
+    func getCenter() -> CGPoint {
+        return CGPoint(x:self.frame.size.width*0.5, y:self.frame.size.height * 0.5)
+    }
     
     func createRotateTexts(text: String, angle: Float, unitAngle: Float) {
-        var smallerSize = self.frame.size.width
-        if(smallerSize > self.frame.size.height) {
-            smallerSize = self.frame.size.height
-        }
+        let size = getSize()
+        let center = getCenter()
         
-        var textAngle = angle
-        var textLayer = CATextLayer()
+        let textLayer = CATextLayer()
         textLayer.string = text
-        textLayer.fontSize = 20.0
-        textLayer.foregroundColor = UIColor.white.cgColor
+        textLayer.fontSize = size*0.09 / CGFloat(max(Double(text.count), 8)/8)
+        textLayer.foregroundColor = UIColor.darkGray.cgColor
         
         
-        textLayer.frame = CGRect(x: (smallerSize / 2) /* CGFloat(cos(angle))*/, y: (smallerSize / 2) /** CGFloat(sin(angle))*/, width: smallerSize / 3, height: 25)
+        textLayer.frame = CGRect(x: 0, y:0 /** CGFloat(sin(angle))*/, width: size, height: size * 0.1)
         textLayer.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        textLayer.position = CGPoint(x: smallerSize / 2, y: smallerSize / 2)
-        let t = CATransform3DMakeTranslation(smallerSize / 3, 0, 0)
+        textLayer.position = center
+        
+        let t = CATransform3DMakeTranslation(size*0.7, 0, 0)
         let r = CATransform3DMakeRotation(CGFloat(angle), 0.0, 0.0, 1.0)
-        textLayer.transform = CATransform3DConcat(t, r)
+        let s = CATransform3DMakeScale(0.5, 0.5, 1)
+        textLayer.transform = CATransform3DConcat(CATransform3DConcat(t, r), s)
         self.layer.addSublayer(textLayer)
         
     }
@@ -105,10 +98,7 @@ class Roulette: UIView {
     
     func createPieces(texts: [String]) {
         let number: Int = texts.count
-        var smallerSize = self.frame.size.width
-        if(smallerSize > self.frame.size.height) {
-            smallerSize = self.frame.size.height
-        }
+        let size = getSize()
         let unitAngle: Float = Float.pi * 2 / Float(number)
         //start from up postion to clockwise ... -0.5 * pi//
         var angle: Float = -.pi * 0.5
@@ -116,13 +106,19 @@ class Roulette: UIView {
         
         
         for i in 0..<number {
-            path = UIBezierPath()
-            path.move(to: CGPoint(x: smallerSize / 2, y: smallerSize / 2))
-            path.addArc(withCenter: CGPoint(x: smallerSize / 2, y: smallerSize / 2), radius: smallerSize / 2, startAngle: CGFloat(angle), endAngle: CGFloat(angle + unitAngle), clockwise: true)
-            path.close()
             
-            Easy.GetGoodColor(n: i).setFill()
-            path.fill()
+            let a = textAngle + unitAngle*0.5
+            
+            path = UIBezierPath()
+            path.move(to: CGPoint(x:size*0.5,y:size*0.5))
+            path.addLine(to: CGPoint(x: size*0.5 + size*CGFloat(cos(a))*0.4, y: size*0.5 +  size*CGFloat(sin(a))*0.4))
+            
+            let shapeLayer = CAShapeLayer()
+            shapeLayer.path = path.cgPath
+            shapeLayer.strokeColor = UIColor.lightGray.mul(n: 1.2).cgColor
+            shapeLayer.lineWidth = 1
+            
+            self.layer.insertSublayer(shapeLayer, at: 0)
             
             createRotateTexts(text: texts[i], angle: textAngle, unitAngle: unitAngle)
             
@@ -132,4 +128,3 @@ class Roulette: UIView {
     }
 }
 
-var roulette: Roulette = Roulette()
