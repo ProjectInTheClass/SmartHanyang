@@ -18,8 +18,7 @@ class EditSuupViewController: UIViewController, UITextFieldDelegate
     @IBOutlet weak var typeSelector: UISegmentedControl!
     @IBOutlet weak var lecturePicker: LecturePicker!
     @IBOutlet weak var datePicker: UIDatePicker!
-    @IBOutlet weak var bogangStartTime: UIDatePicker!
-    @IBOutlet weak var bogangEndTime: UIDatePicker!
+    @IBOutlet weak var bogangTimePicker:TwoTimePicker!
     @IBOutlet weak var hyugangTimePicker: LectureTimePicker!
     @IBOutlet weak var bogangRoom: UITextField!
     
@@ -55,11 +54,8 @@ class EditSuupViewController: UIViewController, UITextFieldDelegate
         }
         else if self.mode == .BOGANG
         {
-            var t1 = EasyCalendar.GetDayTimeSecond(date: self.bogangStartTime.date)
-            var t2 = EasyCalendar.GetDayTimeSecond(date: self.bogangEndTime.date)
-            
-            t1 = t1 - t1%1800
-            t2 = t2 - t2%1800
+            var t1 = bogangTimePicker.selectedTimeStart
+            var t2 = bogangTimePicker.selectedTimeEnd
             
             if t2 <= t1
             {

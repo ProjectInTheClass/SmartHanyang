@@ -26,14 +26,21 @@ public class Easy
         return GoodColors[n%GoodColors.count]
     }
     
-    public static func TimeToText(time:Int) -> String
+    public static func TimeToText(time:Int, blank:Int = 0) -> String
     {
         var str = ""
         
         let hour:Int = (time/3600);
         let min:Int = (time%3600)/60;
+        var a = ":"
         
-        str += " \(String(format: "%2.2i", hour)):\(String(format: "%2.2i", min))"
+        var b = blank
+        while(b > 0){
+            b -= 1
+            a = " \(a) "
+        }
+        
+        str += " \(String(format: "%2.2i", hour))\(a)\(String(format: "%2.2i", min))"
         return str
     }
     

@@ -41,51 +41,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="timetable" rowHeight="450" id="obO-Fv-c9k" userLabel="TimeTableCell" customClass="TimeTableView" customModule="SmartHanYang" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="450"/>
+                            <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="helpCell" textLabel="S4L-kB-ypM" rowHeight="300" style="IBUITableViewCellStyleDefault" id="wLd-gY-TRU" userLabel="blankCell">
+                                <rect key="frame" x="0.0" y="28" width="375" height="300"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="obO-Fv-c9k" id="v7J-3Q-5qH" customClass="TimeTable" customModule="SmartHanYang" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="450"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wLd-gY-TRU" id="bmQ-dt-OQ8">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="CEb-gb-AFj" userLabel="col0">
-                                            <rect key="frame" x="178" y="0.0" width="56.333333333333336" height="449.66666666666669"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </stackView>
-                                        <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="fAY-Yc-FbZ" userLabel="col1" customClass="TimeTableViewCol" customModule="SmartHanYang" customModuleProvider="target">
-                                            <rect key="frame" x="171" y="0.0" width="70.333333333333314" height="449.66666666666669"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </stackView>
-                                        <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="Ub9-jS-oWc" userLabel="col2" customClass="TimeTableViewCol" customModule="SmartHanYang" customModuleProvider="target">
-                                            <rect key="frame" x="171" y="0.0" width="70.666666666666657" height="449.66666666666669"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </stackView>
-                                        <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="Eam-Ld-oal" userLabel="col3" customClass="TimeTableViewCol" customModule="SmartHanYang" customModuleProvider="target">
-                                            <rect key="frame" x="171" y="0.0" width="70.666666666666657" height="449.66666666666669"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </stackView>
-                                        <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="cdL-Id-vgo" userLabel="col4" customClass="TimeTableViewCol" customModule="SmartHanYang" customModuleProvider="target">
-                                            <rect key="frame" x="171" y="0.0" width="70.666666666666686" height="449.66666666666669"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </stackView>
-                                        <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="RS0-ES-xD0" userLabel="col5" customClass="TimeTableViewCol" customModule="SmartHanYang" customModuleProvider="target">
-                                            <rect key="frame" x="171" y="0.0" width="70.333333333333314" height="449.66666666666669"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </stackView>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="설정에서 수업을 추가해주세요." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="S4L-kB-ypM">
+                                            <rect key="frame" x="16" y="0.0" width="343" height="300"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
-                                    <color key="backgroundColor" red="0.95545364610000005" green="0.95392269740000002" blue="0.98066455860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="col0" destination="CEb-gb-AFj" id="Ncq-FG-L5Y"/>
-                                    <outlet property="col1" destination="fAY-Yc-FbZ" id="hPy-dB-zq6"/>
-                                    <outlet property="col2" destination="Ub9-jS-oWc" id="j9K-0z-eNz"/>
-                                    <outlet property="col3" destination="Eam-Ld-oal" id="k5B-Zn-bcC"/>
-                                    <outlet property="col4" destination="cdL-Id-vgo" id="Ap0-Ab-Vc9"/>
-                                    <outlet property="col5" destination="RS0-ES-xD0" id="oqW-tU-JSu"/>
-                                </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="suupCell" rowHeight="78" id="IzT-E2-Tl3" customClass="SuupTableViewCell" customModule="SmartHanYang" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="478" width="375" height="78"/>
+                                <rect key="frame" x="0.0" y="328" width="375" height="78"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IzT-E2-Tl3" id="DMj-9n-5T9">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="78"/>
@@ -151,7 +125,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="blankCell" rowHeight="30" id="jYN-Hz-LJ9" userLabel="blankCell">
-                                <rect key="frame" x="0.0" y="556" width="375" height="30"/>
+                                <rect key="frame" x="0.0" y="406" width="375" height="30"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jYN-Hz-LJ9" id="9nL-Vk-e5e">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
@@ -175,7 +149,7 @@
                                 </tableViewCellContentView>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="gonggangCell" rowHeight="41" id="5jg-1a-m2w" userLabel="gonggangCell" customClass="GonggangCell" customModule="SmartHanYang" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="586" width="375" height="41"/>
+                                <rect key="frame" x="0.0" y="436" width="375" height="41"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5jg-1a-m2w" id="VOu-0U-gT3">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="41"/>
@@ -207,6 +181,49 @@
                                 <connections>
                                     <outlet property="label" destination="VER-2F-kjJ" id="ioa-xw-uJZ"/>
                                     <outlet property="progressBar" destination="lzq-Uv-w48" id="AkT-N3-kPV"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="timetable" rowHeight="450" id="obO-Fv-c9k" userLabel="TimeTableCell" customClass="TimeTableView" customModule="SmartHanYang" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="477" width="375" height="450"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="obO-Fv-c9k" id="v7J-3Q-5qH" customClass="TimeTable" customModule="SmartHanYang" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="450"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="CEb-gb-AFj" userLabel="col0">
+                                            <rect key="frame" x="178" y="0.0" width="56.333333333333336" height="449.66666666666669"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </stackView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="fAY-Yc-FbZ" userLabel="col1" customClass="TimeTableViewCol" customModule="SmartHanYang" customModuleProvider="target">
+                                            <rect key="frame" x="171" y="0.0" width="70.333333333333314" height="449.66666666666669"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </stackView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="Ub9-jS-oWc" userLabel="col2" customClass="TimeTableViewCol" customModule="SmartHanYang" customModuleProvider="target">
+                                            <rect key="frame" x="171" y="0.0" width="70.666666666666657" height="449.66666666666669"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </stackView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="Eam-Ld-oal" userLabel="col3" customClass="TimeTableViewCol" customModule="SmartHanYang" customModuleProvider="target">
+                                            <rect key="frame" x="171" y="0.0" width="70.666666666666657" height="449.66666666666669"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </stackView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="cdL-Id-vgo" userLabel="col4" customClass="TimeTableViewCol" customModule="SmartHanYang" customModuleProvider="target">
+                                            <rect key="frame" x="171" y="0.0" width="70.666666666666686" height="449.66666666666669"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </stackView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="RS0-ES-xD0" userLabel="col5" customClass="TimeTableViewCol" customModule="SmartHanYang" customModuleProvider="target">
+                                            <rect key="frame" x="171" y="0.0" width="70.333333333333314" height="449.66666666666669"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </stackView>
+                                    </subviews>
+                                    <color key="backgroundColor" red="0.95545364610000005" green="0.95392269740000002" blue="0.98066455860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="col0" destination="CEb-gb-AFj" id="Ncq-FG-L5Y"/>
+                                    <outlet property="col1" destination="fAY-Yc-FbZ" id="hPy-dB-zq6"/>
+                                    <outlet property="col2" destination="Ub9-jS-oWc" id="j9K-0z-eNz"/>
+                                    <outlet property="col3" destination="Eam-Ld-oal" id="k5B-Zn-bcC"/>
+                                    <outlet property="col4" destination="cdL-Id-vgo" id="Ap0-Ab-Vc9"/>
+                                    <outlet property="col5" destination="RS0-ES-xD0" id="oqW-tU-JSu"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -299,45 +316,24 @@
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Je4-Uz-avb" userLabel="BogangView">
                                 <rect key="frame" x="0.0" y="418.5" width="375" height="199.5"/>
                                 <subviews>
-                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="30" translatesAutoresizingMaskIntoConstraints="NO" id="1oS-VZ-8Oa" userLabel="StartTime">
-                                        <rect key="frame" x="0.0" y="39.5" width="188" height="160"/>
-                                        <date key="date" timeIntervalSinceReferenceDate="548055216.98325098">
-                                            <!--2018-05-15 05:33:36 +0000-->
-                                        </date>
-                                    </datePicker>
-                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="30" translatesAutoresizingMaskIntoConstraints="NO" id="2wN-1L-YTb" userLabel="EndTime">
-                                        <rect key="frame" x="188" y="39.5" width="187" height="160"/>
-                                        <date key="date" timeIntervalSinceReferenceDate="548055166.66697299">
-                                            <!--2018-05-15 05:32:46 +0000-->
-                                        </date>
-                                    </datePicker>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="~" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mr2-xJ-5ds">
-                                        <rect key="frame" x="182" y="109.5" width="11" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="보강 장소 입력" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AFJ-Fm-gpz">
                                         <rect key="frame" x="93.5" y="0.0" width="188" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                     </textField>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jMZ-KU-ljY" customClass="TwoTimePicker" customModule="SmartHanYang" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="40" width="375" height="159"/>
+                                    </pickerView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="1oS-VZ-8Oa" firstAttribute="width" secondItem="Je4-Uz-avb" secondAttribute="width" multiplier="0.5" id="2i2-XL-Qmz"/>
-                                    <constraint firstAttribute="bottom" secondItem="2wN-1L-YTb" secondAttribute="bottom" id="7Gp-Hb-odg"/>
-                                    <constraint firstItem="Mr2-xJ-5ds" firstAttribute="centerX" secondItem="Je4-Uz-avb" secondAttribute="centerX" id="CHx-Pr-kxW"/>
-                                    <constraint firstItem="Mr2-xJ-5ds" firstAttribute="centerY" secondItem="Je4-Uz-avb" secondAttribute="centerY" multiplier="1.2" id="EKR-fG-8a3"/>
-                                    <constraint firstItem="1oS-VZ-8Oa" firstAttribute="height" secondItem="Je4-Uz-avb" secondAttribute="height" multiplier="0.8" id="GJO-go-ey4"/>
-                                    <constraint firstAttribute="bottom" secondItem="1oS-VZ-8Oa" secondAttribute="bottom" id="TCF-X8-IZS"/>
+                                    <constraint firstAttribute="bottom" secondItem="jMZ-KU-ljY" secondAttribute="bottom" id="JCP-Om-eiG"/>
+                                    <constraint firstItem="jMZ-KU-ljY" firstAttribute="height" secondItem="Je4-Uz-avb" secondAttribute="height" multiplier="0.8" id="XzL-lk-x88"/>
                                     <constraint firstItem="AFJ-Fm-gpz" firstAttribute="centerX" secondItem="Je4-Uz-avb" secondAttribute="centerX" id="ZAi-d8-0Cn"/>
                                     <constraint firstItem="AFJ-Fm-gpz" firstAttribute="width" secondItem="Je4-Uz-avb" secondAttribute="width" multiplier="0.5" id="cZR-t0-MnG"/>
                                     <constraint firstItem="AFJ-Fm-gpz" firstAttribute="top" secondItem="Je4-Uz-avb" secondAttribute="top" id="ed5-DO-aI3"/>
-                                    <constraint firstItem="2wN-1L-YTb" firstAttribute="width" secondItem="Je4-Uz-avb" secondAttribute="width" multiplier="0.5" id="fyC-Zx-cz8"/>
-                                    <constraint firstItem="2wN-1L-YTb" firstAttribute="height" secondItem="Je4-Uz-avb" secondAttribute="height" multiplier="0.8" id="spA-8e-heE"/>
-                                    <constraint firstItem="1oS-VZ-8Oa" firstAttribute="leading" secondItem="Je4-Uz-avb" secondAttribute="leading" id="tVh-MK-CUA"/>
-                                    <constraint firstItem="2wN-1L-YTb" firstAttribute="trailing" secondItem="Je4-Uz-avb" secondAttribute="trailing" id="vtr-jB-grD"/>
+                                    <constraint firstItem="jMZ-KU-ljY" firstAttribute="centerX" secondItem="Je4-Uz-avb" secondAttribute="centerX" id="oVK-xz-9ge"/>
+                                    <constraint firstItem="jMZ-KU-ljY" firstAttribute="width" secondItem="Je4-Uz-avb" secondAttribute="width" id="yD7-c3-7SS"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -386,9 +382,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="bogangEndTime" destination="2wN-1L-YTb" id="HHA-Qs-cQr"/>
                         <outlet property="bogangRoom" destination="AFJ-Fm-gpz" id="1bc-ck-Kfp"/>
-                        <outlet property="bogangStartTime" destination="1oS-VZ-8Oa" id="PgC-Ke-S2J"/>
+                        <outlet property="bogangTimePicker" destination="jMZ-KU-ljY" id="1W2-jh-cED"/>
                         <outlet property="bogangView" destination="Je4-Uz-avb" id="3Tr-v1-6pH"/>
                         <outlet property="cancelBtn" destination="uvi-gf-UzC" id="Xpm-Eg-EDG"/>
                         <outlet property="datePicker" destination="0Vs-8Z-Mm3" id="arX-YH-n3g"/>
@@ -405,7 +400,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="icons8-class-69" width="23" height="23"/>
+        <image name="icons8-class-69" width="34" height="34"/>
     </resources>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>

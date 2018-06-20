@@ -12,9 +12,17 @@ class LectureManagerViewController: UITableViewController {
 
     var lectures:[Lecture] = []
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         lectures = LectureDataManager.shared.GetLectures()
+        self.tableView.reloadData()
+        LectureDataManager.shared.addUpdateEventListener(key: "lectureManagerViewController") {
+            self.lectures = LectureDataManager.shared.GetLectures()
+            self.tableView.reloadData()
+        }
+    }
+    override func viewDidDisappear(_ animated: Bool) {
+        LectureDataManager.shared.removeEventListener(key: "lectureManagerViewController")
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -26,11 +34,16 @@ class LectureManagerViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let _child = self.storyboard?.instantiateViewController(withIdentifier: "editLecture") as? EditLectureViewController?;
+        let _child = self.storyboard?.instantiateViewController(withIdentifier: "editLecture") as? UINavigationController?;
         if let child = _child! {
             child.modalPresentationStyle = .overFullScreen
-            self.present(child, animated: true, completion: nil)
-            child.SetLecture(lecture: self.lectures[indexPath.row])
+            let v = child.childViewControllers.first as! EditLectureViewController
+            self.present(child, animated: true, completion:{
+                self.tableView.deselectRow(at: indexPath, animated: true)
+            })
+            if indexPath.row < lectures.count {
+                v.SetLecture(lecture: self.lectures[indexPath.row])
+            }
         }
     }
     
@@ -57,38 +70,12 @@ class LectureManagerViewController: UITableViewController {
         if editingStyle == .delete {
             Easy.ShowAlert(me: self, title: "정말 수업을 삭제하시겠습니까?", message: "") { (b) in
                 if b{
-                    tableView.deleteRows(at: [indexPath], with: .fade)
+                    LectureDataManager.shared.RemoveLecture(id: self.lectures[indexPath.row].id,withSave: false)
+                    self.lectures = LectureDataManager.shared.GetLectures()
+                    self.tableView.deleteRows(at: [indexPath], with: .automatic)
                 }
             }
         }
     }
- 
     
-    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let delete = deleteAction(at: indexPath)
-        return UISwipeActionsConfiguration(actions: [delete])
-    }
-    
-    func deleteAction(at indexPath: IndexPath) -> UIContextualAction {
-        let action = UIContextualAction(style: .destructive, title: "삭제") {(action, view, completion) in
-            LectureDataManager.shared.RemoveLecture(id: self.lectures[indexPath.row].id)
-            self.lectures.remove(at: indexPath.row)
-            self.tableView.deleteRows(at: [indexPath], with: .automatic)
-            completion(true)
-        }
-        action.backgroundColor = .red
-        
-        return action
-    }
-    
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-        print("pp")
-    }
-    
-
 }
