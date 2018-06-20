@@ -42,6 +42,7 @@
 		F9864A4220D79C4500B2C846 /* TwoTimePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9864A4120D79C4500B2C846 /* TwoTimePicker.swift */; };
 		F9864A4420D79F8200B2C846 /* WeekdayPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9864A4320D79F8200B2C846 /* WeekdayPicker.swift */; };
 		F9864A4620D7A72200B2C846 /* EditTimeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9864A4520D7A72200B2C846 /* EditTimeTableViewController.swift */; };
+		F9864A4A20DA9D6A00B2C846 /* HyuBoManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9864A4920DA9D6A00B2C846 /* HyuBoManagerViewController.swift */; };
 		F98942B420AABC7000905CB2 /* EditSuupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98942B320AABC7000905CB2 /* EditSuupViewController.swift */; };
 		F98942B820AAC46400905CB2 /* LecturePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98942B720AAC46400905CB2 /* LecturePicker.swift */; };
 		F98942BA20AADB3200905CB2 /* LectureTimePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98942B920AADB3200905CB2 /* LectureTimePicker.swift */; };
@@ -95,6 +96,7 @@
 		F9864A4120D79C4500B2C846 /* TwoTimePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoTimePicker.swift; sourceTree = "<group>"; };
 		F9864A4320D79F8200B2C846 /* WeekdayPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekdayPicker.swift; sourceTree = "<group>"; };
 		F9864A4520D7A72200B2C846 /* EditTimeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTimeTableViewController.swift; sourceTree = "<group>"; };
+		F9864A4920DA9D6A00B2C846 /* HyuBoManagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HyuBoManagerViewController.swift; sourceTree = "<group>"; };
 		F98942B320AABC7000905CB2 /* EditSuupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditSuupViewController.swift; sourceTree = "<group>"; };
 		F98942B720AAC46400905CB2 /* LecturePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LecturePicker.swift; sourceTree = "<group>"; };
 		F98942B920AADB3200905CB2 /* LectureTimePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureTimePicker.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 				F98942BB20AC0E1700905CB2 /* LectureDatePicker.swift */,
 				F98942D720B6BAF300905CB2 /* TimeTableView.swift */,
 				F9864A4320D79F8200B2C846 /* WeekdayPicker.swift */,
+				F9864A4920DA9D6A00B2C846 /* HyuBoManagerViewController.swift */,
 			);
 			path = SuupViewClasses;
 			sourceTree = "<group>";
@@ -412,6 +415,7 @@
 				F9864A4220D79C4500B2C846 /* TwoTimePicker.swift in Sources */,
 				F91DCFE520A58D10003A4161 /* ParseJson.swift in Sources */,
 				6F2B020020D9A49800970313 /* MealViewController.swift in Sources */,
+				F9864A4A20DA9D6A00B2C846 /* HyuBoManagerViewController.swift in Sources */,
 				6F2B01F920D9A47A00970313 /* RatingControl.swift in Sources */,
 				6F2B01FF20D9A49800970313 /* MealTableViewController.swift in Sources */,
 				F90FB8F420A912A0001077E9 /* GonggangCell.swift in Sources */,

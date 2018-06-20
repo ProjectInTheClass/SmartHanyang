@@ -99,5 +99,12 @@ class SuupTableViewCell: UITableViewCell
             locationLabel.isEnabled = false
             timeLabel.isEnabled = false
         }
+        else {
+            progressBar.tintColor = defaultColor
+            
+            titleLabel.isEnabled = true
+            locationLabel.isEnabled = true
+            timeLabel.isEnabled = true
+        }
     }
 }

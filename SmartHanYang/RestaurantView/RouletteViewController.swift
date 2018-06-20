@@ -51,7 +51,9 @@ class RouletteViewController: UIViewController {
         super.viewWillAppear(animated)
         
         
-        roulette = Roulette(texts:exTexts1, frame: self.view.frame)
+        roulette = Roulette(texts:MealDataManager.shared.getMeals().map({ (m) -> String in
+            return m.name
+        }), frame: self.view.frame)
         
         if let r = roulette {
             self.view.insertSubview(r, at: 1)

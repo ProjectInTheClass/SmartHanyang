@@ -92,6 +92,7 @@ public class LectureTimeTable: NSObject, NSCoding
         self.timeEnd = timeEnd
         self.weekDay = weekDay
         self.bogangDay = bogangDay
+        self.hyugangDays = hyugangDays
     }
     
     public func encode(with aCoder: NSCoder) {
