@@ -63,6 +63,7 @@ class LectureTimePicker: UIPickerView, UIPickerViewDelegate, UIPickerViewDataSou
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if times.count == 0
         {
+            selectedTimeTable = nil
             return "수업 없음"
         }
         return times[row].GetTimeText()

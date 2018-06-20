@@ -12,8 +12,15 @@ class SuupTableViewController: UITableViewController {
     var todayLectures:[LectureTimeTable] = []
     var gonggangIndexes:[Float] = []
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        Timer.scheduledTimer(withTimeInterval: 0.02, repeats: false) { (_) in
+            self.tableView.scrollToRow(at: IndexPath(row: 1, section: 0), at: UITableViewScrollPosition.top, animated: false)
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         LectureDataManager.shared.addUpdateEventListener(key:"SuupTableViewController") {
             self.update()
         }

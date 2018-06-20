@@ -72,7 +72,7 @@ class EditSuupViewController: UIViewController, UITextFieldDelegate
                 var alreadyLectureExist = false
                 for lecture in lectures {
                     for t in lecture.timeTables{
-                        if weekday == t.weekDay{
+                        if weekday != t.weekDay{
                             continue
                         }
                         //혹시 휴강인것인지 체크
@@ -140,6 +140,7 @@ class EditSuupViewController: UIViewController, UITextFieldDelegate
         case 0:
             ShowHyugangView()
             mode = .HYUGANG
+            doneBtn.isEnabled = hyugangTimePicker.selectedTimeTable != nil
             break
         case 1:
             ShowBogangView()
@@ -177,11 +178,13 @@ class EditSuupViewController: UIViewController, UITextFieldDelegate
     
     func OnLectureTimeSelected(lectureTime:LectureTimeTable?)
     {
-        if lectureTime != nil {
-            doneBtn.isEnabled = true
-        }
-        else {
-            doneBtn.isEnabled = false
+        if mode == .HYUGANG {
+            if lectureTime != nil {
+                doneBtn.isEnabled = true
+            }
+            else {
+                doneBtn.isEnabled = false
+            }
         }
     }
     

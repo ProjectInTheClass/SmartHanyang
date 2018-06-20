@@ -44,11 +44,11 @@ public class Easy
         return str
     }
     
-    public static func DateToText(date:Date) -> String
+    public static func DateToText(date:Date, dateFormat:String = "yyyy.MM.dd") -> String
     {
         var c = EasyCalendar.GetAllComponents(date: date)
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy.MM.dd"
+        dateFormatter.dateFormat = dateFormat
         let s = dateFormatter.string(from: date)
         
         let str = "\(s)(\(WeekdayToString(weekDay: c.weekday!)))"

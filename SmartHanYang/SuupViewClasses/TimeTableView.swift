@@ -38,8 +38,9 @@ class TimeTableView: UITableViewCell
         f = CGRect(x: 0, y: f.minY, width: width0, height: f.height)
         col0.frame = f
         
-        for a in cols.enumerated() {
-            let(i,col) = a
+        let today = EasyCalendar.GetDateFromToday()
+        let todayComs = EasyCalendar.GetAllComponents(date: today)
+        for (i,col) in cols.enumerated() {
             f = col.frame
             f = CGRect(x: 1+width0+width*CGFloat(i), y: f.minY, width: width-1, height: f.height)
             col.frame = f
@@ -48,7 +49,10 @@ class TimeTableView: UITableViewCell
                 view.removeFromSuperview()
             }
             
-            col.SetDate(date: EasyCalendar.GetDateFromToday(day: i))
+            let thisWeekDay = i+2
+            let plusDay = (thisWeekDay-todayComs.weekday!+7)%7
+            
+            col.SetDate(date: EasyCalendar.GetDateFromToday(day: plusDay))
             col.AddWeekDayLabel(width: width)
             weekLectures.append(col.timeTables)
             
@@ -180,7 +184,12 @@ class TimeTableViewCol: UIStackView
     public func AddWeekDayLabel(width:CGFloat)
     {
         let label = UILabel(frame:CGRect(x: 0, y: 1, width: Int(width-1), height: TimeTableView.TOP_HEIGHT-1))
-        label.text = Easy.WeekdayToString(weekDay: EasyCalendar.GetWeekday(date: date))
+        if EasyCalendar.isToday(date: date){
+            label.text = "오늘"
+        }
+        else {
+            label.text = Easy.DateToText(date: date,dateFormat: "M.dd")
+        }
         label.font = label.font.withSize(10)
         label.backgroundColor = UIColor.white
         label.textAlignment = NSTextAlignment.center
