@@ -32,6 +32,80 @@
             </objects>
             <point key="canvasLocation" x="-737" y="32"/>
         </scene>
+        <!--휴강/보강 리스트-->
+        <scene sceneID="5hR-Y0-Rbr">
+            <objects>
+                <viewController id="Q8K-Xk-sPi" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5Td-Se-7Y7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="shU-ok-N7Y">
+                                <rect key="frame" x="0.0" y="44" width="375" height="559"/>
+                                <subviews>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="75" translatesAutoresizingMaskIntoConstraints="NO" id="QH0-Bx-lBE">
+                                        <rect key="frame" x="0.0" y="52" width="375" height="75"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QH0-Bx-lBE" id="Dry-tq-Y0o">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="74.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="suup name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uds-mv-UZE">
+                                                    <rect key="frame" x="8" y="11" width="92" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2GM-vO-A4H">
+                                                    <rect key="frame" x="8" y="40" width="61" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NhI-7P-cXu">
+                                                    <rect key="frame" x="325" y="43" width="34" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </subviews>
+                            </view>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="bKq-be-Ty4">
+                                <rect key="frame" x="37" y="8" width="300" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="Tfm-UP-R7j"/>
+                                    <constraint firstAttribute="height" constant="28" id="buo-Mh-qIw"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="휴강"/>
+                                    <segment title="보강"/>
+                                </segments>
+                                <color key="tintColor" red="0.090196078430000007" green="0.27058823529999998" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="bKq-be-Ty4" firstAttribute="leading" secondItem="rxa-XL-BGU" secondAttribute="leading" constant="37" id="9Ta-HD-Hwz"/>
+                            <constraint firstItem="bKq-be-Ty4" firstAttribute="centerX" secondItem="shU-ok-N7Y" secondAttribute="centerX" id="C6i-bH-7gu"/>
+                            <constraint firstItem="shU-ok-N7Y" firstAttribute="leading" secondItem="5Td-Se-7Y7" secondAttribute="leading" id="HPX-a1-bpH"/>
+                            <constraint firstItem="bKq-be-Ty4" firstAttribute="centerX" secondItem="5Td-Se-7Y7" secondAttribute="centerX" id="aks-gD-DGk"/>
+                            <constraint firstAttribute="bottom" secondItem="shU-ok-N7Y" secondAttribute="bottom" id="gmG-Nd-wTn"/>
+                            <constraint firstItem="bKq-be-Ty4" firstAttribute="top" secondItem="rxa-XL-BGU" secondAttribute="top" constant="8" id="inn-1d-uwa"/>
+                            <constraint firstItem="shU-ok-N7Y" firstAttribute="top" secondItem="rxa-XL-BGU" secondAttribute="top" id="laq-iz-vLm"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="rxa-XL-BGU"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="휴강/보강 리스트" id="cHA-vy-M5Z"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tYA-Hv-SZ3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="29.600000000000001" y="-664.31784107946032"/>
+        </scene>
         <!--Suup-->
         <scene sceneID="EXo-L1-hoJ">
             <objects>
@@ -234,6 +308,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="수업 목록" id="WpS-Re-V2Q">
+                        <barButtonItem key="leftBarButtonItem" image="icons8-menu-30" id="bsD-yU-fQ2">
+                            <connections>
+                                <segue destination="Q8K-Xk-sPi" kind="show" id="8Va-uF-ViG"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="compose" id="2pE-it-Tna">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
@@ -401,6 +480,7 @@
     </scenes>
     <resources>
         <image name="icons8-class-69" width="34" height="34"/>
+        <image name="icons8-menu-30" width="30" height="30"/>
     </resources>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>
