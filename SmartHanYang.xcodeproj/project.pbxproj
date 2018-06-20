@@ -59,8 +59,8 @@
 		6F16DFC820D97BF700860ABE /* convert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = convert.swift; sourceTree = "<group>"; };
 		6F16DFCB20D97BF700860ABE /* Roulette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Roulette.swift; sourceTree = "<group>"; };
 		6F16DFD520D98C1700860ABE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Assets.xcassets/Assets.xcassets; sourceTree = "<group>"; };
-		6F2B01F720D9A47A00970313 /* RatingControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RatingControl.swift; path = /Users/ddd/SmartHanyang/Restaurant/RatingControl.swift; sourceTree = "<absolute>"; };
-		6F2B01F820D9A47A00970313 /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Meal.swift; path = /Users/ddd/SmartHanyang/Restaurant/Meal.swift; sourceTree = "<absolute>"; };
+		6F2B01F720D9A47A00970313 /* RatingControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
+		6F2B01F820D9A47A00970313 /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
 		6F2B01FB20D9A49800970313 /* MealTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MealTableViewCell.swift; path = /Users/ddd/SmartHanyang/SmartHanYang/RestaurantView/MealTableViewCell.swift; sourceTree = "<absolute>"; };
 		6F2B01FC20D9A49800970313 /* MealTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MealTableViewController.swift; path = /Users/ddd/SmartHanyang/SmartHanYang/RestaurantView/MealTableViewController.swift; sourceTree = "<absolute>"; };
 		6F2B01FD20D9A49800970313 /* MealViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MealViewController.swift; path = /Users/ddd/SmartHanyang/SmartHanYang/RestaurantView/MealViewController.swift; sourceTree = "<absolute>"; };
@@ -404,7 +404,6 @@
 				F910BA7620A448EC00E15F90 /* SuupTableViewCell.swift in Sources */,
 				F90FB8F220A8EB6C001077E9 /* GoajeDataManager.swift in Sources */,
 				F9FC4DDE20D204E2001992DF /* SettingsViewController.swift in Sources */,
-				6F8DD1E320BF95F400525298 /* ResataurantManager.swift in Sources */,
 				F9864A4420D79F8200B2C846 /* WeekdayPicker.swift in Sources */,
 				F9FC4DE420D26CDA001992DF /* EditLectureViewController.swift in Sources */,
 				F9864A4220D79C4500B2C846 /* TwoTimePicker.swift in Sources */,
