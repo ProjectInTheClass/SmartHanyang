@@ -35,7 +35,7 @@
             </objects>
             <point key="canvasLocation" x="-706.39999999999998" y="136.28185907046478"/>
         </scene>
-        <!--Roulette View Controller-->
+        <!--roulette-->
         <scene sceneID="vfu-Zk-oak">
             <objects>
                 <viewController id="1yn-Cd-eFU" customClass="RouletteViewController" customModule="SmartHanYang" customModuleProvider="target" sceneMemberID="viewController">
@@ -104,6 +104,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NEK-1q-IIT"/>
                     </view>
+                    <navigationItem key="navigationItem" title="roulette" id="xPf-Gi-MyW"/>
                     <connections>
                         <outlet property="backButton" destination="Fdd-9H-D5E" id="130-Pt-ZqC"/>
                         <outlet property="centerView" destination="ysK-uT-5zH" id="fJz-pf-IUL"/>
@@ -234,4 +235,5 @@
         <image name="icons8-food-69" width="34" height="34"/>
         <image name="red_arrow" width="41" height="58"/>
     </resources>
+    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>
