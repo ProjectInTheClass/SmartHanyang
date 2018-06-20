@@ -5,8 +5,10 @@ import os.log
 
 class MealTableViewController: UITableViewController {
     
-    @IBOutlet weak var textField: UITextField!
+    var textField: UITextField?
+    var btn: UIButton?
     //MARK: Properties
+    
     
 
     override func viewDidLoad() {
@@ -28,10 +30,15 @@ class MealTableViewController: UITableViewController {
     //MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return 2
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if section == 0 {
+            return 1
+        }
+        
+        
         return MealDataManager.shared.meals.count
         
     }
@@ -39,17 +46,25 @@ class MealTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        if indexPath.section == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "addCell", for: indexPath) as? MealTableViewCell
+            
+            self.textField = cell?.textField
+            return cell!
+        }
+        
+        
         // Table view cells are reused and should be dequeued using a cell identifier.
         let cellIdentifier = "MealTableViewCell"
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? MealTableViewCell  else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? UITableViewCell  else {
             fatalError("The dequeued cell is not an instance of MealTableViewCell.")
         }
         
         // Fetches the appropriate meal for the data source layout.
         let meal = MealDataManager.shared.meals[indexPath.row]
         
-        cell.nameLabel.text = meal.name
+        cell.textLabel?.text = meal.name
         
         return cell
     }
@@ -59,7 +74,7 @@ class MealTableViewController: UITableViewController {
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
-        return true
+        return indexPath.section == 1
     }
     
 
@@ -121,29 +136,9 @@ class MealTableViewController: UITableViewController {
     
     //MARK: Actions
     
-    @IBAction func unwindToMealList(sender: UIStoryboardSegue) {
-        if let sourceViewController = sender.source as? MealViewController, let meal = sourceViewController.meal {
-            
-            if let selectedIndexPath = tableView.indexPathForSelectedRow {
-                // Update an existing meal.
-                MealDataManager.shared.meals[selectedIndexPath.row] = meal
-                tableView.reloadRows(at: [selectedIndexPath], with: .none)
-            }
-            else {
-                // Add a new meal.
-                let newIndexPath = IndexPath(row: MealDataManager.shared.meals.count, section: 0)
-                
-                MealDataManager.shared.meals.append(meal)
-                tableView.insertRows(at: [newIndexPath], with: .automatic)
-            }
-            
-            // Save the meals.
-            MealDataManager.shared.save()
-        }
-    }
-    
+        
     func insertNew() {
-        if let text = textField.text {
+        if let text = textField?.text {
             if text.isEmpty{
                 return
             }
@@ -152,13 +147,17 @@ class MealTableViewController: UITableViewController {
             }
         }
         
-        let indexPath = IndexPath(row: MealDataManager.shared.meals.count - 1, section: 0)
+        let indexPath = IndexPath(row: MealDataManager.shared.meals.count - 1, section: 1)
         tableView.beginUpdates()
         tableView.insertRows(at: [indexPath], with: .automatic)
         tableView.endUpdates()
         
-        textField.text = ""
+        textField?.text = ""
         view.endEditing(true)
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.tableView.deselectRow(at: indexPath, animated: true)
     }
     
     //MARK: Actions
