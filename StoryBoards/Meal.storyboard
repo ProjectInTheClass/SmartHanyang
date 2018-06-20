@@ -162,7 +162,7 @@
         <!--식당-->
         <scene sceneID="v7c-Cq-WhV">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="L8g-sl-WVK" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="meal" automaticallyAdjustsScrollViewInsets="NO" id="L8g-sl-WVK" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="식당" image="icons8-food-69" id="fnl-ZH-wNt"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
