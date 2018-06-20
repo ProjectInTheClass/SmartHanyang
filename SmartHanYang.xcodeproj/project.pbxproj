@@ -8,14 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		17A2DED813E7E06C83C19482 /* Pods_SmartHanYang.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 666F3E54E112B992B392C915 /* Pods_SmartHanYang.framework */; };
-		6F0B5E8720D848B000A1413A /* convert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F0B5E8620D848B000A1413A /* convert.swift */; };
-		6FB7DB4F20D3B07A002303DA /* InnerRestaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FB7DB4820D3B079002303DA /* InnerRestaurant.swift */; };
-		6FB7DB5120D3B07A002303DA /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FB7DB4A20D3B07A002303DA /* Meal.swift */; };
-		6FB7DB5220D3B07A002303DA /* restaurantsForRoulette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FB7DB4B20D3B07A002303DA /* restaurantsForRoulette.swift */; };
-		6FB7DB5320D3B07A002303DA /* ResataurantManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FB7DB4C20D3B07A002303DA /* ResataurantManager.swift */; };
-		6FB7DB5520D3B07A002303DA /* OuterRestaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FB7DB4E20D3B07A002303DA /* OuterRestaurant.swift */; };
-		6FB7DB5720D3B15B002303DA /* Roulette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FB7DB5620D3B15B002303DA /* Roulette.swift */; };
-		6FB7DB5920D3B287002303DA /* Restaurant.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6FB7DB5820D3B287002303DA /* Restaurant.storyboard */; };
+		6F16DFCF20D97BF700860ABE /* convert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F16DFC820D97BF700860ABE /* convert.swift */; };
+		6F16DFD220D97BF700860ABE /* Roulette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F16DFCB20D97BF700860ABE /* Roulette.swift */; };
+		6F16DFD620D98C1700860ABE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F16DFD520D98C1700860ABE /* Assets.xcassets */; };
+		6F2B01F920D9A47A00970313 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2B01F720D9A47A00970313 /* RatingControl.swift */; };
+		6F2B01FA20D9A47A00970313 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2B01F820D9A47A00970313 /* Meal.swift */; };
+		6F2B01FE20D9A49800970313 /* MealTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2B01FB20D9A49800970313 /* MealTableViewCell.swift */; };
+		6F2B01FF20D9A49800970313 /* MealTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2B01FC20D9A49800970313 /* MealTableViewController.swift */; };
+		6F2B020020D9A49800970313 /* MealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2B01FD20D9A49800970313 /* MealViewController.swift */; };
+		6F2B020220D9A4C200970313 /* Meal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F2B020120D9A4C200970313 /* Meal.storyboard */; };
 		6FB7DB5C20D3B35B002303DA /* RouletteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FB7DB5B20D3B35B002303DA /* RouletteViewController.swift */; };
 		E300793B20BA72550089A9D7 /* GoajeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E300793820BA72540089A9D7 /* GoajeTableViewCell.swift */; };
 		E300793D20BA72550089A9D7 /* GoajeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E300793A20BA72550089A9D7 /* GoajeTableViewController.swift */; };
@@ -51,14 +52,15 @@
 
 /* Begin PBXFileReference section */
 		666F3E54E112B992B392C915 /* Pods_SmartHanYang.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartHanYang.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6F0B5E8620D848B000A1413A /* convert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = convert.swift; sourceTree = "<group>"; };
-		6FB7DB4820D3B079002303DA /* InnerRestaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InnerRestaurant.swift; sourceTree = "<group>"; };
-		6FB7DB4A20D3B07A002303DA /* Meal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
-		6FB7DB4B20D3B07A002303DA /* restaurantsForRoulette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = restaurantsForRoulette.swift; sourceTree = "<group>"; };
-		6FB7DB4C20D3B07A002303DA /* ResataurantManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResataurantManager.swift; sourceTree = "<group>"; };
-		6FB7DB4E20D3B07A002303DA /* OuterRestaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OuterRestaurant.swift; sourceTree = "<group>"; };
-		6FB7DB5620D3B15B002303DA /* Roulette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Roulette.swift; sourceTree = "<group>"; };
-		6FB7DB5820D3B287002303DA /* Restaurant.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Restaurant.storyboard; sourceTree = "<group>"; };
+		6F16DFC820D97BF700860ABE /* convert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = convert.swift; sourceTree = "<group>"; };
+		6F16DFCB20D97BF700860ABE /* Roulette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Roulette.swift; sourceTree = "<group>"; };
+		6F16DFD520D98C1700860ABE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Assets.xcassets/Assets.xcassets; sourceTree = "<group>"; };
+		6F2B01F720D9A47A00970313 /* RatingControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RatingControl.swift; path = /Users/ddd/SmartHanyang/Restaurant/RatingControl.swift; sourceTree = "<absolute>"; };
+		6F2B01F820D9A47A00970313 /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Meal.swift; path = /Users/ddd/SmartHanyang/Restaurant/Meal.swift; sourceTree = "<absolute>"; };
+		6F2B01FB20D9A49800970313 /* MealTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MealTableViewCell.swift; path = /Users/ddd/SmartHanyang/SmartHanYang/RestaurantView/MealTableViewCell.swift; sourceTree = "<absolute>"; };
+		6F2B01FC20D9A49800970313 /* MealTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MealTableViewController.swift; path = /Users/ddd/SmartHanyang/SmartHanYang/RestaurantView/MealTableViewController.swift; sourceTree = "<absolute>"; };
+		6F2B01FD20D9A49800970313 /* MealViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MealViewController.swift; path = /Users/ddd/SmartHanyang/SmartHanYang/RestaurantView/MealViewController.swift; sourceTree = "<absolute>"; };
+		6F2B020120D9A4C200970313 /* Meal.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Meal.storyboard; sourceTree = "<group>"; };
 		6FB7DB5B20D3B35B002303DA /* RouletteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouletteViewController.swift; sourceTree = "<group>"; };
 		88313F3567C407636023779F /* Pods-SmartHanYang.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartHanYang.release.xcconfig"; path = "Pods/Target Support Files/Pods-SmartHanYang/Pods-SmartHanYang.release.xcconfig"; sourceTree = "<group>"; };
 		CA3DD5FE608F5E983A631046 /* Pods-SmartHanYang.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartHanYang.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SmartHanYang/Pods-SmartHanYang.debug.xcconfig"; sourceTree = "<group>"; };
@@ -108,16 +110,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6F8DD1DB20BF7F7800525298 /* Restaurant */ = {
+		6F16DFC420D97BF700860ABE /* Restaurant */ = {
 			isa = PBXGroup;
 			children = (
-				6FB7DB4820D3B079002303DA /* InnerRestaurant.swift */,
-				6FB7DB4A20D3B07A002303DA /* Meal.swift */,
-				6FB7DB4E20D3B07A002303DA /* OuterRestaurant.swift */,
-				6FB7DB4C20D3B07A002303DA /* ResataurantManager.swift */,
-				6FB7DB4B20D3B07A002303DA /* restaurantsForRoulette.swift */,
-				6FB7DB5620D3B15B002303DA /* Roulette.swift */,
-				6F0B5E8620D848B000A1413A /* convert.swift */,
+				6F2B01F820D9A47A00970313 /* Meal.swift */,
+				6F2B01F720D9A47A00970313 /* RatingControl.swift */,
+				6F16DFC820D97BF700860ABE /* convert.swift */,
+				6F16DFCB20D97BF700860ABE /* Roulette.swift */,
+				6F16DFD520D98C1700860ABE /* Assets.xcassets */,
 			);
 			path = Restaurant;
 			sourceTree = "<group>";
@@ -125,6 +125,9 @@
 		6FB7DB5A20D3B311002303DA /* RestaurantView */ = {
 			isa = PBXGroup;
 			children = (
+				6F2B01FB20D9A49800970313 /* MealTableViewCell.swift */,
+				6F2B01FC20D9A49800970313 /* MealTableViewController.swift */,
+				6F2B01FD20D9A49800970313 /* MealViewController.swift */,
 				6FB7DB5B20D3B35B002303DA /* RouletteViewController.swift */,
 			);
 			path = RestaurantView;
@@ -165,13 +168,13 @@
 		F91DCFDB20A57F4B003A4161 /* StoryBoards */ = {
 			isa = PBXGroup;
 			children = (
+				6F2B020120D9A4C200970313 /* Meal.storyboard */,
 				F9864A3C20D3E1AC00B2C846 /* Suup.storyboard */,
 				F96DFB9520A42E4300997614 /* Main.storyboard */,
 				F91DCFDC20A5814A003A4161 /* Goaje.storyboard */,
 				E347D91A20C505DA00E94ADA /* LaunchScreen.storyboard */,
 				F969861920CA801100336B97 /* Setting.storyboard */,
 				F9FC4DDF20D20E9A001992DF /* LectureManager.storyboard */,
-				6FB7DB5820D3B287002303DA /* Restaurant.storyboard */,
 			);
 			path = StoryBoards;
 			sourceTree = "<group>";
@@ -188,7 +191,7 @@
 		F96DFB8520A42E4300997614 = {
 			isa = PBXGroup;
 			children = (
-				6F8DD1DB20BF7F7800525298 /* Restaurant */,
+				6F16DFC420D97BF700860ABE /* Restaurant */,
 				F91DCFDB20A57F4B003A4161 /* StoryBoards */,
 				F96DFB9020A42E4300997614 /* SmartHanYang */,
 				F96DFB8F20A42E4300997614 /* Products */,
@@ -317,8 +320,9 @@
 			files = (
 				E347D91B20C505DA00E94ADA /* LaunchScreen.storyboard in Resources */,
 				E34A1A4D20C2A2AF0067B743 /* Media.xcassets in Resources */,
-				6FB7DB5920D3B287002303DA /* Restaurant.storyboard in Resources */,
+				6F2B020220D9A4C200970313 /* Meal.storyboard in Resources */,
 				F91DCFDE20A5814A003A4161 /* Goaje.storyboard in Resources */,
+				6F16DFD620D98C1700860ABE /* Assets.xcassets in Resources */,
 				F9864A3E20D3E1AC00B2C846 /* Suup.storyboard in Resources */,
 				F9FC4DE020D20E9A001992DF /* LectureManager.storyboard in Resources */,
 				F91DCFE320A58C3D003A4161 /* example in Resources */,
@@ -381,33 +385,32 @@
 				F9FC4DE220D2686B001992DF /* LectureManagerViewController.swift in Sources */,
 				F90FB8EE20A8DC02001077E9 /* LectureDataMager.swift in Sources */,
 				F96DFB9420A42E4300997614 /* ViewController.swift in Sources */,
+				6F2B01FA20D9A47A00970313 /* Meal.swift in Sources */,
 				E300793B20BA72550089A9D7 /* GoajeTableViewCell.swift in Sources */,
 				F910BA7620A448EC00E15F90 /* SuupTableViewCell.swift in Sources */,
 				F90FB8F220A8EB6C001077E9 /* GoajeDataManager.swift in Sources */,
-				6FB7DB5220D3B07A002303DA /* restaurantsForRoulette.swift in Sources */,
-				6FB7DB4F20D3B07A002303DA /* InnerRestaurant.swift in Sources */,
 				F9FC4DDE20D204E2001992DF /* SettingsViewController.swift in Sources */,
-				6F8DD1E320BF95F400525298 /* ResataurantManager.swift in Sources */,
 				F9FC4DE420D26CDA001992DF /* EditLectureViewController.swift in Sources */,
 				F91DCFE520A58D10003A4161 /* ParseJson.swift in Sources */,
+				6F2B020020D9A49800970313 /* MealViewController.swift in Sources */,
+				6F2B01F920D9A47A00970313 /* RatingControl.swift in Sources */,
+				6F2B01FF20D9A49800970313 /* MealTableViewController.swift in Sources */,
 				F90FB8F420A912A0001077E9 /* GonggangCell.swift in Sources */,
 				F98942BF20AF2AB100905CB2 /* UtilFuncs.swift in Sources */,
-				6FB7DB5720D3B15B002303DA /* Roulette.swift in Sources */,
 				F96DFB9220A42E4300997614 /* AppDelegate.swift in Sources */,
 				F98942B820AAC46400905CB2 /* LecturePicker.swift in Sources */,
+				6F2B01FE20D9A49800970313 /* MealTableViewCell.swift in Sources */,
 				E300793D20BA72550089A9D7 /* GoajeTableViewController.swift in Sources */,
-				6FB7DB5520D3B07A002303DA /* OuterRestaurant.swift in Sources */,
 				F98942B420AABC7000905CB2 /* EditSuupViewController.swift in Sources */,
 				F96DFBAD20A4467D00997614 /* Lecture.swift in Sources */,
 				F96DFBA420A4315600997614 /* SuupTableViewController.swift in Sources */,
-				6FB7DB5120D3B07A002303DA /* Meal.swift in Sources */,
-				6F0B5E8720D848B000A1413A /* convert.swift in Sources */,
 				F98942BA20AADB3200905CB2 /* LectureTimePicker.swift in Sources */,
-				6FB7DB5320D3B07A002303DA /* ResataurantManager.swift in Sources */,
 				F9D0D5FA20C92ED50039BA67 /* AddGoajeViewController.swift in Sources */,
 				6FB7DB5C20D3B35B002303DA /* RouletteViewController.swift in Sources */,
 				F98942D820B6BAF300905CB2 /* TimeTableView.swift in Sources */,
 				F98942BC20AC0E1800905CB2 /* LectureDatePicker.swift in Sources */,
+				6F16DFD220D97BF700860ABE /* Roulette.swift in Sources */,
+				6F16DFCF20D97BF700860ABE /* convert.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
