@@ -12,18 +12,26 @@ import UIKit
 let exTexts1: [String] = ["학생식당", "행원파크", "제2학생생활관", "교직원식당", "알촌", "우리국밥", "술루루루루루","MapleStory", "PC방"]
 let exTexts2: [String] = ["7080술집", "한양플라자", "몰라아아아아아아아ㅏ!"]
 
-var texts: [String] = restaurantsForRoulette.names
+
 
 class Roulette: UIView {
-    
+    var texts: [String]
     var path: UIBezierPath!
     
     override init(frame: CGRect) {
+        texts = [String]()
         super.init(frame: frame)
+    }
+    
+    init(texts:[String], frame: CGRect) {
+        self.texts = texts
+        super.init(frame: frame)
+        
         
     }
     
     required init?(coder aDecoder: NSCoder) {
+        texts = Array<String>()
         super.init(coder: aDecoder)
     }
     
@@ -45,7 +53,7 @@ class Roulette: UIView {
         path.addLine(to: CGPoint(x: self.frame.size.width, y: 0.0))
         path.close()
         
-        UIColor.clear.setFill()
+        UIColor.purple.setFill()
         path.fill()
     }
     
@@ -122,5 +130,6 @@ class Roulette: UIView {
             textAngle += unitAngle
         }
     }
-    
 }
+
+var roulette: Roulette = Roulette()

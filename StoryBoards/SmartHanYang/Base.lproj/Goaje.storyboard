@@ -302,6 +302,6 @@
     <resources>
         <image name="icons8-attendance-100" width="100" height="100"/>
         <image name="icons8-task-30" width="30" height="30"/>
-        <image name="icons8-task-69" width="23" height="23"/>
+        <image name="icons8-task-69" width="34" height="34"/>
     </resources>
 </document>

@@ -11,19 +11,23 @@ import UIKit
 import AVFoundation
 import AudioToolbox
 
+
 class RouletteViewController: UIViewController {
+
+    @IBOutlet weak var rotateButton: UIButton!
     
     var fromAngle: Double = 0.0
     
-    
-    @IBOutlet weak var rotateButton: UIButton!
+
 
     @IBOutlet weak var rotateImage: UIImageView!
     
     @IBOutlet var rotateResultView: UIView!
     @IBOutlet weak var rotateResultText: UITextField!
     @IBOutlet weak var backButton: UIButton!
+  
     
+   
     
     func stopAnimationForView(_ myView: UIView) {
         
@@ -47,18 +51,23 @@ class RouletteViewController: UIViewController {
         //viewDidAppear , ViewWillAppear
         // Do any additional setup after loading the view, typically from a nib.
         
-        
+        self.view.backgroundColor = UIColor.purple
         rotateImage.layer.bounds.size.width = 400
         rotateImage.layer.bounds.size.height = rotateImage.layer.bounds.size.width
         
+        let theRoulette = roulette
+        rotateImage.image = theRoulette.asImage()
         
+        rotateButton.layer.cornerRadius = 0.5 * rotateButton.bounds.size.width
         
-        let roulette = Roulette(frame: CGRect(x: rotateImage.layer.position.x , y: rotateImage.layer.position.y , width: rotateImage.layer.bounds.size.width, height: rotateImage.layer.bounds.size.height))
-        
-        rotateImage.image = roulette.asImage()
-        
-        rotateImage.layer.cornerRadius = 0.5 * rotateImage.bounds.size.width
-        rotateImage.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMaxXMinYCorner, .layerMinXMaxYCorner, .layerMinXMinYCorner]
+//        rotateImage.translatesAutoresizingMaskIntoConstraints = false
+//        rotateImage.topAnchor.constraint(equalTo: view.topAnchor, constant: 100).isActive = true
+//        rotateImage.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -7).isActive = true
+//        rotateImage.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 7).isActive = true
+//        rotateImage.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+//        rotateImage.layer.cornerRadius = 0.5 * rotateImage.bounds.size.width
+//        rotateButton.centerXAnchor.constraint(equalTo: rotateImage.centerXAnchor)
+//        rotateButton.centerYAnchor.constraint(equalTo: rotateImage.centerYAnchor)
         
         
         
@@ -104,8 +113,8 @@ class RouletteViewController: UIViewController {
         
         let timer1 = Timer.scheduledTimer(withTimeInterval: 3.999, repeats: false) { (timer) in
             print("interval")
-            print(texts.count - 1 - Int((fmod(toAngle, M_PI * 2) / (2 * M_PI) ) * Double(texts.count)))
-            print(texts[texts.count - 1 - Int((fmod(toAngle, M_PI * 2) / (2 * M_PI) ) * Double(texts.count))])
+            print(roulette.texts.count - 1 - Int((fmod(toAngle, M_PI * 2) / (2 * M_PI) ) * Double(roulette.texts.count)))
+            print(roulette.texts[roulette.texts.count - 1 - Int((fmod(toAngle, M_PI * 2) / (2 * M_PI) ) * Double(roulette.texts.count))])
             
             let transform = self.rotateImage.layer.presentation()?.transform
             self.rotateImage.layer.transform = transform!
@@ -114,7 +123,7 @@ class RouletteViewController: UIViewController {
             self.rotateButton.isEnabled = true
             self.fromAngle = fmod(toAngle, M_PI * 2) / (2 * M_PI)
         
-            self.rotateResultText.text = texts[texts.count - 1 - Int((fmod(toAngle, M_PI * 2) / (2 * M_PI) ) * Double(texts.count))]
+            self.rotateResultText.text = roulette.texts[roulette.texts.count - 1 - Int((fmod(toAngle, M_PI * 2) / (2 * M_PI) ) * Double(roulette.texts.count))]
             self.view.addSubview(self.rotateResultView)
             self.rotateResultView.center = self.view.center
         }
