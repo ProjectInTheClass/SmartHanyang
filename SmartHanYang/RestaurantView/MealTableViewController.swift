@@ -5,6 +5,7 @@ import os.log
 
 class MealTableViewController: UITableViewController {
     
+    @IBOutlet weak var textField: UITextField!
     //MARK: Properties
     
 
@@ -49,8 +50,6 @@ class MealTableViewController: UITableViewController {
         let meal = MealDataManager.shared.meals[indexPath.row]
         
         cell.nameLabel.text = meal.name
-        cell.photoImageView.image = meal.photo
-        cell.ratingControl.rating = meal.rating
         
         return cell
     }
@@ -102,26 +101,7 @@ class MealTableViewController: UITableViewController {
         super.prepare(for: segue, sender: sender)
         
         switch(segue.identifier ?? "") {
-            
-        case "AddItem":
-            os_log("Adding a new meal.", log: OSLog.default, type: .debug)
-            
-        case "ShowDetail":
-            guard let mealDetailViewController = segue.destination as? MealViewController else {
-                fatalError("Unexpected destination: \(segue.destination)")
-            }
-            
-            guard let selectedMealCell = sender as? MealTableViewCell else {
-                fatalError("Unexpected sender: \(sender)")
-            }
-            
-            guard let indexPath = tableView.indexPath(for: selectedMealCell) else {
-                fatalError("The selected cell is not being displayed by the table")
-            }
-            
-            let selectedMeal = MealDataManager.shared.meals[indexPath.row]
-            mealDetailViewController.meal = selectedMeal
-            
+
         case "Roulette":
             var texts:[String] = [String]()
             
@@ -161,45 +141,42 @@ class MealTableViewController: UITableViewController {
             MealDataManager.shared.save()
         }
     }
+    
+    func insertNew() {
+        if let text = textField.text {
+            if text.isEmpty{
+                return
+            }
+            if let meal = Meal(name: text, photo: nil, rating: 0){
+                MealDataManager.shared.addMeal(aMeal: meal)
+            }
+        }
+        
+        let indexPath = IndexPath(row: MealDataManager.shared.meals.count - 1, section: 0)
+        tableView.beginUpdates()
+        tableView.insertRows(at: [indexPath], with: .automatic)
+        tableView.endUpdates()
+        
+        textField.text = ""
+        view.endEditing(true)
+    }
+    
+    //MARK: Actions
+    
+    
+    @IBAction func addAction(_ sender: Any) {
+        self.insertNew()
+    }
+    
+    @IBAction func keyboardReturn(_ sender: Any) {
+        self.insertNew()
+    }
+    
+    
+    
     @IBAction func rouletteAction(_ sender: Any) {
         
     }
     
-    //MARK: Private Methods
-//    
-//    private func loadSampleMeals() {
-//        
-//        let photo1 = UIImage(named: "meal1")
-//        let photo2 = UIImage(named: "meal2")
-//        let photo3 = UIImage(named: "meal3")
-//
-//        guard let meal1 = Meal(name: "행원파크", photo: photo1, rating: 3) else {
-//            fatalError("Unable to instantiate meal1")
-//        }
-//
-//        guard let meal2 = Meal(name: "신학생식당", photo: photo2, rating: 3) else {
-//            fatalError("Unable to instantiate meal2")
-//        }
-//
-//        guard let meal3 = Meal(name: "교직원식당", photo: photo3, rating: 5) else {
-//            fatalError("Unable to instantiate meal2")
-//        }
-//
-//        MealDataManager.shared.meals += [meal1, meal2, meal3]
-//        MealDataManager.shared.save()
-//    }
-    
-//    private func saveMeals() {
-//        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(meals, toFile: Meal.ArchiveURL.path)
-//        if isSuccessfulSave {
-//            os_log("Meals successfully saved.", log: OSLog.default, type: .debug)
-//        } else {
-//            os_log("Failed to save meals...", log: OSLog.default, type: .error)
-//        }
-//    }
-//    
-//    private func loadMeals() -> [Meal]?  {
-//        return NSKeyedUnarchiver.unarchiveObject(withFile: Meal.ArchiveURL.path) as? [Meal]
-//    }
 
 }
