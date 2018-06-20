@@ -55,11 +55,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let editSuup = vc1.instantiateViewController(withIdentifier: "editSuupViewController") as! UINavigationController
             self.window?.rootViewController?.present(editSuup, animated: true, completion: nil)
         }
-        else if shortcutItem.type == "com.hanyang.graph.SmartHanYang.meal" {
-            let vc2 = UIStoryboard(name: "Meal", bundle: nil)
-            let meal = vc2.instantiateViewController(withIdentifier: "meal") as! UINavigationController
-            self.window?.rootViewController?.present(meal, animated: true, completion: nil)
-        }
     }
 }
 
