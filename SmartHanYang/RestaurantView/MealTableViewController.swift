@@ -7,7 +7,6 @@ class MealTableViewController: UITableViewController {
     
     //MARK: Properties
     
-    var meals = [Meal]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -15,14 +14,9 @@ class MealTableViewController: UITableViewController {
         // Use the edit button item provided by the table view controller.
         navigationItem.leftBarButtonItem = editButtonItem
         navigationItem.leftBarButtonItem?.tintColor = .white
-        // Load any saved meals, otherwise load sample data.
-        if let savedMeals = loadMeals() {
-            meals += savedMeals
-        }
-        else {
-            // Load the sample data.
-            loadSampleMeals()
-        }
+        
+        MealDataManager.shared.load()
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,7 +31,8 @@ class MealTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return meals.count
+        return MealDataManager.shared.meals.count
+        
     }
 
     
@@ -51,7 +46,7 @@ class MealTableViewController: UITableViewController {
         }
         
         // Fetches the appropriate meal for the data source layout.
-        let meal = meals[indexPath.row]
+        let meal = MealDataManager.shared.meals[indexPath.row]
         
         cell.nameLabel.text = meal.name
         cell.photoImageView.image = meal.photo
@@ -74,8 +69,8 @@ class MealTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
-            meals.remove(at: indexPath.row)
-            saveMeals()
+            MealDataManager.shared.meals.remove(at: indexPath.row)
+            MealDataManager.shared.save()
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
@@ -124,13 +119,13 @@ class MealTableViewController: UITableViewController {
                 fatalError("The selected cell is not being displayed by the table")
             }
             
-            let selectedMeal = meals[indexPath.row]
+            let selectedMeal = MealDataManager.shared.meals[indexPath.row]
             mealDetailViewController.meal = selectedMeal
             
         case "Roulette":
             var texts:[String] = [String]()
             
-            for meal in meals {
+            for meal in MealDataManager.shared.meals {
                 texts.append(meal.name)
 
             }
@@ -155,19 +150,19 @@ class MealTableViewController: UITableViewController {
             
             if let selectedIndexPath = tableView.indexPathForSelectedRow {
                 // Update an existing meal.
-                meals[selectedIndexPath.row] = meal
+                MealDataManager.shared.meals[selectedIndexPath.row] = meal
                 tableView.reloadRows(at: [selectedIndexPath], with: .none)
             }
             else {
                 // Add a new meal.
-                let newIndexPath = IndexPath(row: meals.count, section: 0)
+                let newIndexPath = IndexPath(row: MealDataManager.shared.meals.count, section: 0)
                 
-                meals.append(meal)
+                MealDataManager.shared.meals.append(meal)
                 tableView.insertRows(at: [newIndexPath], with: .automatic)
             }
             
             // Save the meals.
-            saveMeals()
+            MealDataManager.shared.save()
         }
     }
     @IBAction func rouletteAction(_ sender: Any) {
@@ -175,39 +170,40 @@ class MealTableViewController: UITableViewController {
     }
     
     //MARK: Private Methods
+//    
+//    private func loadSampleMeals() {
+//        
+//        let photo1 = UIImage(named: "meal1")
+//        let photo2 = UIImage(named: "meal2")
+//        let photo3 = UIImage(named: "meal3")
+//
+//        guard let meal1 = Meal(name: "행원파크", photo: photo1, rating: 3) else {
+//            fatalError("Unable to instantiate meal1")
+//        }
+//
+//        guard let meal2 = Meal(name: "신학생식당", photo: photo2, rating: 3) else {
+//            fatalError("Unable to instantiate meal2")
+//        }
+//
+//        guard let meal3 = Meal(name: "교직원식당", photo: photo3, rating: 5) else {
+//            fatalError("Unable to instantiate meal2")
+//        }
+//
+//        MealDataManager.shared.meals += [meal1, meal2, meal3]
+//        MealDataManager.shared.save()
+//    }
     
-    private func loadSampleMeals() {
-        
-        let photo1 = UIImage(named: "meal1")
-        let photo2 = UIImage(named: "meal2")
-        let photo3 = UIImage(named: "meal3")
-
-        guard let meal1 = Meal(name: "행원파크", photo: photo1, rating: 3) else {
-            fatalError("Unable to instantiate meal1")
-        }
-
-        guard let meal2 = Meal(name: "신학생식당", photo: photo2, rating: 3) else {
-            fatalError("Unable to instantiate meal2")
-        }
-
-        guard let meal3 = Meal(name: "교직원식당", photo: photo3, rating: 5) else {
-            fatalError("Unable to instantiate meal2")
-        }
-
-        meals += [meal1, meal2, meal3]
-    }
-    
-    private func saveMeals() {
-        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(meals, toFile: Meal.ArchiveURL.path)
-        if isSuccessfulSave {
-            os_log("Meals successfully saved.", log: OSLog.default, type: .debug)
-        } else {
-            os_log("Failed to save meals...", log: OSLog.default, type: .error)
-        }
-    }
-    
-    private func loadMeals() -> [Meal]?  {
-        return NSKeyedUnarchiver.unarchiveObject(withFile: Meal.ArchiveURL.path) as? [Meal]
-    }
+//    private func saveMeals() {
+//        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(meals, toFile: Meal.ArchiveURL.path)
+//        if isSuccessfulSave {
+//            os_log("Meals successfully saved.", log: OSLog.default, type: .debug)
+//        } else {
+//            os_log("Failed to save meals...", log: OSLog.default, type: .error)
+//        }
+//    }
+//    
+//    private func loadMeals() -> [Meal]?  {
+//        return NSKeyedUnarchiver.unarchiveObject(withFile: Meal.ArchiveURL.path) as? [Meal]
+//    }
 
 }

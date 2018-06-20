@@ -29,22 +29,58 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="aMZ-eD-Qxa">
-                                            <rect key="frame" x="0.0" y="0.0" width="89" height="89"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bae-2p-rdI">
-                                            <rect key="frame" x="97" y="8" width="270" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ami-MF-hae" customClass="RatingControl" customModule="SmartHanYang" customModuleProvider="target">
-                                            <rect key="frame" x="97" y="37" width="252" height="44"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bQM-ZQ-ehO">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="aMZ-eD-Qxa">
+                                                    <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="aMZ-eD-Qxa" secondAttribute="height" multiplier="1:1" id="iEm-zf-Jqa"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="NEU-sP-Y1n">
+                                                    <rect key="frame" x="90" y="0.0" width="285" height="90"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bae-2p-rdI">
+                                                            <rect key="frame" x="0.0" y="0.0" width="48" height="46"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" relation="lessThanOrEqual" constant="46" id="TsV-zP-5t3"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ami-MF-hae" customClass="RatingControl" customModule="SmartHanYang" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="46" width="252" height="44"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="40" id="SUq-E1-JoF"/>
+                                                                <constraint firstAttribute="width" secondItem="ami-MF-hae" secondAttribute="height" multiplier="69:11" id="z5F-N8-y8l"/>
+                                                            </constraints>
+                                                        </stackView>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="ami-MF-hae" firstAttribute="leading" secondItem="NEU-sP-Y1n" secondAttribute="leading" constant="10" id="0sd-TX-tHG"/>
+                                                        <constraint firstItem="ami-MF-hae" firstAttribute="top" secondItem="bae-2p-rdI" secondAttribute="bottom" id="MBi-98-Jxo"/>
+                                                        <constraint firstItem="bae-2p-rdI" firstAttribute="top" secondItem="NEU-sP-Y1n" secondAttribute="top" id="ZKB-Hv-YPG"/>
+                                                        <constraint firstItem="bae-2p-rdI" firstAttribute="leading" secondItem="NEU-sP-Y1n" secondAttribute="leading" constant="10" id="fbv-9d-7Wx"/>
+                                                        <constraint firstAttribute="bottom" secondItem="ami-MF-hae" secondAttribute="bottom" constant="15" id="gAq-ek-GbN"/>
+                                                        <constraint firstItem="ami-MF-hae" firstAttribute="top" secondItem="bae-2p-rdI" secondAttribute="bottom" id="iOF-Er-deK"/>
+                                                    </constraints>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="aMZ-eD-Qxa" firstAttribute="top" secondItem="bQM-ZQ-ehO" secondAttribute="top" id="3yA-Jn-6Fo"/>
+                                                <constraint firstAttribute="bottom" secondItem="aMZ-eD-Qxa" secondAttribute="bottom" id="L4W-ca-xGT"/>
+                                                <constraint firstItem="aMZ-eD-Qxa" firstAttribute="leading" secondItem="bQM-ZQ-ehO" secondAttribute="leading" id="Od9-aJ-8c7"/>
+                                                <constraint firstAttribute="height" constant="90" id="Z9j-JL-FCD"/>
+                                            </constraints>
                                         </stackView>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="bQM-ZQ-ehO" firstAttribute="top" secondItem="R47-cT-ZpS" secondAttribute="top" id="FRB-Ui-cPO"/>
+                                        <constraint firstAttribute="trailing" secondItem="bQM-ZQ-ehO" secondAttribute="trailing" id="Fby-vL-IN9"/>
+                                        <constraint firstItem="bQM-ZQ-ehO" firstAttribute="leading" secondItem="R47-cT-ZpS" secondAttribute="leading" id="d2K-5G-Pvs"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="nameLabel" destination="bae-2p-rdI" id="g1D-Rd-ym8"/>
@@ -79,7 +115,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZHp-yK-be7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="201" y="136"/>
+            <point key="canvasLocation" x="200.80000000000001" y="135.38230884557723"/>
         </scene>
         <!--새로운 식당-->
         <scene sceneID="tne-QT-ifu">
@@ -201,18 +237,18 @@
         <scene sceneID="vfu-Zk-oak">
             <objects>
                 <viewController id="1yn-Cd-eFU" customClass="RouletteViewController" customModule="SmartHanYang" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="WoW-W3-pMu">
+                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="WoW-W3-pMu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cgn-11-XxP">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cgn-11-XxP">
                                 <rect key="frame" x="0.0" y="164" width="375" height="375"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="cgn-11-XxP" secondAttribute="height" multiplier="1:1" id="GN3-zY-4TW"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sbG-QS-VXw">
-                                <rect key="frame" x="166.5" y="313" width="41" height="41"/>
+                                <rect key="frame" x="166.5" y="-20.5" width="41" height="41"/>
                                 <color key="backgroundColor" red="0.55400220619733043" green="0.78480058081142778" blue="0.94954943783068779" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="sbG-QS-VXw" secondAttribute="height" multiplier="1:1" id="efs-rF-FTw"/>
