@@ -18,7 +18,7 @@ class RouletteViewController: UIViewController {
     
     var fromAngle: Double = 0.0
 
-    @IBOutlet weak var rotateImage: UIImageView!
+    @IBOutlet weak var centerView: UIView!
     
     @IBOutlet var rotateResultView: UIView!
     @IBOutlet weak var rotateResultText: UITextField!
@@ -56,11 +56,11 @@ class RouletteViewController: UIViewController {
         }), frame: self.view.frame)
         
         if let r = roulette {
-            self.view.insertSubview(r, at: 1)
+            self.centerView.insertSubview(r, at: 0)
             
             r.layer.bounds.size.width = self.view.frame.width*0.9
             r.layer.bounds.size.height = self.view.frame.width*0.9
-            r.layer.position = CGPoint(x:self.view.frame.width*0.5, y:self.view.frame.height*0.5)
+            r.layer.position = CGPoint(x:self.view.frame.width*0.5, y:centerView.frame.height*0.5)
             r.drawView()
         }
         
