@@ -60,7 +60,7 @@ class RouletteViewController: UIViewController {
             
             r.layer.bounds.size.width = self.view.frame.width*0.9
             r.layer.bounds.size.height = self.view.frame.width*0.9
-            r.layer.position = CGPoint(x:self.view.frame.width*0.5, y:centerView.frame.height*0.5)
+            r.layer.position = CGPoint(x:self.view.frame.width*0.5, y:self.view.frame.width*0.5)
             r.drawView()
         }
         
