@@ -15,7 +15,9 @@ class SuupTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         Timer.scheduledTimer(withTimeInterval: 0.02, repeats: false) { (_) in
-            self.tableView.scrollToRow(at: IndexPath(row: 1, section: 0), at: UITableViewScrollPosition.top, animated: false)
+            if LectureDataManager.shared.GetLectures().count > 0 {
+                self.tableView.scrollToRow(at: IndexPath(row: 1, section: 0), at: UITableViewScrollPosition.top, animated: false)
+            }
         }
     }
     
