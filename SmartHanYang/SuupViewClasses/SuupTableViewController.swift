@@ -11,6 +11,7 @@ import UIKit
 class SuupTableViewController: UITableViewController {
     var todayLectures:[LectureTimeTable] = []
     var gonggangIndexes:[Float] = []
+    var item:UIBarButtonItem? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,9 +31,6 @@ class SuupTableViewController: UITableViewController {
         update()
         if LectureDataManager.shared.GetLectures().count > 0 {
             self.tableView.scrollToRow(at: IndexPath(row: 1, section: 0), at: UITableViewScrollPosition.top, animated: false)
-        }
-        else {
-            self.navigationItem.rightBarButtonItem = nil
         }
     }
     
@@ -59,10 +57,18 @@ class SuupTableViewController: UITableViewController {
             }
             prev = l
         }
-        
-        self.tableView.rowHeight = UITableViewAutomaticDimension
-        self.tableView.estimatedRowHeight = 44
-        self.tableView.reloadData()
+        DispatchQueue.main.async {
+            if LectureDataManager.shared.GetLectures().count > 0 && self.item != nil {
+                self.navigationItem.rightBarButtonItem = self.item
+            }
+            else if self.navigationItem.rightBarButtonItem != nil {
+                self.item = self.navigationItem.rightBarButtonItem
+                self.navigationItem.rightBarButtonItem = nil
+            }
+            self.tableView.rowHeight = UITableViewAutomaticDimension
+            self.tableView.estimatedRowHeight = 44
+            self.tableView.reloadData()
+        }
     }
 
     override func didReceiveMemoryWarning() {
