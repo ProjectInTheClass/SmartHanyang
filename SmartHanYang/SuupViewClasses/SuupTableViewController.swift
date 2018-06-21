@@ -61,7 +61,7 @@ class SuupTableViewController: UITableViewController {
             if LectureDataManager.shared.GetLectures().count > 0 && self.item != nil {
                 self.navigationItem.rightBarButtonItem = self.item
             }
-            else if self.navigationItem.rightBarButtonItem != nil {
+            else if LectureDataManager.shared.GetLectures().count == 0 && self.navigationItem.rightBarButtonItem != nil {
                 self.item = self.navigationItem.rightBarButtonItem
                 self.navigationItem.rightBarButtonItem = nil
             }
