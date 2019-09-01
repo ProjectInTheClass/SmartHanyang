@@ -88,8 +88,10 @@ class SettingsViewController: UITableViewController {
             var cal = Calendar.current
             cal.timeZone = .current
             
-            if let url = URL(string: "https://m.hanyang.ac.kr/haksa/sggu/sggu0001001.json?suup_year=\(cal.component(.year, from: Date()))&suup_term=10&yoil=\(my_yoil)&apiUrl%5B%5D=%2FHASA%2FA201300018.json"){
+            if let url = URL(string: "https://m.hanyang.ac.kr/haksa/sggu/sggu0001001.json?suup_year=\(cal.component(.year, from: Date()))&suup_term=20&yoil=\(my_yoil)&apiUrl%5B%5D=%2FHASA%2FA201300018.json"){
                 var request = URLRequest(url: url)
+                print("url 보여줘")
+                print(url.absoluteString);
                 request.httpMethod = "GET"
                 request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
                 request.setValue(cookie, forHTTPHeaderField: "Cookie")

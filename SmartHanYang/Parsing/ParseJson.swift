@@ -13,6 +13,9 @@ import Foundation
 
 func ParseJson(json:String, yoil:Int)
 {
+    print("json 보여줘")
+    print(json)
+    
     enum Tags: String {
         case classroom = "\"GANGUISIL_NM\":\""
         case startTime = "\"START_TM\":\""
