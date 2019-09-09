@@ -115,7 +115,7 @@ class HyuBoManagerViewController: UIViewController,UITableViewDelegate,UITableVi
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        let (lec,d) = GetData(indexPath)
+        let (lec,_) = GetData(indexPath)
         
         if editingStyle == .delete {
             Easy.ShowAlert(me: self, title: "정말 삭제하시겠습니까?", message: "") { (b) in
@@ -143,7 +143,7 @@ class HyuBoManagerViewController: UIViewController,UITableViewDelegate,UITableVi
                         var index = 0
                         var targetIndex = -1
                         for (i,t) in lec.bogangTimeTables.enumerated() {
-                            if let b = t.bogangDay {
+                            if let _ = t.bogangDay {
                                 if index == indexPath.row {
                                     targetIndex = i
                                     break

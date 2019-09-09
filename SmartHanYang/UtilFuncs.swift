@@ -155,9 +155,11 @@ public class EasyCalendar
     {
         let cal = CurrentCalendar()
         
-        let components = cal.dateComponents([.day], from: date1, to: date2)
-        
-        return components.day == 0
+        let components1 = cal.dateComponents([.day, .hour], from: date1)
+        let components2 = cal.dateComponents([.day, .hour], from: date2)
+        let d1 = components1.day
+        let d2 = components2.day
+        return d1 == d2
     }
     
     public static func DDay(from:Date,to:Date) -> Int

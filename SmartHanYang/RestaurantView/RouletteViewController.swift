@@ -131,10 +131,12 @@ class RouletteViewController: UIViewController {
             
             self.rotateButton.isEnabled = true
             
-            let angle = Double(atan2(transform!.m12, transform!.m11))+Double.pi*2;
+            let angle = Double(atan2(transform!.m12, transform!.m11))+Double.pi*2
             self.fromAngle = angle
         
-            let text = self.roulette!.texts[self.roulette!.texts.count - 1 - Int((fmod(angle, Double.pi * 2) / (2 * Double.pi) ) * Double(self.roulette!.texts.count))]
+            let a = Int((fmod(angle, Double.pi * 2) / (2 * Double.pi) ) * Double(self.roulette!.texts.count))
+            let b = self.roulette!.texts.count
+            let text = self.roulette!.texts[(b - 1) - a]
             self.updateResultLabel(str: text)
             t.invalidate()
             
